@@ -1,0 +1,78 @@
+/* External custom styles for Tailwind-based site */
+
+/* custom properties */
+:root{
+  --accent-from: #7c3aed;
+  --accent-to: #06b6d4;
+  --glass-bg: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.06);
+}
+
+/* utility font family (Inter loaded via Google Fonts) */
+.font-inter { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* glass card */
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+}
+
+/* primary button */
+.btn-primary{
+  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+  color: black;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 8px 30px rgba(7,9,36,0.6);
+}
+
+/* outline button */
+.btn-outline{
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  color: #cbd5e1;
+}
+
+/* nav links */
+.nav-link{
+  color: #cbd5e1;
+  font-weight: 600;
+}
+.nav-link:hover, .nav-link.active{
+  color: #a78bfa;
+}
+
+/* social icon */
+.social{
+  background: rgba(255,255,255,0.03);
+  width:36px;height:36px;border-radius:8px;display:inline-grid;place-items:center;color:#cbd5e1;
+}
+
+/* loader */
+#page-loader{ transition: opacity 300ms ease, visibility 300ms; }
+#page-loader.hidden{ opacity: 0; visibility: hidden; pointer-events: none; transform: scale(0.98); }
+
+/* fade-in (JS toggles visible class) */
+.fade-in { opacity: 0; transform: translateY(12px); transition: all 600ms cubic-bezier(.2,.9,.2,1); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* gallery hide */
+.gallery-item { transition: transform 280ms ease, opacity 240ms ease; }
+.gallery-item.hidden { opacity: 0; transform: scale(0.98); pointer-events: none; height: 0; margin: 0; padding: 0; }
+
+/* lightbox image */
+#lightbox img { max-height: 60vh; object-fit: contain; }
+
+/* page exit (fade-out before navigation) */
+.page-exit { opacity: 0; transition: opacity 320ms ease; transform: translateY(6px); }
+
+/* small responsive tweaks */
+@media (max-width: 768px){
+  .nav-link { display:none; }
+  header nav { padding: 0.5rem; }
+}

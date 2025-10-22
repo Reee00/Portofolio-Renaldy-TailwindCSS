@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gallery — Ahmad Renaldy</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN config (class-based dark mode) -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { primary: "#7c3aed", accent: "#06b6d4" },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styless.css" />
+
+    <meta
+      name="description"
+      content="Portfolio Ahmad Renaldy — Web Developer & Digital Media Manager"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- NAVBAR -->
+    <header class="sticky top-4 z-40">
+      <div class="max-w-6xl mx-auto px-4">
+        <nav
+          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
+        >
+          <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3" data-link>
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
+              >
+                AR
+              </div>
+              <div>
+                <div class="font-semibold">
+                  Ahmad <span class="text-cyan-300">Renaldy</span>
+                </div>
+                <div class="text-xs text-slate-400 dark:text-slate-300">
+                  Web & Digital Media
+                </div>
+              </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-5">
+              <a href="index.html" class="nav-link" data-link>Home</a>
+              <a href="about.html" class="nav-link" data-link>About</a>
+              <a href="gallery.html" class="nav-link active" data-link
+                >Gallery</a
+              >
+              <a href="profile.html" class="nav-link" data-link>Profile</a>
+              <a href="contact.html" class="nav-link" data-link>Contact</a>
+              <a href="Latihan.html" class="nav-link" data-link
+                >Hasil Latihan</a
+              >
+              <button
+                id="darkToggle"
+                aria-label="Toggle dark mode"
+                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
+              >
+                <i id="darkIcon" class="fa-regular fa-moon"></i>
+              </button>
+            </div>
+
+            <!-- Mobile Buttons -->
+            <div class="md:hidden flex items-center gap-3">
+              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
+                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
+              </button>
+              <button
+                id="menuBtn"
+                class="p-2 rounded-lg bg-white/4"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu -->
+          <div
+            id="mobileMenu"
+            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
+          >
+            <div class="flex flex-col gap-2">
+              <a href="index.html" class="nav-link-mobile"
+                ><i class="fa-solid fa-home w-5"></i><span>Home</span></a
+              >
+              <a href="about.html" class="nav-link-mobile"
+                ><i class="fa-solid fa-user w-5"></i><span>About</span></a
+              >
+              <a href="gallery.html" class="nav-link-mobile"
+                ><i class="fa-solid fa-images w-5"></i><span>Gallery</span></a
+              >
+              <a href="profile.html" class="nav-link-mobile"
+                ><i class="fa-solid fa-id-card w-5"></i><span>Profile</span></a
+              >
+              <a href="contact.html" class="nav-link-mobile"
+                ><i class="fa-solid fa-envelope w-5"></i><span>Contact</span></a
+              >
+              <a href="Latihan.html" class="nav-link-mobile"
+                ><i class="fa-solid fa-code w-5"></i
+                ><span>Hasil Latihan</span></a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <section class="max-w-6xl mx-auto px-6 py-12">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-2">Portfolio Gallery</h2>
+          <p class="text-slate-400">
+            Klik project untuk melihat detail. Filter berdasarkan kategori.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 justify-center mb-8">
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-white/5"
+            data-cat="all"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-white/5"
+            data-cat="web"
+          >
+            Website
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-white/5"
+            data-cat="ui"
+          >
+            UI/UX
+          </button>
+          <button
+            class="filter-btn px-4 py-2 rounded-full bg-white/5"
+            data-cat="admin"
+          >
+            Dashboard
+          </button>
+        </div>
+
+        <div
+          id="galleryGrid"
+          class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
+        >
+          <!-- sample items (use your images later in assets/images/) -->
+          <div
+            class="gallery-item glass p-4 cursor-pointer"
+            data-cat="web"
+            data-title="Website Yayasan"
+            data-desc="WordPress, optimasi konten"
+            data-img="assets/images/p1.jpg"
+          >
+            <div
+              class="w-full h-40 bg-white/5 rounded-lg mb-3 grid place-items-center text-slate-400"
+            >
+              Gambar (ganti nanti)
+            </div>
+            <h4 class="font-semibold">Website Yayasan</h4>
+            <p class="text-sm text-slate-400">WordPress & optimasi</p>
+          </div>
+
+          <div
+            class="gallery-item glass p-4 cursor-pointer"
+            data-cat="ui"
+            data-title="Landing Campaign"
+            data-desc="UI fokus konversi"
+            data-img="assets/images/p2.jpg"
+          >
+            <div
+              class="w-full h-40 bg-white/5 rounded-lg mb-3 grid place-items-center text-slate-400"
+            >
+              Gambar (ganti nanti)
+            </div>
+            <h4 class="font-semibold">Landing Campaign</h4>
+            <p class="text-sm text-slate-400">UI/UX</p>
+          </div>
+
+          <div
+            class="gallery-item glass p-4 cursor-pointer"
+            data-cat="admin"
+            data-title="Dashboard Donasi"
+            data-desc="Admin dashboard & role mapping"
+            data-img="assets/images/p3.jpg"
+          >
+            <div
+              class="w-full h-40 bg-white/5 rounded-lg mb-3 grid place-items-center text-slate-400"
+            >
+              Gambar (ganti nanti)
+            </div>
+            <h4 class="font-semibold">Dashboard Donasi</h4>
+            <p class="text-sm text-slate-400">Admin UI</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal / Lightbox -->
+      <div
+        id="lightbox"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-6"
+      >
+        <div class="max-w-4xl w-full bg-slate-900/80 rounded-2xl p-6 relative">
+          <button id="lb-close" class="absolute right-4 top-4 text-slate-300">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div id="lb-img-wrap" class="mb-4">
+            <img
+              id="lb-img"
+              src=""
+              alt="preview"
+              class="w-full rounded-lg object-contain max-h-[60vh] mx-auto"
+            />
+          </div>
+          <h3 id="lb-title" class="text-xl font-semibold mb-1"></h3>
+          <p id="lb-desc" class="text-slate-400"></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/mainn.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const galleryContainer = document.getElementById("galleryGrid");
+        const stored = JSON.parse(localStorage.getItem("galleryItems") || "[]");
+
+        stored.forEach((item) => {
+          const div = document.createElement("div");
+          div.className = "gallery-item glass p-4 rounded-xl";
+          div.innerHTML = `
+      <img src="${item.img}" alt="${item.title}" class="rounded-lg mb-3 w-full object-cover h-48">
+      <h4 class="font-semibold">${item.title}</h4>
+      <p class="text-sm text-slate-400">${item.desc}</p>
+      <span class="text-xs text-slate-500">${item.date}</span>
+    `;
+          galleryContainer.appendChild(div);
+        });
+      });
+    </script>
+  </body>
+</html>

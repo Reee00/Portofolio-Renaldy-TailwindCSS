@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Upload Latihan — Ahmad Renaldy</title>
+
+    <!-- Font & Tailwind -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { primary: "#7c3aed", accent: "#06b6d4" },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styless.css" />
+  </head>
+  <body
+    class="font-inter bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- NAVBAR -->
+    <header class="sticky top-4 z-40">
+      <div class="max-w-6xl mx-auto px-4">
+        <nav
+          class="bg-white/70 dark:bg-white/5 backdrop-blur-lg border border-white/20 dark:border-white/10 rounded-2xl p-3 shadow-lg flex justify-between items-center"
+        >
+          <a href="index.html" class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
+            >
+              AR
+            </div>
+            <div>
+              <div class="font-semibold">
+                Ahmad <span class="text-cyan-400">Renaldy</span>
+              </div>
+              <div class="text-xs text-slate-400 dark:text-slate-300">
+                Upload Latihan
+              </div>
+            </div>
+          </a>
+          <button
+            id="darkToggle"
+            class="p-2 rounded-lg bg-white/30 dark:bg-white/10"
+          >
+            <i id="darkIcon" class="fa-regular fa-moon"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-16">
+      <section class="max-w-3xl mx-auto px-6">
+        <div class="glass p-8 rounded-2xl shadow-xl">
+          <h1 class="text-2xl font-bold mb-6 text-center">
+            Upload Tugas Latihan
+          </h1>
+
+          <form id="uploadForm" class="flex flex-col gap-4">
+            <div>
+              <label class="font-semibold">Judul Latihan</label>
+              <input
+                type="text"
+                id="title"
+                class="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-white/10"
+                placeholder="Contoh: Latihan Membuat Navbar"
+                required
+              />
+            </div>
+
+            <div>
+              <label class="font-semibold">Deskripsi Singkat</label>
+              <textarea
+                id="desc"
+                rows="3"
+                class="w-full p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-white/10"
+                placeholder="Tuliskan deskripsi singkat..."
+                required
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="font-semibold">File Latihan</label>
+              <input
+                type="file"
+                id="file"
+                accept="image/*,.pdf"
+                class="w-full text-sm text-slate-600 dark:text-slate-300"
+              />
+            </div>
+
+            <button type="submit" class="btn-primary w-full mt-4">
+              Upload Sekarang
+            </button>
+          </form>
+
+          <div
+            id="successMsg"
+            class="hidden mt-6 text-center text-green-500 font-semibold"
+          >
+            ✅ Tugas berhasil diupload!
+            <a href="gallery.html" class="text-cyan-500 underline"
+              >Lihat di Gallery</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/mainn.js"></script>
+
+    <script>
+      // Fungsi upload sederhana pakai localStorage
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const title = document.getElementById("title").value;
+          const desc = document.getElementById("desc").value;
+          const fileInput = document.getElementById("file");
+
+          let fileUrl = "";
+          if (fileInput.files[0]) {
+            fileUrl = URL.createObjectURL(fileInput.files[0]);
+          }
+
+          const newItem = {
+            title,
+            desc,
+            img: fileUrl,
+            date: new Date().toLocaleString(),
+          };
+
+          const existing = JSON.parse(
+            localStorage.getItem("galleryItems") || "[]"
+          );
+          existing.push(newItem);
+          localStorage.setItem("galleryItems", JSON.stringify(existing));
+
+          document.getElementById("uploadForm").reset();
+          document.getElementById("successMsg").classList.remove("hidden");
+        });
+    </script>
+  </body>
+</html>

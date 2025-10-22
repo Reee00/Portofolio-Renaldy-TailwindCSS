@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profile — Ahmad Renaldy</title>
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CDN config (class-based dark mode) -->
+    <script>
+      tailwind = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { primary: "#7c3aed", accent: "#06b6d4" },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styless.css" />
+  </head>
+  <body
+    class="font-inter bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- NAVBAR -->
+    <header class="sticky top-4 z-40">
+      <div class="max-w-6xl mx-auto px-4">
+        <nav
+          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
+        >
+          <!-- Top Row: Logo + Desktop Nav + Mobile Buttons -->
+          <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3" data-link>
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
+              >
+                AR
+              </div>
+              <div>
+                <div class="font-semibold">
+                  Ahmad <span class="text-cyan-300">Renaldy</span>
+                </div>
+                <div class="text-xs text-slate-400 dark:text-slate-300">
+                  Web & Digital Media
+                </div>
+              </div>
+            </a>
+
+            <!-- Desktop Navigation (hidden on mobile) -->
+            <div class="hidden md:flex items-center gap-5">
+              <a href="index.html" class="nav-link" data-link>Home</a>
+              <a href="about.html" class="nav-link" data-link>About</a>
+              <a href="gallery.html" class="nav-link" data-link>Gallery</a>
+              <a href="profile.html" class="nav-link" data-link>Profile</a>
+              <a href="contact.html" class="nav-link" data-link>Contact</a>
+              <a href="Latihan.html" class="nav-link" data-link
+                >Hasil Latihan</a
+              >
+
+              <button
+                id="darkToggle"
+                aria-label="Toggle dark mode"
+                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
+              >
+                <i id="darkIcon" class="fa-regular fa-moon"></i>
+              </button>
+            </div>
+
+            <!-- Mobile Buttons -->
+            <div class="md:hidden flex items-center gap-3">
+              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
+                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
+              </button>
+              <button
+                id="menuBtn"
+                class="p-2 rounded-lg bg-white/4"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Dropdown (Initially Hidden) -->
+          <div
+            id="mobileMenu"
+            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
+          >
+            <div class="flex flex-col gap-2">
+              <a href="index.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-home w-5"></i>
+                <span>Home</span>
+              </a>
+              <a href="about.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-user w-5"></i>
+                <span>About</span>
+              </a>
+              <a href="gallery.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-images w-5"></i>
+                <span>Gallery</span>
+              </a>
+              <a href="profile.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-id-card w-5"></i>
+                <span>Profile</span>
+              </a>
+              <a href="contact.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-envelope w-5"></i>
+                <span>Contact</span>
+              </a>
+              <a href="Latihan.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-envelope w-5"></i>
+                <span>Hasil Latihan</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="pt-16">
+      <section class="max-w-4xl mx-auto px-6 py-12 fade-in">
+        <h2 class="text-3xl font-bold mb-4">Profil Profesional</h2>
+        <p class="text-slate-500 mb-6">
+          Ringkasan pengalaman, keahlian, dan kontak profesional.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass p-6">
+            <h4 class="font-semibold mb-2">Ringkasan</h4>
+            <p class="text-slate-500">
+              Saya membuat & mengelola website yang mudah dikelola, cepat, dan
+              teroptimasi SEO. Berpengalaman menangani
+              yayasankankeranakindonesia.com.
+            </p>
+          </div>
+
+          <div class="glass p-6">
+            <h4 class="font-semibold mb-2">Kontak</h4>
+            <p class="text-slate-500 mb-2">
+              Email:
+              <a
+                href="mailto:ahmadd.renaldyy@gmail.com"
+                class="text-cyan-500text-slate-500"
+                >ahmadd.renaldyy@gmail.com</a
+              >
+            </p>
+            <p class="text-slate-500">
+              Instagram:
+              <a
+                href="https://instagram.com/ahmadd.renaldyy"
+                class="text-cyan-300"
+                >@ahmadd.renaldyy</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/mainn.js"></script>
+  </body>
+</html>

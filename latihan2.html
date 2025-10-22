@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hasil Latihan – Ahmad Renaldy</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { primary: "#7c3aed", accent: "#06b6d4" },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .nav-link {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+        color: inherit;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .nav-link-mobile {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+        color: inherit;
+        text-decoration: none;
+      }
+      .nav-link-mobile:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .btn-primary {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(to right, #7c3aed, #06b6d4);
+        color: white;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+      }
+      .training-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .training-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(124, 58, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+      }
+      .category-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(124, 58, 237, 0.2);
+        border: 1px solid rgba(124, 58, 237, 0.4);
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #c084fc;
+      }
+    </style> -->
+    <link rel="stylesheet" href="css/styless.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- NAVBAR -->
+    <header class="sticky top-4 z-40">
+      <div class="max-w-6xl mx-auto px-4">
+        <nav
+          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
+        >
+          <!-- Top Row: Logo + Desktop Nav + Mobile Buttons -->
+          <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3" data-link>
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
+              >
+                AR
+              </div>
+              <div>
+                <div class="font-semibold">
+                  Ahmad <span class="text-cyan-300">Renaldy</span>
+                </div>
+                <div class="text-xs text-slate-400 dark:text-slate-300">
+                  Web & Digital Media
+                </div>
+              </div>
+            </a>
+
+            <!-- Desktop Navigation (hidden on mobile) -->
+            <div class="hidden md:flex items-center gap-5">
+              <a href="index.html" class="nav-link" data-link>Home</a>
+              <a href="about.html" class="nav-link" data-link>About</a>
+              <a href="gallery.html" class="nav-link" data-link>Gallery</a>
+              <a href="profile.html" class="nav-link" data-link>Profile</a>
+              <a href="contact.html" class="nav-link" data-link>Contact</a>
+              <a href="Latihan.html" class="nav-link" data-link
+                >Hasil Latihan</a
+              >
+
+              <button
+                id="darkToggle"
+                aria-label="Toggle dark mode"
+                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
+              >
+                <i id="darkIcon" class="fa-regular fa-moon"></i>
+              </button>
+            </div>
+
+            <!-- Mobile Buttons -->
+            <div class="md:hidden flex items-center gap-3">
+              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
+                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
+              </button>
+              <button
+                id="menuBtn"
+                class="p-2 rounded-lg bg-white/4"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Dropdown (Initially Hidden) -->
+          <div
+            id="mobileMenu"
+            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
+          >
+            <div class="flex flex-col gap-2">
+              <a href="index.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-home w-5"></i>
+                <span>Home</span>
+              </a>
+              <a href="about.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-user w-5"></i>
+                <span>About</span>
+              </a>
+              <a href="gallery.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-images w-5"></i>
+                <span>Gallery</span>
+              </a>
+              <a href="profile.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-id-card w-5"></i>
+                <span>Profile</span>
+              </a>
+              <a href="contact.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-envelope w-5"></i>
+                <span>Contact</span>
+              </a>
+              <a href="Latihan.html" class="nav-link-mobile" data-link>
+                <i class="fa-solid fa-envelope w-5"></i>
+                <span>Hasil Latihan</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- Hero Section -->
+      <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center fade-in mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300"
+                >Hasil Latihan</span
+              >
+            </h1>
+            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+              Dokumentasi progress pembelajaran dan eksperimen dalam
+              pengembangan web, design, dan teknologi digital
+            </p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in">
+            <button
+              class="filter-btn active px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 text-white font-semibold"
+              data-filter="all"
+            >
+              Semua
+            </button>
+            <button
+              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
+              data-filter="frontend"
+            >
+              Frontend
+            </button>
+            <button
+              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
+              data-filter="backend"
+            >
+              Backend
+            </button>
+            <button
+              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
+              data-filter="design"
+            >
+              Design
+            </button>
+            <button
+              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
+              data-filter="cms"
+            >
+              CMS
+            </button>
+            <button
+              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
+              data-filter="Pemrograman Web 1"
+            >
+              Pemrograman Web 1
+            </button>
+          </div>
+
+          <!-- Training Cards Grid -->
+          <div id="trainingGrid" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch fade-in">
+
+            <!-- Card 1 -->
+            <div class="training-card" data-category="frontend">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-purple-500/20 to-cyan-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-brands fa-html5 text-6xl text-orange-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Frontend</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Responsive Landing Page</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Landing page modern dengan Tailwind CSS dan animasi interaktif
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>15 Okt 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="training-card" data-category="backend">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-green-500/20 to-blue-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-database text-6xl text-green-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Backend</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">REST API dengan Node.js</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat RESTful API sederhana dengan Express dan MongoDB
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>10 Okt 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="training-card" data-category="design">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-pink-500/20 to-purple-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-palette text-6xl text-pink-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Design</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">UI/UX Dashboard Design</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Desain dashboard admin dengan Figma dan implementasi HTML/CSS
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>5 Okt 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="training-card" data-category="cms">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-blue-500/20 to-indigo-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-brands fa-wordpress text-6xl text-blue-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">CMS</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">WordPress Custom Theme</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat custom theme WordPress dari scratch dengan ACF
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>1 Okt 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="training-card" data-category="frontend">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-yellow-500/20 to-orange-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-brands fa-js text-6xl text-yellow-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Frontend</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Interactive Calculator</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Kalkulator interaktif dengan JavaScript vanilla dan local
+                storage
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>28 Sep 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="training-card" data-category="design">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-red-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-mobile-screen text-6xl text-red-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Design</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Mobile App Mockup</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Mockup aplikasi mobile untuk e-commerce dengan prototype
+                interaktif
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>20 Sep 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+          </div>
+            <!-- Card 7 -->
+<div class="training-card h-full flex flex-col justify-between" data-category="design">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-red-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-mobile-screen text-6xl text-red-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Design</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Mobile App Mockup</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Mockup aplikasi mobile untuk e-commerce dengan prototype
+                interaktif
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>20 Sep 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+          </div>
+            <!-- Card 6 -->
+            <div class="training-card" data-category="design">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-red-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-mobile-screen text-6xl text-red-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Design</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Mobile App Mockup</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Mockup aplikasi mobile untuk e-commerce dengan prototype
+                interaktif
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500"
+              >
+                <span
+                  ><i class="fa-regular fa-calendar mr-1"></i>20 Sep 2025</span
+                >
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Load More Button -->
+          <div class="text-center mt-12">
+            <button class="btn-primary">
+              <i class="fa-solid fa-plus mr-2"></i>Muat Lebih Banyak
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-12 mb-12">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="glass rounded-2xl p-8">
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  24
+                </div>
+                <div class="text-sm text-slate-400">Total Projects</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  150+
+                </div>
+                <div class="text-sm text-slate-400">Jam Belajar</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  12
+                </div>
+                <div class="text-sm text-slate-400">Teknologi</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  6 bln
+                </div>
+                <div class="text-sm text-slate-400">Pengalaman</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
+          © <strong>Ahmad Renaldy</strong> – Maintainer
+          yayasankankeranakindonesia.com
+        </div>
+      </footer>
+    </main>
+
+    <!-- <script>
+      // Dark Mode Toggle
+      const darkToggle = document.getElementById("darkToggle");
+      const darkToggleMobile = document.getElementById("darkToggleMobile");
+      const darkIcon = document.getElementById("darkIcon");
+      const darkIconMobile = document.getElementById("darkIconMobile");
+      const html = document.documentElement;
+
+      function toggleDarkMode() {
+        html.classList.toggle("dark");
+        const isDark = html.classList.contains("dark");
+        darkIcon.className = isDark
+          ? "fa-regular fa-sun"
+          : "fa-regular fa-moon";
+        darkIconMobile.className = isDark
+          ? "fa-regular fa-sun"
+          : "fa-regular fa-moon";
+        localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+      }
+
+      if (localStorage.getItem("darkMode") === "enabled") {
+        html.classList.add("dark");
+        darkIcon.className = "fa-regular fa-sun";
+        darkIconMobile.className = "fa-regular fa-sun";
+      }
+
+      darkToggle.addEventListener("click", toggleDarkMode);
+      darkToggleMobile.addEventListener("click", toggleDarkMode);
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Filter Functionality
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const trainingCards = document.querySelectorAll(".training-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+
+          // Update active button
+          filterBtns.forEach((b) => {
+            b.classList.remove(
+              "active",
+              "bg-gradient-to-r",
+              "from-purple-500",
+              "to-cyan-400",
+              "text-white"
+            );
+            b.classList.add("glass", "hover:bg-white/10");
+          });
+          btn.classList.add(
+            "active",
+            "bg-gradient-to-r",
+            "from-purple-500",
+            "to-cyan-400",
+            "text-white"
+          );
+          btn.classList.remove("glass", "hover:bg-white/10");
+
+          // Filter cards
+          trainingCards.forEach((card) => {
+            if (
+              filter === "all" ||
+              card.getAttribute("data-category") === filter
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script> -->
+    <script src="js/mainn.js"></script>
+  </body>
+</html>

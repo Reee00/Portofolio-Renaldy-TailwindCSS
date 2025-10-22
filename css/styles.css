@@ -1,0 +1,521 @@
+/* External custom styles for Tailwind-based site */
+
+/* custom properties */
+:root {
+  --accent-from: #7c3aed;
+  --accent-to: #06b6d4;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+/* utility font family (Inter loaded via Google Fonts) */
+.font-inter {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* glass card - enhanced with hover */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+}
+
+/* primary button - responsive sizing */
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+  color: black;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 8px 30px rgba(7, 9, 36, 0.6);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* outline button - responsive sizing */
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #a78bfa;
+}
+
+/* nav links */
+.nav-link {
+  color: #cbd5e1;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+}
+
+/* social icon - enhanced */
+.social {
+  background: rgba(255, 255, 255, 0.03);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-grid;
+  place-items: center;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social:hover {
+  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
+}
+
+/* loader */
+#page-loader {
+  transition: opacity 300ms ease, visibility 300ms;
+}
+
+#page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.98);
+}
+
+/* fade-in (JS toggles visible class) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 600ms cubic-bezier(.2, .9, .2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* gallery items - responsive */
+.gallery-item {
+  transition: transform 280ms ease, opacity 240ms ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+.gallery-item.hidden {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* lightbox image */
+#lightbox img {
+  max-height: 60vh;
+  object-fit: contain;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* page exit (fade-out before navigation) */
+.page-exit {
+  opacity: 0;
+  transition: opacity 320ms ease;
+  transform: translateY(6px);
+}
+
+/* Timeline styling */
+.timeline-item {
+  position: relative;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+  border-left: 2px solid rgba(124, 58, 237, 0.3);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+}
+
+/* Filter buttons */
+.filter-btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #a78bfa;
+}
+
+.filter-btn.active {
+  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+  color: black;
+  font-weight: 700;
+}
+
+/* ===============================================
+   RESPONSIVE BREAKPOINTS
+   =============================================== */
+
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  /* Hide desktop nav links */
+  .nav-link {
+    display: none;
+  }
+
+  /* Compact header */
+  header nav {
+    padding: 0.5rem;
+  }
+
+  /* Stack buttons vertically */
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Smaller social icons */
+  .social {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  /* Compact glass cards */
+  .glass {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  /* Typography adjustments */
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Compact timeline */
+  .timeline-item {
+    padding-left: 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Full width lightbox */
+  #lightbox img {
+    max-height: 50vh;
+  }
+}
+
+/* Mobile Medium (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  /* Hide desktop nav links */
+  .nav-link {
+    display: none;
+  }
+
+  /* Compact header */
+  header nav {
+    padding: 0.5rem;
+  }
+
+  /* Buttons side by side if space allows */
+  .btn-primary,
+  .btn-outline {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* Typography adjustments */
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  /* Gallery 1 column */
+  #galleryGrid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Show nav links but compact */
+  .nav-link {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* Gallery 2 columns */
+  #galleryGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+  }
+
+  /* Adjust container padding */
+  .max-w-6xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Buttons normal size */
+  .btn-primary,
+  .btn-outline {
+    padding: 0.65rem 1.15rem;
+  }
+
+  /* Typography balance */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+}
+
+/* Desktop Small (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Full nav visible */
+  .nav-link {
+    display: inline-block;
+  }
+
+  /* Gallery 3 columns */
+  #galleryGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Standard spacing */
+  header nav {
+    padding: 0.75rem;
+  }
+}
+
+/* Desktop Large (≥ 1280px) */
+@media (min-width: 1280px) {
+  /* Enhanced hover effects */
+  .glass:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(124, 58, 237, 0.2);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Smooth transitions */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Gallery optimal layout */
+  #galleryGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem;
+  }
+}
+
+/* ===============================================
+   LANDSCAPE ORIENTATION ADJUSTMENTS
+   =============================================== */
+@media (max-width: 767px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape */
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Compact header */
+  header {
+    top: 0.5rem;
+  }
+
+  /* Smaller lightbox */
+  #lightbox img {
+    max-height: 70vh;
+  }
+}
+
+/* ===============================================
+   PRINT STYLES
+   =============================================== */
+@media print {
+  .no-print,
+  header,
+  .btn-primary,
+  .btn-outline,
+  #page-loader {
+    display: none !important;
+  }
+
+  .glass {
+    border: 1px solid #ddd;
+    background: white;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* ===============================================
+   ACCESSIBILITY ENHANCEMENTS
+   =============================================== */
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-from);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-primary {
+    border: 2px solid black;
+  }
+}
+
+/* ===============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   =============================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets on mobile */
+  .btn-primary,
+  .btn-outline,
+  .nav-link,
+  .social {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .glass:hover {
+    transform: none;
+  }
+
+  /* Tap highlight color */
+  * {
+    -webkit-tap-highlight-color: rgba(124, 58, 237, 0.3);
+  }
+}
+
+/* ===============================================
+   UTILITY CLASSES
+   =============================================== */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Container max-width responsive */
+.container-responsive {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

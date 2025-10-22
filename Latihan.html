@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hasil Latihan – Ahmad Renaldy</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { primary: "#7c3aed", accent: "#06b6d4" },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .fade-in {
+        animation: fadeIn 0.8s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .title-gradient {
+        background: linear-gradient(to right, #a855f7, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .light .title-gradient {
+        background: none;
+        -webkit-text-fill-color: #0f172a;
+        color: #0f172a;
+      }
+      .nav-link {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+        color: inherit;
+        text-decoration: none;
+      }
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .nav-link-mobile {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s;
+        color: inherit;
+        text-decoration: none;
+      }
+      .nav-link-mobile:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .btn-primary {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(to right, #7c3aed, #06b6d4);
+        color: white;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+      }
+      .training-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: all 0.3s;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+      }
+      .training-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(124, 58, 237, 0.5);
+        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+      }
+      .category-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(124, 58, 237, 0.2);
+        border: 1px solid rgba(124, 58, 237, 0.4);
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #c084fc;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-[#1a1625] dark:via-[#1f1b2e] dark:to-[#0f0a1a] text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- NAVBAR -->
+    <header class="sticky top-4 z-40">
+      <div class="max-w-6xl mx-auto px-4">
+        <nav
+          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
+        >
+          <div class="flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
+              >
+                AR
+              </div>
+              <div>
+                <div class="font-semibold">
+                  Ahmad <span class="text-cyan-300">Renaldy</span>
+                </div>
+                <div class="text-xs text-slate-400 dark:text-slate-300">
+                  Web & Digital Media
+                </div>
+              </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-5">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="about.html" class="nav-link">About</a>
+              <a href="gallery.html" class="nav-link">Gallery</a>
+              <a href="profile.html" class="nav-link">Profile</a>
+              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="Latihan.html" class="nav-link">Hasil Latihan</a>
+
+              <button
+                id="darkToggle"
+                aria-label="Toggle dark mode"
+                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
+              >
+                <i id="darkIcon" class="fa-regular fa-moon"></i>
+              </button>
+            </div>
+
+            <div class="md:hidden flex items-center gap-3">
+              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
+                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
+              </button>
+              <button
+                id="menuBtn"
+                class="p-2 rounded-lg bg-white/4"
+                aria-label="Toggle menu"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="mobileMenu"
+            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
+          >
+            <div class="flex flex-col gap-2">
+              <a href="index.html" class="nav-link-mobile">
+                <i class="fa-solid fa-home w-5"></i>
+                <span>Home</span>
+              </a>
+              <a href="about.html" class="nav-link-mobile">
+                <i class="fa-solid fa-user w-5"></i>
+                <span>About</span>
+              </a>
+              <a href="gallery.html" class="nav-link-mobile">
+                <i class="fa-solid fa-images w-5"></i>
+                <span>Gallery</span>
+              </a>
+              <a href="profile.html" class="nav-link-mobile">
+                <i class="fa-solid fa-id-card w-5"></i>
+                <span>Profile</span>
+              </a>
+              <a href="contact.html" class="nav-link-mobile">
+                <i class="fa-solid fa-envelope w-5"></i>
+                <span>Contact</span>
+              </a>
+              <a href="Latihan.html" class="nav-link-mobile">
+                <i class="fa-solid fa-code w-5"></i>
+                <span>Hasil Latihan</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- Hero Section -->
+      <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center fade-in mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              <span class="title-gradient">Hasil Latihan</span>
+            </h1>
+            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+              Dokumentasi progress pembelajaran HTML dari dasar hingga advanced
+            </p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in">
+            <button
+              class="filter-btn active px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 text-white font-semibold"
+              data-filter="all"
+            >
+              Semua
+            </button>
+            <button
+              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
+              data-filter="Pemrograman Web 1"
+            >
+              Pemrograman Web 1
+            </button>
+          </div>
+
+          <!-- Training Cards Grid -->
+          <div
+            id="trainingGrid"
+            class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in"
+          >
+            <!-- Card 1: Basic Tag -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-orange-500/20 to-red-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-brands fa-html5 text-6xl text-orange-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Latihan Basic Tag HTML</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Mempelajari tag dasar HTML seperti heading, paragraph,
+                horizontal rule, dan format teks
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 1</span>
+                <a
+                  href="latihan basic tag.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 2: Format Teks -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-blue-500/20 to-indigo-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-font text-6xl text-blue-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">
+                Format Teks & Karakter Khusus
+              </h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Penggunaan tag formatting seperti bold, italic, underline dan
+                karakter khusus HTML
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 2</span>
+                <a
+                  href="latihan format teks dan karakter khusus.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 3: Multimedia -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-purple-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-video text-6xl text-purple-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Gambar, Suara, dan Video</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Implementasi multimedia dalam HTML dengan tag video dan kontrol
+                JavaScript
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 3</span>
+                <a
+                  href="menampilkan gambar, suara, dan video.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 4: Hyperlink -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-green-500/20 to-emerald-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-link text-6xl text-green-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Latihan Hyperlink</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat navigasi antar halaman dengan hyperlink internal dan
+                eksternal
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 4</span>
+                <a
+                  href="latihan hyperlink.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 5: List -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-yellow-500/20 to-orange-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-list text-6xl text-yellow-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Bullet Numbering & List</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat list multi-level dengan ordered list, unordered list,
+                dan berbagai tipe marker
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 5</span>
+                <a
+                  href="latihan bullet numbering dan list.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 6: Tabel -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-cyan-500/20 to-blue-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-table text-6xl text-cyan-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Latihan Tabel</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat struktur tabel HTML dengan berbagai atribut seperti
+                colspan, rowspan, dan styling
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 6</span>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 7: Form -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-red-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-file-lines text-6xl text-red-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Latihan Form HTML</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat form registrasi dengan berbagai input type: text, radio,
+                checkbox, select, dan textarea
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 7</span>
+                <a
+                  href="latihan form.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Load More Button -->
+          <div class="text-center mt-12">
+            <button class="btn-primary" onclick="alert('Fitur segera hadir!')">
+              <i class="fa-solid fa-plus mr-2"></i>Muat Lebih Banyak
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="py-12 mb-12">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="glass rounded-2xl p-8">
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  7
+                </div>
+                <div class="text-sm text-slate-400">Total Latihan</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  35+
+                </div>
+                <div class="text-sm text-slate-400">Jam Belajar</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  HTML5
+                </div>
+                <div class="text-sm text-slate-400">Teknologi</div>
+              </div>
+              <div>
+                <div
+                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
+                >
+                  7 Minggu
+                </div>
+                <div class="text-sm text-slate-400">Periode</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
+          © <strong>Ahmad Renaldy</strong> – Maintainer
+          yayasankankeranakindonesia.com
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // Dark Mode Toggle
+      const darkToggle = document.getElementById("darkToggle");
+      const darkToggleMobile = document.getElementById("darkToggleMobile");
+      const darkIcon = document.getElementById("darkIcon");
+      const darkIconMobile = document.getElementById("darkIconMobile");
+      const html = document.documentElement;
+
+      // Check localStorage for saved preference
+      if (localStorage.getItem("darkMode") === "enabled") {
+        html.classList.add("dark");
+        darkIcon.className = "fa-regular fa-sun";
+        darkIconMobile.className = "fa-regular fa-sun";
+      } else {
+        html.classList.add("light");
+        darkIcon.className = "fa-regular fa-moon";
+        darkIconMobile.className = "fa-regular fa-moon";
+      }
+
+      function toggleDarkMode() {
+        html.classList.toggle("dark");
+        html.classList.toggle("light");
+        const isDark = html.classList.contains("dark");
+        darkIcon.className = isDark
+          ? "fa-regular fa-sun"
+          : "fa-regular fa-moon";
+        darkIconMobile.className = isDark
+          ? "fa-regular fa-sun"
+          : "fa-regular fa-moon";
+        localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+      }
+
+      darkToggle.addEventListener("click", toggleDarkMode);
+      darkToggleMobile.addEventListener("click", toggleDarkMode);
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Filter Functionality
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const trainingCards = document.querySelectorAll(".training-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+
+          // Update active button
+          filterBtns.forEach((b) => {
+            b.classList.remove(
+              "active",
+              "bg-gradient-to-r",
+              "from-purple-500",
+              "to-cyan-400",
+              "text-white"
+            );
+            b.classList.add("glass", "hover:bg-white/10");
+          });
+          btn.classList.add(
+            "active",
+            "bg-gradient-to-r",
+            "from-purple-500",
+            "to-cyan-400",
+            "text-white"
+          );
+          btn.classList.remove("glass", "hover:bg-white/10");
+
+          // Filter cards
+          trainingCards.forEach((card) => {
+            if (
+              filter === "all" ||
+              card.getAttribute("data-category") === filter
+            ) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
