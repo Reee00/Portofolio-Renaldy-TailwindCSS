@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Contact — Ahmad Renaldy</title>
+    <title>Ahmad Renaldy — Portfolio</title>
 
-    <!--Google Fonts-->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <!-- Tailwind CDN config (class-based dark mode) -->
     <script>
-      tailwind = {
+      tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
@@ -32,10 +33,20 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="css/styless.css" />
+
+    <meta
+      name="description"
+      content="Portfolio Ahmad Renaldy — Web Developer & Digital Media Manager"
+    />
   </head>
   <body
-    class="font-inter bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
+    class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
   >
+    <!-- Loader -->
+    <!-- <div id="page-loader" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900">
+    <div class="animate-spin w-14 h-14 rounded-full border-4 border-t-transparent border-indigo-400"></div>
+  </div> -->
+
     <!-- NAVBAR -->
     <header class="sticky top-4 z-40">
       <div class="max-w-6xl mx-auto px-4">
@@ -132,64 +143,91 @@
         </nav>
       </div>
     </header>
-
-    <main class="pt-16">
-      <section class="max-w-3xl mx-auto px-6 py-12 fade-in">
-        <h2 class="text-3xl font-bold mb-4">Hubungi Saya</h2>
-        <p class="text-slate-500 mb-6">
-          Isi form di bawah untuk mengirim pesan.
-          <!--(Demo: validasi client-side,
-          tidak ada backend)-->
-        </p>
-
-        <form
-          id="contactForm"
-          class="glass p-6 rounded-xl space-y-4"
-          onsubmit="return submitContact(event)"
+    <!-- HERO -->
+    <main>
+      <section class="min-h-[80vh] flex items-center">
+        <div
+          class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
         >
-          <div>
-            <label class="text-sm">Nama</label>
-            <input
-              id="name"
-              name="name"
-              required
-              class="w-full p-3 mt-1 rounded-md bg-transparent border border-white/6 focus:outline-none"
-              placeholder="Nama lengkap"
-            />
-          </div>
-          <div>
-            <label class="text-sm">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              class="w-full p-3 mt-1 rounded-md bg-transparent border border-white/6 focus:outline-none"
-              placeholder="you@domain.com"
-            />
-          </div>
-          <div>
-            <label class="text-sm">Pesan</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="6"
-              class="w-full p-3 mt-1 rounded-md bg-transparent border border-white/6 focus:outline-none"
-              placeholder="Tulis pesan..."
-            ></textarea>
-          </div>
-          <div>
-            <button type="submit" class="btn-primary w-full">
-              Kirim Pesan
-            </button>
-            <p class="text-xs text-slate-500 mt-2">
-              <!-- Untuk menerima pesan via web tanpa membuka email client,
-              integrasikan dengan Formspree / Netlify Forms / endpoint server. -->
+          <div class="flex-1 fade-in">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              Halo — Saya
+              <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300"
+                >Ahmad Renaldy</span
+              >
+            </h1>
+            <p class="text-slate-500 dark:text-slate-500 mb-6 max-w-xl">
+              Saya menangani website
+              <strong>yayasankankeranakindonesia.com</strong> dan
+              <strong>web.yayasankankeranakindonesia.com</strong>. Fokus pada
+              website cepat, responsif, dan manajemen konten yang efisien.
             </p>
+            <div class="flex gap-4">
+              <a href="about.html" class="btn-primary" data-link
+                >Tentang Saya</a
+              >
+              <a href="gallery.html" class="btn-outline" data-link
+                >Lihat Portfolio</a
+              >
+            </div>
           </div>
-        </form>
+
+          <div class="flex-1 fade-in">
+            <div class="glass p-4 rounded-2xl shadow-xl max-w-md mx-auto">
+              <div
+                class="w-full h-56 bg-white/5 rounded-xl mb-4 grid place-items-center text-slate-400"
+              >
+                <a
+                  href="https://web.yayasankankeranakindonesia.com"
+                  target="_blank"
+                  ><img src="images/Webykai.svg"
+                /></a>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="font-semibold">Project Terbaru</div>
+                  <div class="text-sm text-slate-400">
+                    Website Yayasan — pengelolaan & optimasi
+                  </div>
+                </div>
+                <div class="text-xs text-slate-400">UI / CMS</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
+      <!-- Features / Skills teaser -->
+      <section class="py-12">
+        <div class="max-w-6xl mx-auto px-6 fade-in">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass p-6">
+              <h4 class="font-semibold mb-2">Frontend</h4>
+              <p class="text-sm text-slate-500">
+                HTML, Tailwind CSS, responsive design
+              </p>
+            </div>
+            <div class="glass p-6">
+              <h4 class="font-semibold mb-2">CMS & Content</h4>
+              <p class="text-sm text-slate-500">
+                WordPress management & bulk upload
+              </p>
+            </div>
+            <div class="glass p-6">
+              <h4 class="font-semibold mb-2">Performance</h4>
+              <p class="text-sm text-slate-500">Optimasi SEO & aksesibilitas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
+          © <strong>Ahmad Renaldy</strong> — Maintainer
+          yayasankankeranakindonesia.com
+        </div>
+      </footer>
     </main>
 
     <script src="js/mainn.js"></script>

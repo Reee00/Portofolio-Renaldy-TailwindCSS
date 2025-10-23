@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Free Registration</title>
+</head>
+<body>
+    <form>
+        <center><h2 style="color:purple;">Free Registration</h2></center>
+        <table align="center" cellpadding="5" cellspacing="0" border="0">
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><input type="text" size="15" name="nama"></td>
+            </tr>
+            <tr>
+                <td>Tgl Lahir</td>
+                <td>:</td>
+                <td>
+                    <input type="text" size="4" name="tgl"> /
+                    <input type="text" size="4" name="bln"> /
+                    <input type="text" size="6" name="thn">
+                </td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td><textarea name="alamat" rows="2" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td>Kota</td>
+                <td>:</td>
+                <td><input type="text" size="20" name="kota"></td>
+            </tr>
+            <tr>
+                <td>Pekerjaan</td>
+                <td>:</td>
+                <td>
+                    <select name="pekerjaan">
+                        <option value="Tani">Tani</option>
+                        <option value="Guru">Guru</option>
+                        <option value="Pegawai">Pegawai</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td>
+                    <input type="radio" name="jk" value="Laki-Laki"> Laki-Laki
+                    <input type="radio" name="jk" value="Perempuan"> Perempuan
+                    <input type="radio" name="jk" value="mencurigakan"> mencurigakan
+                </td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>:</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="Reading"> Reading<br>
+                    <input type="checkbox" name="hobby" value="Sport"> Sport<br>
+                    <input type="checkbox" name="hobby" value="Singing"> Singing<br>
+                    <input type="checkbox" name="hobby" value="Traveling"> Traveling
+                </td>
+            </tr>
+            <tr>
+                <td></td><td></td>
+                <td>
+                    <input type="submit" value="Kirim">
+                    <input type="reset" value="Cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

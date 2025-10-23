@@ -28,105 +28,7 @@
       crossorigin="anonymous"
     />
 
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .fade-in {
-        animation: fadeIn 0.8s ease-out;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .title-gradient {
-        background: linear-gradient(to right, #a855f7, #06b6d4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .light .title-gradient {
-        background: none;
-        -webkit-text-fill-color: #0f172a;
-        color: #0f172a;
-      }
-      .nav-link {
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        transition: all 0.3s;
-        color: inherit;
-        text-decoration: none;
-      }
-      .nav-link:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      .nav-link-mobile {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-        border-radius: 0.5rem;
-        transition: all 0.3s;
-        color: inherit;
-        text-decoration: none;
-      }
-      .nav-link-mobile:hover {
-        background: rgba(255, 255, 255, 0.08);
-      }
-      .btn-primary {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: linear-gradient(to right, #7c3aed, #06b6d4);
-        color: white;
-        font-weight: 600;
-        border-radius: 0.75rem;
-        text-decoration: none;
-        transition: all 0.3s;
-        border: none;
-        cursor: pointer;
-      }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
-      }
-      .training-card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        padding: 1.5rem;
-        transition: all 0.3s;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-      }
-      .training-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(124, 58, 237, 0.5);
-        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
-      }
-      .category-badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        background: rgba(124, 58, 237, 0.2);
-        border: 1px solid rgba(124, 58, 237, 0.4);
-        border-radius: 9999px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #c084fc;
-      }
-    </style>
+    <link rel="stylesheet" href="css/styless.css" />
   </head>
   <body
     class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-[#1a1625] dark:via-[#1f1b2e] dark:to-[#0f0a1a] text-slate-900 dark:text-slate-100 transition-colors duration-300"
@@ -275,7 +177,7 @@
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 1</span>
                 <a
-                  href="latihan basic tag.html"
+                  href="latihan/latihan2.html"
                   class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
@@ -304,7 +206,7 @@
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 2</span>
                 <a
-                  href="latihan format teks dan karakter khusus.html"
+                  href="latihan/latihan3.html"
                   class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
@@ -331,7 +233,7 @@
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 3</span>
                 <a
-                  href="menampilkan gambar, suara, dan video.html"
+                  href="latihan/latihan4.html"
                   class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
@@ -358,7 +260,7 @@
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 4</span>
                 <a
-                  href="latihan hyperlink.html"
+                  href="latihan/latihan5.html"
                   class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
@@ -385,7 +287,7 @@
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 5</span>
                 <a
-                  href="latihan bullet numbering dan list.html"
+                  href="latihan/latihan6.html"
                   class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
@@ -411,7 +313,9 @@
                 class="flex items-center justify-between text-xs text-slate-500 mt-auto"
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 6</span>
-                <a href="#" class="text-cyan-400 hover:text-cyan-300"
+                <a
+                  href="latihan/TravelTime/index.html"
+                  class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
               </div>
@@ -437,7 +341,62 @@
               >
                 <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 7</span>
                 <a
-                  href="latihan form.html"
+                  href="latihan/latihan8.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 9: Frame -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-cyan-500/20 to-blue-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-border-all text-6xl text-cyan-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">
+                Latihan Frame dan Tugas Portofolio
+              </h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat struktur Frame HTML dengan berbagai atribut seperti
+                colspan, rowspan, dan styling
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 8</span>
+                <a
+                  href="latihan/TravelTime/index.html"
+                  class="text-cyan-400 hover:text-cyan-300"
+                  >Lihat Detail →</a
+                >
+              </div>
+            </div>
+            <!-- Card 10: iFrame -->
+            <div class="training-card" data-category="Pemrograman Web 1">
+              <div
+                class="w-full h-40 bg-gradient-to-br from-cyan-500/20 to-blue-400/20 rounded-lg mb-4 grid place-items-center"
+              >
+                <i class="fa-solid fa-border-all text-6xl text-cyan-400"></i>
+              </div>
+              <div class="mb-3">
+                <span class="category-badge">Pemrograman Web 1</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2">Latihan iFrame</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Membuat struktur iFrame HTML dengan berbagai atribut seperti
+                colspan, rowspan, dan styling
+              </p>
+              <div
+                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
+              >
+                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 9</span>
+                <a
+                  href="latihan/latihan10.html"
                   class="text-cyan-400 hover:text-cyan-300"
                   >Lihat Detail →</a
                 >
@@ -463,7 +422,7 @@
                 <div
                   class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
                 >
-                  7
+                  9
                 </div>
                 <div class="text-sm text-slate-400">Total Latihan</div>
               </div>
@@ -487,7 +446,7 @@
                 <div
                   class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
                 >
-                  7 Minggu
+                  10 Pertemuan
                 </div>
                 <div class="text-sm text-slate-400">Periode</div>
               </div>
@@ -505,90 +464,6 @@
       </footer>
     </main>
 
-    <script>
-      // Dark Mode Toggle
-      const darkToggle = document.getElementById("darkToggle");
-      const darkToggleMobile = document.getElementById("darkToggleMobile");
-      const darkIcon = document.getElementById("darkIcon");
-      const darkIconMobile = document.getElementById("darkIconMobile");
-      const html = document.documentElement;
-
-      // Check localStorage for saved preference
-      if (localStorage.getItem("darkMode") === "enabled") {
-        html.classList.add("dark");
-        darkIcon.className = "fa-regular fa-sun";
-        darkIconMobile.className = "fa-regular fa-sun";
-      } else {
-        html.classList.add("light");
-        darkIcon.className = "fa-regular fa-moon";
-        darkIconMobile.className = "fa-regular fa-moon";
-      }
-
-      function toggleDarkMode() {
-        html.classList.toggle("dark");
-        html.classList.toggle("light");
-        const isDark = html.classList.contains("dark");
-        darkIcon.className = isDark
-          ? "fa-regular fa-sun"
-          : "fa-regular fa-moon";
-        darkIconMobile.className = isDark
-          ? "fa-regular fa-sun"
-          : "fa-regular fa-moon";
-        localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
-      }
-
-      darkToggle.addEventListener("click", toggleDarkMode);
-      darkToggleMobile.addEventListener("click", toggleDarkMode);
-
-      // Mobile Menu Toggle
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Filter Functionality
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const trainingCards = document.querySelectorAll(".training-card");
-
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const filter = btn.getAttribute("data-filter");
-
-          // Update active button
-          filterBtns.forEach((b) => {
-            b.classList.remove(
-              "active",
-              "bg-gradient-to-r",
-              "from-purple-500",
-              "to-cyan-400",
-              "text-white"
-            );
-            b.classList.add("glass", "hover:bg-white/10");
-          });
-          btn.classList.add(
-            "active",
-            "bg-gradient-to-r",
-            "from-purple-500",
-            "to-cyan-400",
-            "text-white"
-          );
-          btn.classList.remove("glass", "hover:bg-white/10");
-
-          // Filter cards
-          trainingCards.forEach((card) => {
-            if (
-              filter === "all" ||
-              card.getAttribute("data-category") === filter
-            ) {
-              card.style.display = "flex";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-    </script>
+    <script src="js/mainn.js"></script>
   </body>
 </html>
