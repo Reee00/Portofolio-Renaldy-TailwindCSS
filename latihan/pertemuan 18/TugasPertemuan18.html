@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu Aplikasi JavaScript</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        overflow: hidden;
+    }
+    
+    .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .header h1 {
+        margin-bottom: 10px;
+    }
+    
+    .content {
+        padding: 30px;
+    }
+    
+    .menu-box {
+        background-color: #f5f7fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #667eea;
+    }
+    
+    .menu-box h3 {
+        color: #667eea;
+        margin-bottom: 15px;
+    }
+    
+    .menu-item {
+        padding: 10px;
+        margin: 8px 0;
+        background-color: white;
+        border-left: 4px solid #4CAF50;
+        border-radius: 5px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: white;
+    }
+    
+    .btn-primary {
+        background-color: #667eea;
+    }
+    
+    .btn-primary:hover {
+        background-color: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .btn-back {
+        background-color: #6c757d;
+    }
+    
+    .btn-back:hover {
+        background-color: #5a6268;
+    }
+    
+    .result-box {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f5f7fa;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        display: none;
+    }
+    
+    .calculator-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .calculator-grid button {
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    .display {
+        width: 100%;
+        padding: 15px;
+        font-size: 24px;
+        text-align: right;
+        border: 2px solid #667eea;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background-color: #f5f5f5;
+    }
+    
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #667eea;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+    
+    .hide {
+        display: none !important;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🎯 Menu Aplikasi JavaScript</h1>
+        <p>Pilih menu yang ingin Anda gunakan</p>
+    </div>
+    
+    <div class="content">
+        <!-- Menu Utama -->
+        <div id="menuUtama">
+            <div class="menu-box">
+                <h3>📋 Menu Pilihan:</h3>
+                <div class="menu-item">[1] Menghitung Kalkulator</div>
+                <div class="menu-item">[2] Menghitung Luas Trapesium</div>
+                <div class="menu-item">[3] Menghitung Deret</div>
+            </div>
+            
+            <button class="btn-primary" onclick="pilihMenu()">Pilih Menu</button>
+        </div>
+        
+        <!-- Menu 1: Kalkulator -->
+        <div id="menu1" class="hide">
+            <h3>🧮 Kalkulator</h3>
+            <input type="text" class="display" id="display1" readonly value="0">
+            <div class="calculator-grid">
+                <button class="btn-primary" onclick="clearCalc()">C</button>
+                <button class="btn-primary" onclick="deleteCalc()">DEL</button>
+                <button class="btn-primary" onclick="appendOp('/')">÷</button>
+                <button class="btn-primary" onclick="appendOp('*')">×</button>
+                
+                <button onclick="appendNum('7')">7</button>
+                <button onclick="appendNum('8')">8</button>
+                <button onclick="appendNum('9')">9</button>
+                <button class="btn-primary" onclick="appendOp('-')">-</button>
+                
+                <button onclick="appendNum('4')">4</button>
+                <button onclick="appendNum('5')">5</button>
+                <button onclick="appendNum('6')">6</button>
+                <button class="btn-primary" onclick="appendOp('+')">+</button>
+                
+                <button onclick="appendNum('1')">1</button>
+                <button onclick="appendNum('2')">2</button>
+                <button onclick="appendNum('3')">3</button>
+                <button style="background-color: #4CAF50; color: white; grid-row: span 2;" onclick="calcResult()">=</button>
+                
+                <button style="grid-column: span 2;" onclick="appendNum('0')">0</button>
+                <button onclick="appendNum('.')">.</button>
+            </div>
+            <button class="btn-back" onclick="kembaliKeMenu()">Kembali ke Menu</button>
+        </div>
+        
+        <!-- Menu 2: Trapesium -->
+        <div id="menu2" class="hide">
+            <h3>📐 Menghitung Luas Trapesium</h3>
+            <div class="menu-box">
+                <label>Sisi Atas (a):</label>
+                <input type="number" id="sisiAtas" placeholder="Masukkan sisi atas">
+                
+                <label>Sisi Bawah (b):</label>
+                <input type="number" id="sisiBawah" placeholder="Masukkan sisi bawah">
+                
+                <label>Tinggi (t):</label>
+                <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+                
+                <button class="btn-primary" onclick="hitungTrapesium()">Hitung Luas</button>
+            </div>
+            
+            <div id="resultTrapesium" class="result-box"></div>
+            <button class="btn-back" onclick="kembaliKeMenu()">Kembali ke Menu</button>
+        </div>
+        
+        <!-- Menu 3: Deret -->
+        <div id="menu3" class="hide">
+            <h3>🔢 Menghitung Deret Bilangan Genap Habis Dibagi 3</h3>
+            <div class="menu-box">
+                <label>Nilai Awal:</label>
+                <input type="number" id="nilaiAwal" placeholder="Masukkan nilai awal">
+                
+                <label>Nilai Akhir:</label>
+                <input type="number" id="nilaiAkhir" placeholder="Masukkan nilai akhir">
+                
+                <button class="btn-primary" onclick="hitungDeret()">Hitung Deret</button>
+            </div>
+            
+            <div id="resultDeret" class="result-box"></div>
+            <button class="btn-back" onclick="kembaliKeMenu()">Kembali ke Menu</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+// ============ VARIABEL GLOBAL ============
+var currentCalcInput = "0";
+var calcOperator = "";
+var previousCalcInput = "";
+
+// ============ FUNGSI MENU ============
+function pilihMenu() {
+    var pilihan = prompt("Masukkan pilihan Anda (1-3):", "");
+    
+    if(pilihan == null || pilihan == "") {
+        alert("Pilihan tidak boleh kosong!");
+        return;
+    }
+    
+    pilihan = parseInt(pilihan);
+    
+    if(isNaN(pilihan) || pilihan < 1 || pilihan > 3) {
+        alert("Pilihan harus angka 1, 2, atau 3!");
+        return;
+    }
+    
+    document.getElementById("menuUtama").classList.add("hide");
+    document.getElementById("menu" + pilihan).classList.remove("hide");
+}
+
+function kembaliKeMenu() {
+    document.getElementById("menu1").classList.add("hide");
+    document.getElementById("menu2").classList.add("hide");
+    document.getElementById("menu3").classList.add("hide");
+    document.getElementById("menuUtama").classList.remove("hide");
+    
+    // Reset hasil
+    document.getElementById("resultTrapesium").style.display = "none";
+    document.getElementById("resultDeret").style.display = "none";
+    clearCalc();
+}
+
+// ============ FUNGSI KALKULATOR ============
+function updateCalcDisplay() {
+    document.getElementById("display1").value = currentCalcInput;
+}
+
+function appendNum(num) {
+    if(currentCalcInput === "0" && num !== ".") {
+        currentCalcInput = num;
+    } else if(num === "." && currentCalcInput.indexOf(".") !== -1) {
+        return;
+    } else {
+        currentCalcInput += num;
+    }
+    updateCalcDisplay();
+}
+
+function appendOp(op) {
+    if(previousCalcInput !== "" && currentCalcInput !== "") {
+        calcResult();
+    }
+    calcOperator = op;
+    previousCalcInput = currentCalcInput;
+    currentCalcInput = "0";
+}
+
+function clearCalc() {
+    currentCalcInput = "0";
+    calcOperator = "";
+    previousCalcInput = "";
+    updateCalcDisplay();
+}
+
+function deleteCalc() {
+    if(currentCalcInput.length > 1) {
+        currentCalcInput = currentCalcInput.slice(0, -1);
+    } else {
+        currentCalcInput = "0";
+    }
+    updateCalcDisplay();
+}
+
+function calcResult() {
+    if(previousCalcInput === "" || currentCalcInput === "" || calcOperator === "") {
+        return;
+    }
+    
+    var result = executeCalculation(
+        parseFloat(previousCalcInput), 
+        parseFloat(currentCalcInput), 
+        calcOperator
+    );
+    
+    if(result === null) {
+        return;
+    }
+    
+    currentCalcInput = result.toString();
+    calcOperator = "";
+    previousCalcInput = "";
+    updateCalcDisplay();
+}
+
+function executeCalculation(num1, num2, operator) {
+    var result;
+    
+    switch(operator) {
+        case "+":
+            result = num1 + num2;
+            break;
+        case "-":
+            result = num1 - num2;
+            break;
+        case "*":
+            result = num1 * num2;
+            break;
+        case "/":
+            if(num2 === 0) {
+                alert("Error: Tidak bisa membagi dengan 0!");
+                clearCalc();
+                return null;
+            }
+            result = num1 / num2;
+            break;
+        default:
+            return null;
+    }
+    
+    return Math.round(result * 100000000) / 100000000;
+}
+
+// ============ FUNGSI TRAPESIUM ============
+function hitungTrapesium() {
+    var a = parseFloat(document.getElementById("sisiAtas").value);
+    var b = parseFloat(document.getElementById("sisiBawah").value);
+    var t = parseFloat(document.getElementById("tinggi").value);
+    
+    if(isNaN(a) || isNaN(b) || isNaN(t)) {
+        alert("Semua nilai harus diisi dengan angka!");
+        return;
+    }
+    
+    if(a <= 0 || b <= 0 || t <= 0) {
+        alert("Nilai harus lebih besar dari 0!");
+        return;
+    }
+    
+    var luas = hitungLuasTrapesium(a, b, t);
+    
+    var hasil = "<h4>📊 Hasil Perhitungan</h4>";
+    hasil += "<div style='padding: 10px; background-color: white; border-radius: 5px; margin: 10px 0;'>";
+    hasil += "<strong>Rumus:</strong> Luas = ½ × (a + b) × t<br>";
+    hasil += "<strong>Sisi Atas (a):</strong> " + a + " cm<br>";
+    hasil += "<strong>Sisi Bawah (b):</strong> " + b + " cm<br>";
+    hasil += "<strong>Tinggi (t):</strong> " + t + " cm<br>";
+    hasil += "<strong>Perhitungan:</strong> ½ × (" + a + " + " + b + ") × " + t + "<br>";
+    hasil += "<strong>Perhitungan:</strong> ½ × " + (a+b) + " × " + t + "<br>";
+    hasil += "<strong style='color: #4CAF50; font-size: 18px;'>Luas = " + luas + " cm²</strong>";
+    hasil += "</div>";
+    
+    document.getElementById("resultTrapesium").innerHTML = hasil;
+    document.getElementById("resultTrapesium").style.display = "block";
+}
+
+function hitungLuasTrapesium(a, b, t) {
+    return 0.5 * (a + b) * t;
+}
+
+// ============ FUNGSI DERET ============
+function hitungDeret() {
+    var nilaiAwal = parseInt(document.getElementById("nilaiAwal").value);
+    var nilaiAkhir = parseInt(document.getElementById("nilaiAkhir").value);
+    
+    if(isNaN(nilaiAwal) || isNaN(nilaiAkhir)) {
+        alert("Nilai harus berupa angka!");
+        return;
+    }
+    
+    if(nilaiAwal >= nilaiAkhir) {
+        alert("Nilai awal harus lebih kecil dari nilai akhir!");
+        return;
+    }
+    
+    var hasilDeret = generateDeret(nilaiAwal, nilaiAkhir);
+    tampilkanDeret(nilaiAwal, nilaiAkhir, hasilDeret);
+}
+
+function generateDeret(awal, akhir) {
+    var deret = [];
+    
+    for(var i = awal; i <= akhir; i++) {
+        if(i % 2 == 0 && i % 3 == 0) {
+            deret.push(i);
+        }
+    }
+    
+    return deret;
+}
+
+function hitungJumlahDeret(deret) {
+    var jumlah = 0;
+    for(var i = 0; i < deret.length; i++) {
+        jumlah += deret[i];
+    }
+    return jumlah;
+}
+
+function tampilkanDeret(awal, akhir, deret) {
+    var jumlahNilai = hitungJumlahDeret(deret);
+    
+    var hasil = "<h4>📊 Hasil Perhitungan Deret</h4>";
+    hasil += "<div style='padding: 10px; background-color: white; border-radius: 5px; margin: 10px 0;'>";
+    hasil += "<strong>Nilai Awal:</strong> " + awal + "<br>";
+    hasil += "<strong>Nilai Akhir:</strong> " + akhir + "<br><br>";
+    
+    if(deret.length > 0) {
+        hasil += "<strong>Deret yang tampil:</strong><br>";
+        hasil += "<div style='padding: 10px; background-color: #e3f2fd; border-radius: 5px; margin: 10px 0; font-family: monospace;'>";
+        hasil += deret.join(", ");
+        hasil += "</div>";
+        hasil += "<strong>Jumlah deret bilangan:</strong> " + deret.length + " bilangan<br>";
+        hasil += "<strong style='color: #4CAF50;'>Jumlah nilai bilangan tersebut:</strong> " + jumlahNilai + "<br>";
+    } else {
+        hasil += "<strong style='color: #f44336;'>Tidak ada bilangan genap yang habis dibagi 3 dalam rentang tersebut.</strong>";
+    }
+    
+    hasil += "</div>";
+    
+    document.getElementById("resultDeret").innerHTML = hasil;
+    document.getElementById("resultDeret").style.display = "block";
+}
+</script>
+</body>
+</html>

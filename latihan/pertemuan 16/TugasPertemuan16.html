@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kalkulator JavaScript</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0;
+    }
+    
+    .calculator {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        width: 320px;
+    }
+    
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    .display {
+        width: 100%;
+        height: 60px;
+        font-size: 24px;
+        text-align: right;
+        padding: 10px;
+        border: 2px solid #667eea;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+    }
+    
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    button {
+        padding: 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: bold;
+    }
+    
+    button:hover {
+        transform: scale(1.05);
+    }
+    
+    .number, .decimal {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    
+    .number:hover, .decimal:hover {
+        background-color: #e0e0e0;
+    }
+    
+    .operator {
+        background-color: #667eea;
+        color: white;
+    }
+    
+    .operator:hover {
+        background-color: #5568d3;
+    }
+    
+    .equal {
+        background-color: #4CAF50;
+        color: white;
+        grid-column: span 2;
+    }
+    
+    .equal:hover {
+        background-color: #45a049;
+    }
+    
+    .clear {
+        background-color: #f44336;
+        color: white;
+        grid-column: span 2;
+    }
+    
+    .clear:hover {
+        background-color: #da190b;
+    }
+    
+    .history {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    
+    .history h4 {
+        margin: 0 0 10px 0;
+        color: #667eea;
+    }
+    
+    .history-item {
+        font-size: 14px;
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+</head>
+<body>
+<div class="calculator">
+    <h2>🧮 Kalkulator</h2>
+    <input type="text" class="display" id="display" readonly value="0">
+    
+    <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button class="operator" onclick="deleteLast()">DEL</button>
+        <button class="operator" onclick="appendOperator('/')">÷</button>
+        
+        <button class="number" onclick="appendNumber('7')">7</button>
+        <button class="number" onclick="appendNumber('8')">8</button>
+        <button class="number" onclick="appendNumber('9')">9</button>
+        <button class="operator" onclick="appendOperator('*')">×</button>
+        
+        <button class="number" onclick="appendNumber('4')">4</button>
+        <button class="number" onclick="appendNumber('5')">5</button>
+        <button class="number" onclick="appendNumber('6')">6</button>
+        <button class="operator" onclick="appendOperator('-')">-</button>
+        
+        <button class="number" onclick="appendNumber('1')">1</button>
+        <button class="number" onclick="appendNumber('2')">2</button>
+        <button class="number" onclick="appendNumber('3')">3</button>
+        <button class="operator" onclick="appendOperator('+')">+</button>
+        
+        <button class="number" onclick="appendNumber('0')">0</button>
+        <button class="decimal" onclick="appendNumber('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+    </div>
+    
+    <div class="history">
+        <h4>📜 Riwayat</h4>
+        <div id="history"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+let currentInput = "0";
+let operator = "";
+let previousInput = "";
+let history = [];
+
+function updateDisplay() {
+    document.getElementById("display").value = currentInput;
+}
+
+function appendNumber(num) {
+    if(currentInput === "0" && num !== ".") {
+        currentInput = num;
+    } else if(num === "." && currentInput.indexOf(".") !== -1) {
+        return; // Tidak boleh ada dua titik
+    } else {
+        currentInput += num;
+    }
+    updateDisplay();
+}
+
+function appendOperator(op) {
+    if(previousInput !== "" && currentInput !== "") {
+        calculate();
+    }
+    operator = op;
+    previousInput = currentInput;
+    currentInput = "0";
+}
+
+function clearDisplay() {
+    currentInput = "0";
+    operator = "";
+    previousInput = "";
+    updateDisplay();
+}
+
+function deleteLast() {
+    if(currentInput.length > 1) {
+        currentInput = currentInput.slice(0, -1);
+    } else {
+        currentInput = "0";
+    }
+    updateDisplay();
+}
+
+function calculate() {
+    if(previousInput === "" || currentInput === "" || operator === "") {
+        return;
+    }
+    
+    let result;
+    let num1 = parseFloat(previousInput);
+    let num2 = parseFloat(currentInput);
+    let calculation = previousInput + " " + operator + " " + currentInput;
+    
+    switch(operator) {
+        case "+":
+            result = num1 + num2;
+            break;
+        case "-":
+            result = num1 - num2;
+            break;
+        case "*":
+            result = num1 * num2;
+            break;
+        case "/":
+            if(num2 === 0) {
+                alert("Error: Tidak bisa membagi dengan 0!");
+                clearDisplay();
+                return;
+            }
+            result = num1 / num2;
+            break;
+        default:
+            return;
+    }
+    
+    // Bulatkan hasil jika terlalu panjang
+    result = Math.round(result * 100000000) / 100000000;
+    
+    // Simpan ke history
+    addToHistory(calculation + " = " + result);
+    
+    currentInput = result.toString();
+    operator = "";
+    previousInput = "";
+    updateDisplay();
+}
+
+function addToHistory(item) {
+    history.unshift(item);
+    if(history.length > 5) {
+        history.pop(); // Hanya simpan 5 history terakhir
+    }
+    
+    let historyDiv = document.getElementById("history");
+    historyDiv.innerHTML = "";
+    
+    for(let i = 0; i < history.length; i++) {
+        historyDiv.innerHTML += "<div class='history-item'>" + history[i] + "</div>";
+    }
+}
+
+// Event listener untuk keyboard
+document.addEventListener('keydown', function(event) {
+    if(event.key >= '0' && event.key <= '9') {
+        appendNumber(event.key);
+    } else if(event.key === '.') {
+        appendNumber('.');
+    } else if(event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/') {
+        appendOperator(event.key);
+    } else if(event.key === 'Enter' || event.key === '=') {
+        calculate();
+    } else if(event.key === 'Escape' || event.key === 'c' || event.key === 'C') {
+        clearDisplay();
+    } else if(event.key === 'Backspace') {
+        deleteLast();
+    }
+});
+</script>
+</body>
+</html>

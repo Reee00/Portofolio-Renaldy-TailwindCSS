@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Operator Pembanding</title>
+</head>
+<body>
+<h2>Operator Pembanding dalam JavaScript</h2>
+<script type="text/javascript">
+var x = 10;
+var y = 5;
+var z = "10";
+
+document.write("<h3>Nilai yang Dibandingkan:</h3>");
+document.write("x = " + x + " (number)<br>");
+document.write("y = " + y + " (number)<br>");
+document.write("z = " + z + " (string)<br><br>");
+
+document.write("<h3>Hasil Perbandingan:</h3>");
+document.write("x == y : " + (x == y) + " (sama dengan)<br>");
+document.write("x != y : " + (x != y) + " (tidak sama dengan)<br>");
+document.write("x > y : " + (x > y) + " (lebih besar)<br>");
+document.write("x < y : " + (x < y) + " (lebih kecil)<br>");
+document.write("x >= y : " + (x >= y) + " (lebih besar sama dengan)<br>");
+document.write("x <= y : " + (x <= y) + " (lebih kecil sama dengan)<br><br>");
+
+document.write("<h3>Perbandingan dengan Tipe Data Berbeda:</h3>");
+document.write("x == z : " + (x == z) + " (nilai sama, tipe diabaikan)<br>");
+document.write("x === z : " + (x === z) + " (nilai dan tipe harus sama)<br>");
+document.write("x !== z : " + (x !== z) + " (nilai atau tipe berbeda)<br>");
+</script>
+</body>
+</html>

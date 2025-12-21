@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Latihan Alert, Prompt, Confirm dan Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f0f0;
+    }
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e7f3fe;
+        border-left: 4px solid #2196F3;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Program JavaScript - Alert, Prompt, Confirm dan Form</h2>
+    
+    <!-- Bagian 1: Alert -->
+    <h3>1. Alert</h3>
+    <button onclick="testAlert()">Tampilkan Alert</button>
+    
+    <!-- Bagian 2: Prompt -->
+    <h3>2. Prompt - Hitung Luas Persegi Panjang</h3>
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <div id="hasilLuas" class="result" style="display:none;"></div>
+    
+    <!-- Bagian 3: Confirm -->
+    <h3>3. Confirm</h3>
+    <button onclick="testConfirm()">Test Confirm</button>
+    <div id="hasilConfirm" class="result" style="display:none;"></div>
+    
+    <!-- Bagian 4: Form -->
+    <h3>4. Form Input</h3>
+    <form name="myForm" onsubmit="return validateForm()">
+        <label>Nama:</label>
+        <input type="text" name="nama" id="nama">
+        
+        <label>Email:</label>
+        <input type="text" name="email" id="email">
+        
+        <label>Umur:</label>
+        <input type="number" name="umur" id="umur">
+        
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" name="gender" value="Laki-laki"> Laki-laki
+        <input type="radio" name="gender" value="Perempuan"> Perempuan<br><br>
+        
+        <label>Hobi:</label><br>
+        <input type="checkbox" name="hobi" value="Membaca"> Membaca<br>
+        <input type="checkbox" name="hobi" value="Olahraga"> Olahraga<br>
+        <input type="checkbox" name="hobi" value="Musik"> Musik<br><br>
+        
+        <label>Kota:</label>
+        <select name="kota" id="kota">
+            <option value="">Pilih Kota</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+        </select>
+        
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <div id="hasilForm" class="result" style="display:none;"></div>
+</div>
+
+<script type="text/javascript">
+// Fungsi Alert
+function testAlert() {
+    alert("Selamat datang di pembelajaran JavaScript!");
+    alert("Alert digunakan untuk menampilkan pesan kepada pengguna");
+}
+
+// Fungsi Prompt - Hitung Luas
+function hitungLuas() {
+    var nama = prompt("Masukkan nama Anda:", "");
+    if(nama == null || nama == "") {
+        alert("Nama tidak boleh kosong!");
+        return;
+    }
+    
+    var panjang = prompt("Masukkan panjang (cm):", "10");
+    var lebar = prompt("Masukkan lebar (cm):", "5");
+    
+    if(panjang == null || lebar == null || panjang == "" || lebar == "") {
+        alert("Panjang dan lebar tidak boleh kosong!");
+        return;
+    }
+    
+    var luas = parseFloat(panjang) * parseFloat(lebar);
+    
+    var hasil = "<h4>Hasil Perhitungan Luas Persegi Panjang</h4>";
+    hasil += "==================================<br>";
+    hasil += "Programmer: " + nama + "<br>";
+    hasil += "Panjang: " + panjang + " cm<br>";
+    hasil += "Lebar: " + lebar + " cm<br>";
+    hasil += "Luas: " + panjang + " × " + lebar + " = " + luas + " cm²<br>";
+    
+    document.getElementById("hasilLuas").innerHTML = hasil;
+    document.getElementById("hasilLuas").style.display = "block";
+}
+
+// Fungsi Confirm
+function testConfirm() {
+    var result = confirm("Apakah Anda ingin melanjutkan?");
+    var pesan = "";
+    
+    if(result == true) {
+        pesan = "<strong>Anda memilih OK</strong><br>Proses dilanjutkan!";
+    } else {
+        pesan = "<strong>Anda memilih Cancel</strong><br>Proses dibatalkan!";
+    }
+    
+    document.getElementById("hasilConfirm").innerHTML = pesan;
+    document.getElementById("hasilConfirm").style.display = "block";
+}
+
+// Validasi Form
+function validateForm() {
+    var nama = document.forms["myForm"]["nama"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var umur = document.forms["myForm"]["umur"].value;
+    var kota = document.forms["myForm"]["kota"].value;
+    
+    if(nama == "") {
+        alert("Nama harus diisi!");
+        return false;
+    }
+    
+    if(email == "") {
+        alert("Email harus diisi!");
+        return false;
+    }
+    
+    if(email.indexOf("@") == -1) {
+        alert("Format email tidak valid!");
+        return false;
+    }
+    
+    if(umur == "" || umur < 1) {
+        alert("Umur harus diisi dengan angka yang valid!");
+        return false;
+    }
+    
+    var genderChecked = document.querySelector('input[name="gender"]:checked');
+    if(!genderChecked) {
+        alert("Jenis kelamin harus dipilih!");
+        return false;
+    }
+    
+    if(kota == "") {
+        alert("Kota harus dipilih!");
+        return false;
+    }
+    
+    // Ambil hobi yang dipilih
+    var hobiChecked = document.querySelectorAll('input[name="hobi"]:checked');
+    var hobiList = [];
+    for(var i = 0; i < hobiChecked.length; i++) {
+        hobiList.push(hobiChecked[i].value);
+    }
+    
+    var hasil = "<h4>Data yang Anda Masukkan:</h4>";
+    hasil += "==================================<br>";
+    hasil += "Nama: " + nama + "<br>";
+    hasil += "Email: " + email + "<br>";
+    hasil += "Umur: " + umur + " tahun<br>";
+    hasil += "Jenis Kelamin: " + genderChecked.value + "<br>";
+    hasil += "Hobi: " + (hobiList.length > 0 ? hobiList.join(", ") : "Tidak ada") + "<br>";
+    hasil += "Kota: " + kota + "<br>";
+    
+    document.getElementById("hasilForm").innerHTML = hasil;
+    document.getElementById("hasilForm").style.display = "block";
+    
+    return false; // Mencegah form submit
+}
+</script>
+</body>
+</html>

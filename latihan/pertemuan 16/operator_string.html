@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Operator String</title>
+</head>
+<body>
+<h2>Operator String dalam JavaScript</h2>
+<script type="text/javascript">
+var firstName = "John";
+var lastName = "Doe";
+var age = 25;
+
+document.write("<h3>Konkatenasi String:</h3>");
+document.write("firstName = '" + firstName + "'<br>");
+document.write("lastName = '" + lastName + "'<br>");
+document.write("age = " + age + "<br><br>");
+
+// Konkatenasi dengan operator +
+var fullName = firstName + " " + lastName;
+document.write("fullName = firstName + ' ' + lastName<br>");
+document.write("Hasil: " + fullName + "<br><br>");
+
+// Konkatenasi string dengan angka
+var text = "Umur saya " + age + " tahun";
+document.write("text = 'Umur saya ' + age + ' tahun'<br>");
+document.write("Hasil: " + text + "<br><br>");
+
+// Operator += untuk string
+var message = "Hello";
+message += " World";
+message += "!";
+document.write("message = 'Hello'<br>");
+document.write("message += ' World'<br>");
+document.write("message += '!'<br>");
+document.write("Hasil: " + message + "<br>");
+</script>
+</body>
+</html>

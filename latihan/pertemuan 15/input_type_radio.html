@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Form Input Radio</title>
+<script type="text/javascript">
+function tampilkanJK() {
+    var jk;
+    if(document.getElementById("rbPria").checked) {
+        jk = "Pria";
+    } else if(document.getElementById("rbWanita").checked) {
+        jk = "Wanita";
+    } else {
+        jk = "Belum dipilih";
+    }
+    alert("Jenis Kelamin: " + jk);
+}
+</script>
+</head>
+<body>
+<h2>Input Type Radio</h2>
+<form>
+Jenis Kelamin:<br>
+<input type="radio" id="rbPria" name="jk" value="Pria"> Pria<br>
+<input type="radio" id="rbWanita" name="jk" value="Wanita"> Wanita<br><br>
+<input type="button" value="Tampilkan" onclick="tampilkanJK()">
+</form>
+</body>
+</html>

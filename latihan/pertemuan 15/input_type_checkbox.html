@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Form Input Checkbox</title>
+<script type="text/javascript">
+function tampilkanHobi() {
+    var hobi = [];
+    
+    if(document.getElementById("chkFutsal").checked) {
+        hobi.push("Futsal");
+    }
+    if(document.getElementById("chkRenang").checked) {
+        hobi.push("Renang");
+    }
+    if(document.getElementById("chkTraveling").checked) {
+        hobi.push("Traveling");
+    }
+    
+    if(hobi.length > 0) {
+        alert("Hobi Anda: " + hobi.join(", "));
+    } else {
+        alert("Anda belum memilih hobi");
+    }
+}
+</script>
+</head>
+<body>
+<h2>Input Type Checkbox</h2>
+<form>
+Pilih Hobi:<br>
+<input type="checkbox" id="chkFutsal" name="hobi" value="Futsal"> Futsal<br>
+<input type="checkbox" id="chkRenang" name="hobi" value="Renang"> Renang<br>
+<input type="checkbox" id="chkTraveling" name="hobi" value="Traveling"> Traveling<br><br>
+<input type="button" value="Tampilkan" onclick="tampilkanHobi()">
+</form>
+</body>
+</html>

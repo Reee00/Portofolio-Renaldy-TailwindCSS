@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deret Bilangan Genap Habis Dibagi 3</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        max-width: 600px;
+        width: 100%;
+    }
+    
+    h2 {
+        text-align: center;
+        color: #667eea;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        background-color: #667eea;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: bold;
+    }
+    
+    button:hover {
+        background-color: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .result {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f5f7fa;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        display: none;
+    }
+    
+    .result h3 {
+        color: #667eea;
+        margin-top: 0;
+    }
+    
+    .info-line {
+        padding: 8px;
+        margin: 5px 0;
+        background-color: white;
+        border-radius: 5px;
+        border-left: 3px solid #4CAF50;
+    }
+    
+    .deret-box {
+        background-color: #e3f2fd;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        word-wrap: break-word;
+        font-family: 'Courier New', monospace;
+    }
+    
+    .label {
+        font-weight: bold;
+        color: #667eea;
+    }
+    
+    .value {
+        color: #333;
+        font-weight: 500;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>🔢 Program Deret Bilangan Genap<br>Habis Dibagi 3</h2>
+    <button onclick="hitungDeret()">Mulai Hitung Deret</button>
+    
+    <div id="result" class="result"></div>
+</div>
+
+<script type="text/javascript">
+function hitungDeret() {
+    // Input nilai awal dan nilai akhir
+    var nilaiAwal = prompt("Masukkan nilai awal:", "1");
+    
+    // Validasi input
+    if(nilaiAwal == null || nilaiAwal == "") {
+        alert("Nilai awal tidak boleh kosong!");
+        return;
+    }
+    
+    var nilaiAkhir = prompt("Masukkan nilai akhir:", "100");
+    
+    if(nilaiAkhir == null || nilaiAkhir == "") {
+        alert("Nilai akhir tidak boleh kosong!");
+        return;
+    }
+    
+    // Konversi ke integer
+    nilaiAwal = parseInt(nilaiAwal);
+    nilaiAkhir = parseInt(nilaiAkhir);
+    
+    // Validasi nilai
+    if(isNaN(nilaiAwal) || isNaN(nilaiAkhir)) {
+        alert("Nilai harus berupa angka!");
+        return;
+    }
+    
+    if(nilaiAwal >= nilaiAkhir) {
+        alert("Nilai awal harus lebih kecil dari nilai akhir!");
+        return;
+    }
+    
+    // Variabel untuk menyimpan hasil
+    var deret = [];
+    var jumlahBilangan = 0;
+    var jumlahNilai = 0;
+    
+    // Proses mencari bilangan genap yang habis dibagi 3
+    for(var i = nilaiAwal; i <= nilaiAkhir; i++) {
+        // Cek apakah bilangan genap (habis dibagi 2) 
+        // DAN habis dibagi 3
+        if(i % 2 == 0 && i % 3 == 0) {
+            deret.push(i);
+            jumlahBilangan++;
+            jumlahNilai += i;
+        }
+    }
+    
+    // Tampilkan hasil
+    var hasil = "<h3>📊 Hasil Perhitungan</h3>";
+    hasil += "<div class='info-line'><span class='label'>Nilai Awal:</span> <span class='value'>" + nilaiAwal + "</span></div>";
+    hasil += "<div class='info-line'><span class='label'>Nilai Akhir:</span> <span class='value'>" + nilaiAkhir + "</span></div>";
+    
+    if(deret.length > 0) {
+        hasil += "<div class='info-line'><span class='label'>Deret yang tampil:</span></div>";
+        hasil += "<div class='deret-box'>" + deret.join(", ") + "</div>";
+        hasil += "<div class='info-line'><span class='label'>Jumlah deret bilangan:</span> <span class='value'>" + jumlahBilangan + " bilangan</span></div>";
+        hasil += "<div class='info-line'><span class='label'>Jumlah nilai bilangan:</span> <span class='value'>" + jumlahNilai + "</span></div>";
+        
+        // Informasi tambahan
+        hasil += "<div style='margin-top: 15px; padding: 10px; background-color: #fff3cd; border-radius: 5px; border-left: 3px solid #ffc107;'>";
+        hasil += "<strong>ℹ️ Penjelasan:</strong><br>";
+        hasil += "Bilangan genap yang habis dibagi 3 adalah bilangan yang habis dibagi 2 DAN habis dibagi 3 (atau habis dibagi 6).";
+        hasil += "</div>";
+    } else {
+        hasil += "<div class='info-line' style='border-left-color: #f44336;'>";
+        hasil += "<span class='value'>Tidak ada bilangan genap yang habis dibagi 3 dalam rentang tersebut.</span>";
+        hasil += "</div>";
+    }
+    
+    document.getElementById("result").innerHTML = hasil;
+    document.getElementById("result").style.display = "block";
+}
+</script>
+</body>
+</html>

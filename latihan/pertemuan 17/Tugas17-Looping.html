@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* === CARD OUTPUT === */
+      .card {
+        width: 500px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 25px;
+        margin: 40px auto;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+      }
+
+      h1 {
+        text-align: center;
+        color: black;
+        margin-bottom: 15px;
+        font-size: 2.2em;
+      }
+
+      .output-box {
+        background: white;
+        color: black;
+        padding: 15px;
+        border-radius: 10px;
+        white-space: pre-wrap;
+        font-family: "Courier New", monospace;
+        font-size: 17px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Segitiga Sama kaki</h1>
+      <div id="hasil" class="output-box"></div>
+    </div>
+
+    <script>
+      let baris = 7;
+      let pola = "";
+
+      for (let i = 1; i <= baris; i++) {
+        for (let j = 1; j <= baris - i; j++) {
+          pola += " ";
+        }
+        for (let k = 1; k <= 2 * i - 1; k++) {
+          pola += "*";
+        }
+        pola += "\n";
+      }
+
+      document.getElementById("hasil").textContent = pola;
+    </script>
+    <pre id="hasil"></pre>
+  </body>
+</html>

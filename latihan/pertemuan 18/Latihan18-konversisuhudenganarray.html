@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script language="JavaScript" type="text/javascript">
+function konversi(F) {
+    var C;
+    C = 5/9 * (F - 32);
+    return C;
+}
+
+var F = new Array(212, 32, -459.15);
+var C = new Array();
+var Counter;
+
+for(Counter = 0; Counter <= 2; Counter++) {
+    C[Counter] = konversi(F[Counter]);
+}
+for(Counter = 2; Counter >= 0; Counter--) {
+document.write("Value " + Counter + " was " + F[Counter] + " derajat Fahrenheit");
+document.write(" which is " + C[Counter] + " derajat celsius<br>");
+}
+</script>
+</body>
+</html>

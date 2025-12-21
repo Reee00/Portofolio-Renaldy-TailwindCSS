@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div style="text-align:center">
+<button onclick="tekanPause()">Play/Pause</button>
+<button onclick="menjadiBig()">Big</button>
+<button onclick="menjadiSmall()">Small</button>
+<button onclick="menjadiNormal()">Normal</button>
+<br><br>
+
+<video id="videoku" width="430">
+<source src="media/People Get Ready (Official Music Video).mp4" type="video/mp4">
+<source src="media/People Get Ready (Official Music Video).ogg" type="video/ogg">
+Browser anda tidak support video HTML 5.
+</video>
+</div>
+
+<script>
+var VideoAku = document.getElementById("videoku");
+
+function tekanPause() {
+    if (VideoAku.paused)
+        VideoAku.play();
+    else
+        VideoAku.pause();
+}
+
+function menjadiBig() {
+    VideoAku.width = 560;
+}
+
+function menjadiSmall() {
+    VideoAku.width = 320;
+}
+
+function menjadiNormal() {
+    VideoAku.width = 430;
+}
+</script>
+</body>
+</html>

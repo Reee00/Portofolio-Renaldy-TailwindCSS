@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Menggunakan CSS Class</title>
+    <link rel="stylesheet" type="text/css" href="tugaslatihan12-stylecss.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main">
+        <h1 class="header-title">Selamat Datang di Website Saya</h1>
+        <p class="header-subtitle">Belajar CSS dengan Class</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <div class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+        </div>
+        <div class="nav-item">
+            <a href="#services" class="nav-link">Services</a>
+        </div>
+        <div class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h2 class="card-title">Tentang CSS Class</h2>
+            <div class="card-content">
+                <p>CSS Class adalah salah satu fitur penting dalam pengembangan web modern. Dengan menggunakan class, kita dapat membuat style yang dapat digunakan berulang kali pada berbagai elemen HTML.</p>
+                <p class="text-highlight">Class memberikan fleksibilitas dan efisiensi dalam penulisan kode CSS.</p>
+            </div>
+        </div>
+
+        <!-- Alert Examples -->
+        <div class="alert alert-success">
+            <strong>Sukses!</strong> Website Anda berhasil menggunakan CSS External.
+        </div>
+
+        <div class="alert alert-info">
+            <strong>Info:</strong> File CSS disimpan terpisah dari HTML untuk kemudahan maintenance.
+        </div>
+
+        <!-- Grid Layout -->
+        <h2 class="text-center">Keuntungan Menggunakan CSS Class</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3 class="text-center">Reusable</h3>
+                <p class="text-justify">Class dapat digunakan berkali-kali pada elemen yang berbeda.</p>
+            </div>
+            <div class="grid-item">
+                <h3 class="text-center">Maintainable</h3>
+                <p class="text-justify">Mudah untuk mengubah style dengan mengedit satu file CSS saja.</p>
+            </div>
+            <div class="grid-item">
+                <h3 class="text-center">Organized</h3>
+                <p class="text-justify">Kode menjadi lebih terorganisir dan mudah dibaca.</p>
+            </div>
+        </div>
+
+        <!-- Button Examples -->
+        <div class="text-center">
+            <a href="#" class="btn btn-primary">Button Primary</a>
+            <a href="#" class="btn btn-secondary">Button Secondary</a>
+        </div>
+
+        <!-- Table Example -->
+        <div class="card">
+            <h2 class="card-title">Perbedaan Class dan ID</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="table-header">Aspek</th>
+                        <th class="table-header">Class</th>
+                        <th class="table-header">ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row">
+                        <td class="table-cell">Penggunaan</td>
+                        <td class="table-cell">Dapat digunakan berkali-kali</td>
+                        <td class="table-cell">Hanya digunakan sekali</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">Selector CSS</td>
+                        <td class="table-cell">.namaclass</td>
+                        <td class="table-cell">#namaid</td>
+                    </tr>
+                    <tr class="table-row">
+                        <td class="table-cell">Priority</td>
+                        <td class="table-cell">Lebih rendah</td>
+                        <td class="table-cell">Lebih tinggi</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2024 Website Pembelajaran CSS</p>
+        <p class="footer-text">
+            <a href="#" class="footer-link">Privacy Policy</a> | 
+            <a href="#" class="footer-link">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>

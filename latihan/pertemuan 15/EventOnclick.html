@@ -1,0 +1,22 @@
+<!-- menampilkan tanggal -->
+
+<html>
+<head>
+    <title>Event OnClick</title>
+</head>
+<body>
+    <h2>Contoh Penggunaan Event OnClick</h2>
+    <p>Klik tombol di bawah untuk menampilkan tanggal sistem:</p>
+    
+    <button onclick="tampilkanTanggal()">Tampilkan Tanggal</button>
+    
+    <p id="hasil"></p>
+    
+    <script type="text/javascript">
+        function tampilkanTanggal() {
+            var tanggal = new Date();
+            document.getElementById("hasil").innerHTML = "Tanggal: " + tanggal;
+        }
+    </script>
+</body>
+</html>

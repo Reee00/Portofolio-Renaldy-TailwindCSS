@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Form Input Select</title>
+<script type="text/javascript">
+function tampilkanKota() {
+    var kota = document.getElementById("selKota").value;
+    alert("Kota yang dipilih: " + kota);
+}
+</script>
+</head>
+<body>
+<h2>Input Type Select</h2>
+<form>
+Pilih Kota:<br>
+<select id="selKota" name="kota">
+    <option value="">-- Pilih Kota --</option>
+    <option value="Jakarta">Jakarta</option>
+    <option value="Bandung">Bandung</option>
+    <option value="Surabaya">Surabaya</option>
+    <option value="Yogyakarta">Yogyakarta</option>
+</select><br><br>
+<input type="button" value="Tampilkan" onclick="tampilkanKota()">
+</form>
+</body>
+</html>
