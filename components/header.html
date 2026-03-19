@@ -1,0 +1,83 @@
+<header class="sticky top-4 z-40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav
+      class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-2 md:p-3 shadow-lg"
+    >
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 md:gap-3" data-link>
+          <div
+            class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold flex-shrink-0"
+          >
+            AR
+          </div>
+          <div>
+            <div class="font-semibold text-sm md:text-base">
+              Ahmad <span class="text-cyan-300">Renaldy</span>
+            </div>
+            <div class="text-xs text-slate-400 dark:text-slate-300">
+              Web & Digital Media
+            </div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-5">
+          <a href="index.html" class="nav-link" data-link>Home</a>
+          <a href="gallery.html" class="nav-link" data-link>Case Studies</a>
+          <a href="about.html" class="nav-link" data-link>About</a>
+          <a href="profile.html" class="nav-link" data-link>Profile</a>
+          <a href="contact.html" class="nav-link" data-link>Contact</a>
+
+          <button
+            id="darkToggle"
+            aria-label="Toggle dark mode"
+            class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
+          >
+            <i id="darkIcon" class="fa-regular fa-moon"></i>
+          </button>
+        </div>
+
+        <div class="md:hidden flex items-center gap-2">
+          <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3" aria-label="Toggle dark mode mobile">
+            <i id="darkIconMobile" class="fa-regular fa-moon"></i>
+          </button>
+          <button
+            id="menuBtn"
+            class="p-2 rounded-lg bg-white/4"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
+      >
+        <div class="flex flex-col gap-2">
+          <a href="index.html" class="nav-link-mobile" data-link>
+            <i class="fa-solid fa-home w-5"></i>
+            <span>Home</span>
+          </a>
+          <a href="gallery.html" class="nav-link-mobile" data-link>
+            <i class="fa-solid fa-briefcase w-5"></i>
+            <span>Case Studies</span>
+          </a>
+          <a href="about.html" class="nav-link-mobile" data-link>
+            <i class="fa-solid fa-user w-5"></i>
+            <span>About</span>
+          </a>
+          <a href="profile.html" class="nav-link-mobile" data-link>
+            <i class="fa-solid fa-id-card w-5"></i>
+            <span>Profile</span>
+          </a>
+          <a href="contact.html" class="nav-link-mobile" data-link>
+            <i class="fa-solid fa-envelope w-5"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

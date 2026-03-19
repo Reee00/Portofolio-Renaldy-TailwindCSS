@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
   }
 });
 
+<<<<<<< HEAD
 // Dark Mode Toggle
 const initDarkMode = () => {
   const darkToggle = document.getElementById('darkToggle');
@@ -56,6 +57,116 @@ const initMobileMenu = () => {
       }
     });
   }
+=======
+// Theme Manager (robust for dynamic header/footer)
+const ThemeManager = (() => {
+  const THEME_KEY = 'theme';
+
+  const getSavedTheme = () => {
+    try {
+      return localStorage.getItem(THEME_KEY) || 'dark';
+    } catch {
+      return 'dark';
+    }
+  };
+
+  const saveTheme = (theme) => {
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch {
+      // Ignore storage failures and keep runtime theme only.
+    }
+  };
+
+  const applyTheme = (theme) => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  };
+
+  const getCurrentTheme = () => (
+    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+  );
+
+  const syncIcons = () => {
+    const theme = getCurrentTheme();
+    const iconClass = theme === 'dark' ? 'fa-moon' : 'fa-sun';
+    document.querySelectorAll('#darkIcon, #darkIconMobile').forEach((icon) => {
+      icon.className = `fa-regular ${iconClass}`;
+    });
+  };
+
+  const setTheme = (theme) => {
+    applyTheme(theme);
+    saveTheme(theme);
+    syncIcons();
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+  };
+
+  const init = () => {
+    applyTheme(getSavedTheme());
+    syncIcons();
+
+    if (window.__themeSystemInitialized) return;
+    window.__themeSystemInitialized = true;
+
+    // Delegation keeps toggle working even when header is injected dynamically.
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('#darkToggle, #darkToggleMobile');
+      if (!button) return;
+      event.preventDefault();
+      toggleTheme();
+    });
+  };
+
+  return {
+    init,
+    setTheme,
+    syncIcons,
+  };
+})();
+
+const initDarkMode = () => {
+  ThemeManager.init();
+};
+
+window.ThemeManager = ThemeManager;
+
+// Mobile Menu Toggle
+const initMobileMenu = () => {
+  if (window.__mobileMenuSystemInitialized) return;
+  window.__mobileMenuSystemInitialized = true;
+
+  const closeMenu = () => {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.getElementById('menuBtn');
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('hidden');
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+  };
+
+  document.addEventListener('click', (event) => {
+    const menuBtn = event.target.closest('#menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (menuBtn && mobileMenu) {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+      return;
+    }
+
+    if (!event.target.closest('#mobileMenu')) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('#mobileMenu a')) return;
+    closeMenu();
+  });
+>>>>>>> 8cbecc8 (update porto)
 };
 
 // Gallery Filter
@@ -137,6 +248,7 @@ const initLightbox = () => {
   });
 };
 
+<<<<<<< HEAD
 // Contact Form Handler
 window.submitContact = (e) => {
   e.preventDefault();
@@ -157,6 +269,61 @@ window.submitContact = (e) => {
   
   form.reset();
   return false;
+=======
+// Contact Form Handler (async submit with inline status)
+const initContactForm = () => {
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('contactStatus');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
+    const formData = new FormData(form);
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Mengirim...';
+    }
+
+    status.classList.remove('hidden', 'text-red-500', 'text-green-500');
+    status.classList.add('text-slate-500');
+    status.textContent = 'Sedang mengirim pesan...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (!response.ok) {
+        throw new Error('Submit failed');
+      }
+
+      form.reset();
+      status.classList.remove('text-slate-500', 'text-red-500');
+      status.classList.add('text-green-500');
+      status.textContent = 'Pesan berhasil dikirim. Terima kasih!';
+    } catch (error) {
+      status.classList.remove('text-slate-500', 'text-green-500');
+      status.classList.add('text-red-500');
+      status.textContent = 'Pesan gagal dikirim. Coba lagi dalam beberapa saat.';
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
+  });
+>>>>>>> 8cbecc8 (update porto)
 };
 
 // Smooth scroll for anchor links
@@ -217,23 +384,51 @@ const initScrollAnimations = () => {
   });
 };
 
+<<<<<<< HEAD
 // Initialize all features on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+=======
+const initializePortfolioFeatures = () => {
+  if (window.__portfolioFeaturesInitialized) return;
+  window.__portfolioFeaturesInitialized = true;
+
+>>>>>>> 8cbecc8 (update porto)
   initDarkMode();
   initMobileMenu();
   initGalleryFilter();
   initLightbox();
+<<<<<<< HEAD
   initSmoothScroll();
   setActiveNavLink();
   initScrollAnimations();
 });
+=======
+  initContactForm();
+  initSmoothScroll();
+  setActiveNavLink();
+  initScrollAnimations();
+};
+
+window.initializePortfolioFeatures = initializePortfolioFeatures;
+
+// Initialize all features on DOM ready (or immediately if already loaded)
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializePortfolioFeatures);
+} else {
+  initializePortfolioFeatures();
+}
+>>>>>>> 8cbecc8 (update porto)
 
 // Handle viewport resize
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
+<<<<<<< HEAD
     // Recalculate any necessary layouts
     console.log('Viewport resized');
+=======
+    // Reserved for responsive recalculations when needed.
+>>>>>>> 8cbecc8 (update porto)
   }, 250);
 });

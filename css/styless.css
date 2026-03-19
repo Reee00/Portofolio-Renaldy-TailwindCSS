@@ -2,6 +2,7 @@
 
 /* custom properties */
 :root {
+<<<<<<< HEAD
   --accent-from: #7c3aed;
   --accent-to: #06b6d4;
   --glass-bg: rgba(255, 255, 255, 0.03);
@@ -9,10 +10,57 @@
 }
 
 /* utility font family (Inter loaded via Google Fonts) */
+=======
+  --accent-from: #0f766e;
+  --accent-to: #0284c7;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --text-body-light: #334155;
+  --text-muted-light: #475569;
+  --text-soft-light: #64748b;
+  --text-body-dark: #e2e8f0;
+  --text-muted-dark: #cbd5e1;
+  --text-soft-dark: #94a3b8;
+}
+
+/* utility font family (Inter loaded via Google Fonts) */
+html,
+body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.65;
+}
+
+>>>>>>> 8cbecc8 (update porto)
 .font-inter {
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
+<<<<<<< HEAD
+=======
+p {
+  line-height: 1.7;
+}
+
+/* Improve readability for Tailwind text utility classes used across pages */
+.text-slate-500 {
+  color: var(--text-muted-light) !important;
+}
+
+.text-slate-400 {
+  color: var(--text-soft-light) !important;
+}
+
+html.dark .text-slate-500,
+html.dark .dark\:text-slate-500 {
+  color: var(--text-muted-dark) !important;
+}
+
+html.dark .text-slate-400,
+html.dark .dark\:text-slate-400 {
+  color: var(--text-soft-dark) !important;
+}
+
+>>>>>>> 8cbecc8 (update porto)
 /* glass card - enhanced with hover */
 .glass {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
@@ -84,6 +132,25 @@
   background: rgba(167, 139, 250, 0.1);
 }
 
+<<<<<<< HEAD
+=======
+.nav-link-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #334155;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.625rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.nav-link-mobile:hover,
+.nav-link-mobile.active {
+  background: rgba(2, 132, 199, 0.08);
+  color: #0369a1;
+}
+
+>>>>>>> 8cbecc8 (update porto)
 /* social icon - enhanced */
 .social {
   background: rgba(255, 255, 255, 0.03);
@@ -215,6 +282,7 @@
 }
 
 /* ===============================================
+<<<<<<< HEAD
    RESPONSIVE BREAKPOINTS
    =============================================== */
 
@@ -391,10 +459,95 @@
   }
 
   /* Gallery 1 column */
+=======
+   MOBILE-FIRST RESPONSIVE RULES
+   =============================================== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+p,
+li,
+a {
+  overflow-wrap: anywhere;
+}
+
+.btn-primary,
+.btn-outline,
+.filter-btn,
+.nav-link-mobile,
+button,
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.6rem 1rem;
+}
+
+/* iOS Safari: prevent zoom on input focus */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+@media (max-width: 479px) {
+  header {
+    top: 0.5rem !important;
+  }
+
+  header nav {
+    padding: 0.5rem !important;
+  }
+
+  header nav a[href="index.html"] > div:last-child > div:first-child {
+    font-size: 0.9rem;
+  }
+
+  header nav a[href="index.html"] > div:last-child > div:last-child {
+    font-size: 0.68rem;
+  }
+
+  #mobileMenu .nav-link-mobile {
+    font-size: 0.95rem;
+    padding: 0.8rem 0.85rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+>>>>>>> 8cbecc8 (update porto)
   #galleryGrid {
     grid-template-columns: 1fr !important;
     gap: 1rem;
   }
+<<<<<<< HEAD
 }
 
 /* Tablet (768px - 1023px) */
@@ -494,6 +647,205 @@
   /* Smaller lightbox */
   #lightbox img {
     max-height: 70vh;
+=======
+
+  #lightbox {
+    padding: 1rem;
+  }
+
+  #lightbox > div {
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  #lightbox img {
+    max-height: 45vh;
+  }
+}
+
+/* Fallback responsive utilities for classes used in HTML but missing in current build */
+@media (min-width: 640px) {
+  .sm\:px-6 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .sm\:py-10 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .sm\:py-12 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .sm\:py-14 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .sm\:gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem !important;
+  }
+
+  .sm\:gap-6 {
+    gap: 1.5rem !important;
+  }
+
+  .sm\:gap-8 {
+    gap: 2rem !important;
+  }
+
+  .sm\:gap-10 {
+    gap: 2.5rem !important;
+  }
+
+  .sm\:p-5 {
+    padding: 1.25rem !important;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem !important;
+  }
+
+  .sm\:mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .sm\:mb-4 {
+    margin-bottom: 1rem !important;
+  }
+
+  .sm\:mb-6 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .sm\:mb-8 {
+    margin-bottom: 2rem !important;
+  }
+
+  .sm\:mt-2 {
+    margin-top: 0.5rem !important;
+  }
+
+  .sm\:mt-3 {
+    margin-top: 0.75rem !important;
+  }
+
+  .sm\:h-40 {
+    height: 10rem !important;
+  }
+
+  .sm\:text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
+  }
+
+  .sm\:min-h-\[82vh\] {
+    min-height: 82vh !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:gap-6 {
+    gap: 1.5rem !important;
+  }
+
+  .md\:gap-12 {
+    gap: 3rem !important;
+  }
+
+  .md\:p-3 {
+    padding: 0.75rem !important;
+  }
+
+  .md\:py-14 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .md\:py-16 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .md\:py-20 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  .md\:gap-3 {
+    gap: 0.75rem !important;
+  }
+
+  .md\:text-base {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:px-8 {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* iOS safe-area horizontal padding support */
+@supports (padding: max(0px)) {
+  @media (max-width: 767px) {
+    header .max-w-6xl,
+    main .max-w-6xl,
+    main .max-w-5xl,
+    main .max-w-4xl,
+    main .max-w-3xl,
+    footer .max-w-6xl {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+>>>>>>> 8cbecc8 (update porto)
   }
 }
 
@@ -625,7 +977,11 @@ textarea:focus-visible {
 
 /* Light Mode (default) */
 body {
+<<<<<<< HEAD
   background: linear-gradient(to bottom right, #f9f9ff, #f4f0ff, #ffffff);
+=======
+  background: linear-gradient(to bottom right, #f8fafc, #edf6ff, #ffffff);
+>>>>>>> 8cbecc8 (update porto)
   color: #1e293b;
   transition: background 0.4s ease, color 0.4s ease;
 }
@@ -633,17 +989,28 @@ body {
 /* Navbar */
 header nav {
   background: rgba(255, 255, 255, 0.7);
+<<<<<<< HEAD
   border-color: rgba(124, 58, 237, 0.15);
   box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08);
+=======
+  border-color: rgba(2, 132, 199, 0.15);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
+>>>>>>> 8cbecc8 (update porto)
   backdrop-filter: blur(12px);
 }
 
 /* Glass (light mode) */
 .glass {
   background: rgba(255, 255, 255, 0.85);
+<<<<<<< HEAD
   border: 1px solid rgba(124, 58, 237, 0.1);
   color: #1e293b;
   box-shadow: 0 4px 12px rgba(124, 58, 237, 0.08);
+=======
+  border: 1px solid rgba(2, 132, 199, 0.1);
+  color: #1e293b;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Tombol utama */
@@ -651,21 +1018,38 @@ header nav {
   background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
   color: white;
   font-weight: 600;
+<<<<<<< HEAD
   box-shadow: 0 6px 18px rgba(124, 58, 237, 0.2);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(124, 58, 237, 0.25);
+=======
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.25);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Tombol outline */
 .btn-outline {
+<<<<<<< HEAD
   border: 1px solid rgba(124, 58, 237, 0.25);
   color: #4c1d95;
 }
 .btn-outline:hover {
   background: rgba(124, 58, 237, 0.08);
   color: #7c3aed;
+=======
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: #0f172a;
+}
+.btn-outline:hover {
+  background: rgba(2, 132, 199, 0.08);
+  color: #0369a1;
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Nav links */
@@ -674,27 +1058,46 @@ header nav {
 }
 .nav-link:hover,
 .nav-link.active {
+<<<<<<< HEAD
   color: #7c3aed;
   background: rgba(124, 58, 237, 0.08);
+=======
+  color: #0369a1;
+  background: rgba(2, 132, 199, 0.08);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Social icons */
 .social {
+<<<<<<< HEAD
   background: rgba(124, 58, 237, 0.05);
   color: #4c1d95;
   border-color: rgba(124, 58, 237, 0.08);
+=======
+  background: rgba(2, 132, 199, 0.05);
+  color: #0f172a;
+  border-color: rgba(2, 132, 199, 0.08);
+>>>>>>> 8cbecc8 (update porto)
 }
 .social:hover {
   background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
   color: white;
+<<<<<<< HEAD
   box-shadow: 0 8px 16px rgba(124, 58, 237, 0.2);
+=======
+  box-shadow: 0 8px 16px rgba(2, 132, 199, 0.2);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* ===============================================
    DARK MODE
    =============================================== */
 html.dark body {
+<<<<<<< HEAD
   background: linear-gradient(to bottom right, #0f0c24, #1a103d, #000);
+=======
+  background: linear-gradient(to bottom right, #0b1220, #0c1f31, #030712);
+>>>>>>> 8cbecc8 (update porto)
   color: #f8fafc;
   transition: background 0.4s ease, color 0.4s ease;
 }
@@ -710,13 +1113,21 @@ html.dark .glass {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.08);
   color: #f8fafc;
+<<<<<<< HEAD
   box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+=======
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.15);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Tombol */
 html.dark .btn-primary {
   color: #000;
+<<<<<<< HEAD
   box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+=======
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.3);
+>>>>>>> 8cbecc8 (update porto)
 }
 html.dark .btn-outline {
   border-color: rgba(255, 255, 255, 0.08);
@@ -733,8 +1144,23 @@ html.dark .nav-link {
 }
 html.dark .nav-link:hover,
 html.dark .nav-link.active {
+<<<<<<< HEAD
   color: #a78bfa;
   background: rgba(167, 139, 250, 0.15);
+=======
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+}
+
+html.dark .nav-link-mobile {
+  color: #e2e8f0;
+}
+
+html.dark .nav-link-mobile:hover,
+html.dark .nav-link-mobile.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Social icons */
@@ -745,7 +1171,11 @@ html.dark .social {
 }
 html.dark .social:hover {
   color: black;
+<<<<<<< HEAD
   box-shadow: 0 8px 16px rgba(124, 58, 237, 0.4);
+=======
+  box-shadow: 0 8px 16px rgba(2, 132, 199, 0.4);
+>>>>>>> 8cbecc8 (update porto)
 }
 
 /* Transition halus antar mode */
