@@ -32,17 +32,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script>
-      tailwind = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: { primary: "#7c3aed", accent: "#06b6d4" },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind (compiled) -->
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -51,108 +42,14 @@
     <link rel="stylesheet" href="css/styless.css" />
   </head>
   <body
+    data-nav-active="about.html"
     class="font-inter bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
   >
-    <!-- NAVBAR -->
-    <header class="sticky top-4 z-40">
-      <div class="max-w-6xl mx-auto px-4">
-        <nav
-          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
-        >
-          <!-- Top Row: Logo + Desktop Nav + Mobile Buttons -->
-          <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-3" data-link>
-              <div
-                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
-              >
-                AR
-              </div>
-              <div>
-                <div class="font-semibold">
-                  Ahmad <span class="text-cyan-300">Renaldy</span>
-                </div>
-                <div class="text-xs text-slate-400 dark:text-slate-300">
-                  Web & Digital Media
-                </div>
-              </div>
-            </a>
-
-            <!-- Desktop Navigation (hidden on mobile) -->
-            <div class="hidden md:flex items-center gap-5">
-              <a href="index.html" class="nav-link" data-link>Home</a>
-              <a href="about.html" class="nav-link" data-link>About</a>
-              <a href="gallery.html" class="nav-link" data-link>Gallery</a>
-              <a href="profile.html" class="nav-link" data-link>Profile</a>
-              <a href="contact.html" class="nav-link" data-link>Contact</a>
-              <a href="Latihan.html" class="nav-link" data-link
-                >Hasil Latihan</a
-              >
-
-              <button
-                id="darkToggle"
-                aria-label="Toggle dark mode"
-                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
-              >
-                <i id="darkIcon" class="fa-regular fa-moon"></i>
-              </button>
-            </div>
-
-            <!-- Mobile Buttons -->
-            <div class="md:hidden flex items-center gap-3">
-              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
-                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
-              </button>
-              <button
-                id="menuBtn"
-                class="p-2 rounded-lg bg-white/4"
-                aria-label="Toggle menu"
-                aria-expanded="false"
-              >
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Mobile Menu Dropdown (Initially Hidden) -->
-          <div
-            id="mobileMenu"
-            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
-          >
-            <div class="flex flex-col gap-2">
-              <a href="index.html" class="nav-link-mobile" data-link>
-                <i class="fa-solid fa-home w-5"></i>
-                <span>Home</span>
-              </a>
-              <a href="about.html" class="nav-link-mobile" data-link>
-                <i class="fa-solid fa-user w-5"></i>
-                <span>About</span>
-              </a>
-              <a href="gallery.html" class="nav-link-mobile" data-link>
-                <i class="fa-solid fa-images w-5"></i>
-                <span>Gallery</span>
-              </a>
-              <a href="profile.html" class="nav-link-mobile" data-link>
-                <i class="fa-solid fa-id-card w-5"></i>
-                <span>Profile</span>
-              </a>
-              <a href="contact.html" class="nav-link-mobile" data-link>
-                <i class="fa-solid fa-envelope w-5"></i>
-                <span>Contact</span>
-              </a>
-              <a href="Latihan.html" class="nav-link-mobile" data-link>
-                <i class="fa-solid fa-envelope w-5"></i>
-                <span>Hasil Latihan</span>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <div id="site-header"></div>
 
     <main class="pt-16">
-      <section class="max-w-5xl mx-auto px-6 py-12 fade-in">
-        <div class="grid md:grid-cols-3 gap-8 items-start">
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16 fade-in" aria-labelledby="about-heading">
+        <div class="grid md:grid-cols-3 gap-6 sm:gap-8 items-start">
           <div class="col-span-1">
             <div class="glass p-6">
               <div
@@ -160,7 +57,8 @@
               >
                 <img
                   src="images/CV-RENALDY.svg"
-                  alt="Foto Ahmad Renaldy"
+                  alt="Foto profil Ahmad Renaldy, Web Developer"
+                  loading="lazy"
                   class="w-32 h-32 object-cover rounded-full border-4 border-white/10 shadow-lg"
                 />
               </div>
@@ -174,14 +72,6 @@
                   class="social"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Buka Instagram Ahmad Renaldy"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a
-                  href="https://github.com/Reee00"
-                  class="social"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label="Buka GitHub Ahmad Renaldy"
                 >
                   <i class="fab fa-github"></i
@@ -191,15 +81,7 @@
                   class="social"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Buka LinkedIn Ahmad Renaldy"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
-                <a
-                  href="https://wa.me/6282130217706"
-                  class="social"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Hubungi via WhatsApp"
+                  aria-label="Chat WhatsApp Ahmad Renaldy"
                   ><i class="fab fa-whatsapp"></i
                 ></a>
               </div>
@@ -207,13 +89,13 @@
           </div>
 
           <div class="md:col-span-2">
-            <h2 class="text-3xl font-bold mb-3">Tentang Saya</h2>
-            <p class="text-slate-500 dark:text-slate-500">
-              Saya menangani website
+            <h1 id="about-heading" class="text-3xl font-bold mb-3">Tentang Saya</h1>
+            <p class="text-slate-500">
+              Saya berfokus pada pengembangan dan pengelolaan website yang
+              cepat, stabil, dan mudah dikelola oleh tim. Pengalaman utama saya
+              adalah maintenance serta optimasi konten untuk
               <strong>yayasankankeranakindonesia.com</strong> dan
-              <strong>web.yayasankankeranakindonesia.com</strong>. Fokus pada
-              pembuatan website yang cepat, dapat di-manage oleh tim, dan ramah
-              SEO.
+              <strong>web.yayasankankeranakindonesia.com</strong>.
             </p>
 
             <h3 class="text-xl font-semibold mb-3">Keahlian</h3>
@@ -299,6 +181,9 @@
       </section>
     </main>
 
-    <script src="js/mainn.js"></script>
+    <div id="site-footer"></div>
+
+    <script src="js/mainn.js?v=20260319"></script>
+    <script src="js/layout-loader.js?v=20260319"></script>
   </body>
 </html>

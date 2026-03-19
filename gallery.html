@@ -12,19 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Tailwind CDN config (class-based dark mode) -->
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: { primary: "#7c3aed", accent: "#06b6d4" },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind (compiled) -->
+    <link rel="stylesheet" href="css/tailwind.css" />
 
     <!-- Font Awesome -->
     <link
@@ -59,110 +48,21 @@
     <meta name="twitter:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
   </head>
   <body
+    data-nav-active="gallery.html"
     class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-purple-900 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300"
   >
-    <!-- NAVBAR -->
-    <header class="sticky top-4 z-40">
-      <div class="max-w-6xl mx-auto px-4">
-        <nav
-          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
-        >
-          <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-3" data-link>
-              <div
-                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
-              >
-                AR
-              </div>
-              <div>
-                <div class="font-semibold">
-                  Ahmad <span class="text-cyan-300">Renaldy</span>
-                </div>
-                <div class="text-xs text-slate-400 dark:text-slate-300">
-                  Web & Digital Media
-                </div>
-              </div>
-            </a>
-
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-5">
-              <a href="index.html" class="nav-link" data-link>Home</a>
-              <a href="about.html" class="nav-link" data-link>About</a>
-              <a href="gallery.html" class="nav-link active" data-link
-                >Gallery</a
-              >
-              <a href="profile.html" class="nav-link" data-link>Profile</a>
-              <a href="contact.html" class="nav-link" data-link>Contact</a>
-              <a href="Latihan.html" class="nav-link" data-link
-                >Hasil Latihan</a
-              >
-              <button
-                id="darkToggle"
-                aria-label="Toggle dark mode"
-                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
-              >
-                <i id="darkIcon" class="fa-regular fa-moon"></i>
-              </button>
-            </div>
-
-            <!-- Mobile Buttons -->
-            <div class="md:hidden flex items-center gap-3">
-              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
-                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
-              </button>
-              <button
-                id="menuBtn"
-                class="p-2 rounded-lg bg-white/4"
-                aria-label="Toggle menu"
-                aria-expanded="false"
-              >
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Mobile Menu -->
-          <div
-            id="mobileMenu"
-            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
-          >
-            <div class="flex flex-col gap-2">
-              <a href="index.html" class="nav-link-mobile"
-                ><i class="fa-solid fa-home w-5"></i><span>Home</span></a
-              >
-              <a href="about.html" class="nav-link-mobile"
-                ><i class="fa-solid fa-user w-5"></i><span>About</span></a
-              >
-              <a href="gallery.html" class="nav-link-mobile"
-                ><i class="fa-solid fa-images w-5"></i><span>Gallery</span></a
-              >
-              <a href="profile.html" class="nav-link-mobile"
-                ><i class="fa-solid fa-id-card w-5"></i><span>Profile</span></a
-              >
-              <a href="contact.html" class="nav-link-mobile"
-                ><i class="fa-solid fa-envelope w-5"></i><span>Contact</span></a
-              >
-              <a href="Latihan.html" class="nav-link-mobile"
-                ><i class="fa-solid fa-code w-5"></i
-                ><span>Hasil Latihan</span></a
-              >
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <div id="site-header"></div>
 
     <main class="pt-16">
-      <section class="max-w-6xl mx-auto px-6 py-12">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold mb-2">Portfolio Gallery</h2>
-          <p class="text-slate-400">
-            Klik project untuk melihat detail. Filter berdasarkan kategori.
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16" aria-labelledby="case-study-heading">
+        <div class="text-center mb-4 sm:mb-6 md:mb-8">
+          <h1 id="case-study-heading" class="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Featured Case Studies</h1>
+          <p class="text-sm sm:text-base text-slate-400">
+            Fokus pada 3 project dengan dampak paling relevan untuk recruiter.
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-3 justify-center mb-8">
+        <div class="flex flex-wrap gap-2 sm:gap-3 justify-center mb-5 sm:mb-8">
           <button
             class="filter-btn px-4 py-2 rounded-full bg-white/5"
             data-cat="all"
@@ -191,55 +91,79 @@
 
         <div
           id="galleryGrid"
-          class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
+          class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 sm:gap-6"
         >
-          <!-- sample items (use your images later in assets/images/) -->
+          <!-- Case study items -->
           <div
             class="gallery-item glass p-4 cursor-pointer"
             data-cat="web"
-            data-title="Website Yayasan"
-            data-desc="WordPress, optimasi konten"
-            data-img="assets/images/p1.jpg"
+            data-title="Website Yayasan Kanker Anak Indonesia"
+            data-desc="Problem: konten sulit dikelola. Role: maintenance + optimasi. Impact: alur update konten lebih cepat."
+            data-img="images/Webykai.png"
           >
-            <div
-              class="w-full h-40 bg-white/5 rounded-lg mb-3 grid place-items-center text-slate-400"
-            >
-              Gambar (ganti nanti)
+            <img
+              src="images/Webykai.png"
+              alt="Website Yayasan Kanker Anak Indonesia"
+              loading="lazy"
+              class="w-full h-36 sm:h-40 object-cover rounded-lg mb-2 sm:mb-3"
+            />
+            <h2 class="font-semibold text-sm sm:text-base">Website Yayasan Kanker Anak Indonesia</h2>
+            <p class="text-xs sm:text-sm text-slate-400">Stack: WordPress, SEO, Content Management</p>
+            <p class="text-xs text-slate-500 mt-1 sm:mt-2">Impact: proses update artikel lebih terstruktur untuk tim konten.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">SEO</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">Content Ops</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">+30 artikel terkelola</span>
             </div>
-            <h4 class="font-semibold">Website Yayasan</h4>
-            <p class="text-sm text-slate-400">WordPress & optimasi</p>
+            <a href="project-ykai-website.html" class="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300">Lihat Studi Kasus -></a>
           </div>
 
           <div
             class="gallery-item glass p-4 cursor-pointer"
             data-cat="ui"
-            data-title="Landing Campaign"
-            data-desc="UI fokus konversi"
-            data-img="assets/images/p2.jpg"
+            data-title="Redesign Halaman Profil"
+            data-desc="Problem: informasi profil tersebar. Role: redesign UI. Impact: informasi utama lebih cepat dipahami recruiter."
+            data-img="images/CV-RENALDY.svg"
           >
-            <div
-              class="w-full h-40 bg-white/5 rounded-lg mb-3 grid place-items-center text-slate-400"
-            >
-              Gambar (ganti nanti)
+            <img
+              src="images/CV-RENALDY.svg"
+              alt="Redesign halaman profil"
+              loading="lazy"
+              class="w-full h-36 sm:h-40 object-contain rounded-lg mb-2 sm:mb-3 bg-white"
+            />
+            <h2 class="font-semibold text-sm sm:text-base">Redesign Halaman Profil</h2>
+            <p class="text-xs sm:text-sm text-slate-400">Stack: Tailwind CSS, HTML</p>
+            <p class="text-xs text-slate-500 mt-1 sm:mt-2">Impact: struktur konten lebih rapi dan mudah dipindai.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">UX</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">Hierarchy</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">5 detik first impression</span>
             </div>
-            <h4 class="font-semibold">Landing Campaign</h4>
-            <p class="text-sm text-slate-400">UI/UX</p>
+            <a href="project-profile-redesign.html" class="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300">Lihat Studi Kasus -></a>
           </div>
 
           <div
             class="gallery-item glass p-4 cursor-pointer"
             data-cat="admin"
-            data-title="Dashboard Donasi"
-            data-desc="Admin dashboard & role mapping"
-            data-img="assets/images/p3.jpg"
+            data-title="Portal Web YKAI"
+            data-desc="Problem: kebutuhan alur kerja admin. Role: setup halaman admin konten. Impact: input konten lebih konsisten."
+            data-img="images/Webykai.svg"
           >
-            <div
-              class="w-full h-40 bg-white/5 rounded-lg mb-3 grid place-items-center text-slate-400"
-            >
-              Gambar (ganti nanti)
+            <img
+              src="images/Webykai.svg"
+              alt="Portal Web YKAI"
+              loading="lazy"
+              class="w-full h-36 sm:h-40 object-contain rounded-lg mb-2 sm:mb-3 bg-white"
+            />
+            <h2 class="font-semibold text-sm sm:text-base">Portal Web YKAI</h2>
+            <p class="text-xs sm:text-sm text-slate-400">Stack: WordPress Admin, Content Workflow</p>
+            <p class="text-xs text-slate-500 mt-1 sm:mt-2">Impact: tim non-teknis lebih mudah melakukan update rutin.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">Workflow</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">Admin UI</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyan-500/15 text-cyan-500">2x lebih konsisten</span>
             </div>
-            <h4 class="font-semibold">Dashboard Donasi</h4>
-            <p class="text-sm text-slate-400">Admin UI</p>
+            <a href="project-portal-ykai.html" class="inline-block mt-3 text-sm text-cyan-400 hover:text-cyan-300">Lihat Studi Kasus -></a>
           </div>
         </div>
       </section>
@@ -258,17 +182,10 @@
               id="lb-img"
               src=""
               alt="preview"
-              loading="lazy"
-              class="w-full rounded-lg object-contain max-h-[60vh] mx-auto"
-            />
-          </div>
-          <h3 id="lb-title" class="text-xl font-semibold mb-1"></h3>
-          <p id="lb-desc" class="text-slate-400"></p>
-        </div>
-      </div>
-    </main>
+    <div id="site-footer"></div>
 
-    <script src="js/mainn.js"></script>
+    <script src="js/mainn.js?v=20260319"></script>
+    <script src="js/layout-loader.js?v=20260319"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const galleryContainer = document.getElementById("galleryGrid");
@@ -276,12 +193,16 @@
 
         stored.forEach((item) => {
           const div = document.createElement("div");
-          div.className = "gallery-item glass p-4 rounded-xl";
+          div.className = "gallery-item glass p-4 rounded-xl cursor-pointer";
+          div.dataset.cat = item.cat || "web";
+          div.dataset.title = item.title || "Project";
+          div.dataset.desc = item.desc || "Detail project belum tersedia";
+          div.dataset.img = item.img || "images/Webykai.png";
           div.innerHTML = `
-      <img src="${item.img}" alt="${item.title}" class="rounded-lg mb-3 w-full object-cover h-48">
-      <h4 class="font-semibold">${item.title}</h4>
-      <p class="text-sm text-slate-400">${item.desc}</p>
-      <span class="text-xs text-slate-500">${item.date}</span>
+      <img src="${div.dataset.img}" alt="${div.dataset.title}" loading="lazy" class="rounded-lg mb-3 w-full object-cover h-48">
+      <h4 class="font-semibold">${div.dataset.title}</h4>
+      <p class="text-sm text-slate-400">${div.dataset.desc}</p>
+      <span class="text-xs text-slate-500">${item.date || "Tanggal tidak tersedia"}</span>
     `;
           galleryContainer.appendChild(div);
         });

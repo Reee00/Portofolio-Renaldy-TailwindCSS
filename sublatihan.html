@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sub Latihan - Pemrograman Web</title>
+  <title>Detail Latihan Web | Portfolio Ahmad Renaldy</title>
+  <link rel="icon" type="image/svg+xml" href="images/Webykai.svg" />
+  <meta
+    name="description"
+    content="Halaman detail sub latihan pemrograman web Ahmad Renaldy dengan progress pembelajaran dan tautan tugas per pertemuan."
+  />
   
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
@@ -222,16 +227,16 @@
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <!-- Social Media -->
         <div class="flex items-center gap-3">
-          <a href="https://github.com" target="_blank" class="social" title="GitHub">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Buka GitHub" class="social" title="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://linkedin.com" target="_blank" class="social" title="LinkedIn">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Buka LinkedIn" class="social" title="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" class="social" title="Twitter">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Twitter" class="social" title="Twitter">
             <i class="fa-brands fa-twitter"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" class="social" title="Instagram">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram" class="social" title="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>
@@ -249,27 +254,37 @@
   
   <!-- Dynamic Content Script -->
 <script>
+  const loaderEl = document.getElementById('page-loader');
+
   // Cek apakah latihan-data.js berhasil dimuat
   if (typeof latihanData === 'undefined') {
     console.error('latihan-data.js gagal dimuat!');
-    document.getElementById('page-loader').innerHTML = `
-      <div class="text-center text-white">
-        <i class="fa-solid fa-exclamation-triangle text-6xl mb-4 text-red-400"></i>
-        <p class="text-xl font-bold mb-2">Error Loading Data</p>
-        <p class="mb-4">File latihan-data.js tidak dapat dimuat</p>
-        <button onclick="location.reload()" class="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700">
-          Coba Lagi
-        </button>
-      </div>
-    `;
+    if (loaderEl) {
+      loaderEl.innerHTML = `
+        <div class="text-center text-white">
+          <i class="fa-solid fa-exclamation-triangle text-6xl mb-4 text-red-400"></i>
+          <p class="text-xl font-bold mb-2">Error Loading Data</p>
+          <p class="mb-4">File latihan-data.js tidak dapat dimuat</p>
+          <button onclick="location.reload()" class="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700">
+            Coba Lagi
+          </button>
+        </div>
+      `;
+    }
   }
 
   // Load dynamic content based on URL parameter
   document.addEventListener('DOMContentLoaded', () => {
     // Hide loader setelah halaman siap
-    setTimeout(() => {
-      document.getElementById('page-loader').style.display = 'none';
-    }, 500);
+    if (loaderEl) {
+      setTimeout(() => {
+        loaderEl.style.display = 'none';
+      }, 500);
+    }
+
+    if (typeof latihanData === 'undefined') {
+      return;
+    }
 
     // Get URL parameter
     const urlParams = new URLSearchParams(window.location.search);
