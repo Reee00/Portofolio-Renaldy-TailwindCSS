@@ -16,11 +16,7 @@ const latihanData = {
         category: "HTML5",
         icon: "fa-code",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 2/formatdokumen.html"
-=======
-        link: "latihan/pertemuan 2/formatdokumen.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -29,11 +25,7 @@ const latihanData = {
         category: "SEO",
         icon: "fa-tag",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 2/metatag.html"
-=======
-        link: "latihan/pertemuan 2/metatag.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -42,11 +34,7 @@ const latihanData = {
         category: "Text",
         icon: "fa-align-left",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 2/penggunaanpre.html"
-=======
-        link: "latihan/pertemuan 2/penggunaanpre.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -66,11 +54,7 @@ const latihanData = {
         category: "Font",
         icon: "fa-font",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 3/font.html"
-=======
-        link: "latihan/pertemuan 3/format-font.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -79,11 +63,7 @@ const latihanData = {
         category: "Format",
         icon: "fa-bold",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 3/formatteks.html"
-=======
-        link: "latihan/pertemuan 3/format-teks.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -92,11 +72,7 @@ const latihanData = {
         category: "Animation",
         icon: "fa-arrows-alt-h",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 3/marquee.html"
-=======
-        link: "latihan/pertemuan 3/marquee.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -105,11 +81,7 @@ const latihanData = {
         category: "Special",
         icon: "fa-text-height",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 3/small-big-strike.html"
-=======
-        link: "latihan/pertemuan 3/small-big-strike.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -118,11 +90,7 @@ const latihanData = {
         category: "Special",
         icon: "fa-superscript",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 3/superscript_subscript.html"
-=======
-        link: "latihan/pertemuan 3/superscript_subscript.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -142,11 +110,7 @@ const latihanData = {
         category: "Media",
         icon: "fa-play-circle",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 4/audio-video.html"
-=======
-        link: "latihan/pertemuan 4/audio-video.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -155,11 +119,7 @@ const latihanData = {
         category: "Audio",
         icon: "fa-music",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 4/audio.html"
-=======
-        link: "latihan/pertemuan 4/audio.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -168,11 +128,7 @@ const latihanData = {
         category: "Image",
         icon: "fa-image",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 4/gambar.html"
-=======
-        link: "latihan/pertemuan 4/gambar.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -181,11 +137,7 @@ const latihanData = {
         category: "Interactive",
         icon: "fa-map-marked-alt",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 4/image-map.html"
-=======
-        link: "latihan/pertemuan 4/image-map.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -194,11 +146,7 @@ const latihanData = {
         category: "Video",
         icon: "fa-video",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 4/video.html"
-=======
-        link: "latihan/pertemuan 4/video.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 6,
@@ -207,11 +155,7 @@ const latihanData = {
         category: "Advanced",
         icon: "fa-sliders-h",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 4/video-js.html"
-=======
-        link: "latihan/pertemuan 4/video-js.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -231,11 +175,7 @@ const latihanData = {
         category: "Navigation",
         icon: "fa-link",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 5/hyperlink.html"
-=======
-        link: "latihan/pertemuan 5/hyperlink.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -255,11 +195,7 @@ const latihanData = {
         category: "List",
         icon: "fa-list-alt",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 6/definitionlist.html"
-=======
-        link: "latihan/pertemuan 6/definitionlist.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -268,11 +204,7 @@ const latihanData = {
         category: "Navigation",
         icon: "fa-bars",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 6/menulist.html"
-=======
-        link: "latihan/pertemuan 6/menulist.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -281,11 +213,7 @@ const latihanData = {
         category: "List",
         icon: "fa-list-ol",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 6/orderedlist.html"
-=======
-        link: "latihan/pertemuan 6/orederedlist.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -294,11 +222,7 @@ const latihanData = {
         category: "List",
         icon: "fa-list-ul",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 6/unorderedlist.html"
-=======
-        link: "latihan/pertemuan 6/unorderedlist.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -307,11 +231,7 @@ const latihanData = {
         category: "Advanced",
         icon: "fa-tasks",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 6/lengkap.html"
-=======
-        link: "latihan/pertemuan 6/lengkap.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -331,11 +251,7 @@ const latihanData = {
         category: "Table",
         icon: "fa-table",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 7/biodata.html"
-=======
-        link: "latihan/pertemuan 7/biodata.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -344,11 +260,7 @@ const latihanData = {
         category: "Advanced",
         icon: "fa-th",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 7/tabel_colspan_rowspan.html"
-=======
-        link: "latihan/pertemuan 7/tabel_colspan_rowspan.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -357,11 +269,7 @@ const latihanData = {
         category: "Advanced",
         icon: "fa-th",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 7/TravelTime/index.html"
-=======
-        link: "latihan/pertemuan 7/TravelTime/index.html"
->>>>>>> 8cbecc8 (update porto)
       }      
     ]
   },
@@ -381,11 +289,7 @@ const latihanData = {
         category: "Form",
         icon: "fa-edit",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 8/form.html"
-=======
-        link: "latihan/pertemuan 8/form.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -405,11 +309,7 @@ const latihanData = {
         category: "Layout",
         icon: "fa-window-restore",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/index.html"
-=======
-        link: "latihan/pertemuan 9/index.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -418,11 +318,7 @@ const latihanData = {
         category: "Content",
         icon: "fa-home",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/home.html"
-=======
-        link: "latihan/pertemuan 9/home.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -431,11 +327,7 @@ const latihanData = {
         category: "Media",
         icon: "fa-images",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/gallery.html"
-=======
-        link: "latihan/pertemuan 9/gallery.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -444,11 +336,7 @@ const latihanData = {
         category: "Form",
         icon: "fa-envelope",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/kontak.html"
-=======
-        link: "latihan/pertemuan 9/kontak.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -457,11 +345,7 @@ const latihanData = {
         category: "Content",
         icon: "fa-user",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/profile.html"
-=======
-        link: "latihan/pertemuan 9/profile.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 6,
@@ -470,11 +354,7 @@ const latihanData = {
         category: "Navigation",
         icon: "fa-bars",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/menu.html"
-=======
-        link: "latihan/pertemuan 9/menu.html"
->>>>>>> 8cbecc8 (update porto)
       },
             {
         id: 7,
@@ -483,11 +363,7 @@ const latihanData = {
         category: "Navigation",
         icon: "fa-bars",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/menu.html"
-=======
-        link: "latihan/pertemuan 9/menu.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -507,11 +383,7 @@ const latihanData = {
         category: "Embed",
         icon: "fa-window-maximize",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 10/iframe.html"
-=======
-        link: "latihan/pertemuan 10/iframe.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -520,11 +392,7 @@ const latihanData = {
         category: "Styling",
         icon: "fa-paint-brush",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 10/iframe_css.html"
-=======
-        link: "latihan/pertemuan 10/iframe_css.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -544,11 +412,7 @@ const latihanData = {
         category: "Semantic",
         icon: "fa-file-alt",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 11/article_dan_section.html"
-=======
-        link: "latihan/pertemuan 11/article_dan_section.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -557,11 +421,7 @@ const latihanData = {
         category: "Styling",
         icon: "fa-palette",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 11/css_background_font.html"
-=======
-        link: "latihan/pertemuan 11/css_background_font.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -570,11 +430,7 @@ const latihanData = {
         category: "Background",
         icon: "fa-image",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 11/css_bg_image.html"
-=======
-        link: "latihan/pertemuan 11/css_bg_image.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -583,11 +439,7 @@ const latihanData = {
         category: "Advanced",
         icon: "fa-plus-circle",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 11/css_create_element.html"
-=======
-        link: "latihan/pertemuan 11/css_create_element.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -596,11 +448,7 @@ const latihanData = {
         category: "Layout",
         icon: "fa-align-left",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 11/css_float_gambar.html"
-=======
-        link: "latihan/pertemuan 11/css_float_gambar.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 6,
@@ -609,11 +457,7 @@ const latihanData = {
         category: "Layout",
         icon: "fa-bars",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 9/menu.html"
-=======
-        link: "latihan/pertemuan 9/menu.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -633,11 +477,7 @@ const latihanData = {
         category: "Alignment",
         icon: "fa-align-center",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 12/css_align_date.html"
-=======
-        link: "latihan/pertemuan 12/css_align_date.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -646,11 +486,7 @@ const latihanData = {
         category: "Selector",
         icon: "fa-dot-circle",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 12/css_dengan_class.html"
-=======
-        link: "latihan/pertemuan 12/css_dengan_class.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -659,11 +495,7 @@ const latihanData = {
         category: "External",
         icon: "fa-file-code",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 12/css_external.html"
-=======
-        link: "latihan/pertemuan 12/css_external.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -672,11 +504,7 @@ const latihanData = {
         category: "Organization",
         icon: "fa-folder-open",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 12/style.css"
-=======
-        link: "latihan/pertemuan 12/style.css"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -696,11 +524,7 @@ const latihanData = {
         category: "Container",
         icon: "fa-square",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan13/div.html"
-=======
-        link: "latihan/pertemuan 13/div.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -709,11 +533,7 @@ const latihanData = {
         category: "Selector",
         icon: "fa-code-branch",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan13/id_dengan_class.html"
-=======
-        link: "latihan/pertemuan 13/id_dengan_class.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -722,11 +542,7 @@ const latihanData = {
         category: "Selector",
         icon: "fa-hashtag",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan13/id.html"
-=======
-        link: "latihan/pertemuan 13/id.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -735,11 +551,7 @@ const latihanData = {
         category: "Layout",
         icon: "fa-th-large",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan13/layout_dengan_div.html"
-=======
-        link: "latihan/pertemuan 13/layout_dengan_div.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -748,11 +560,7 @@ const latihanData = {
         category: "Inline",
         icon: "fa-i-cursor",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan13/span.html"
-=======
-        link: "latihan/pertemuan 13/span.html"
->>>>>>> 8cbecc8 (update porto)
       },
                   {
         id: 6,
@@ -761,11 +569,7 @@ const latihanData = {
         category: "Bootstrap",
         icon: "fa-cube",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/latihan14.html"
-=======
-        link: "latihan/pertemuan 14/jsdasar_alert.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -785,11 +589,7 @@ const latihanData = {
         category: "Output",
         icon: "fa-exclamation-circle",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 14/jsdasar_alert.html"
-=======
-        link: "latihan/pertemuan 14/jsdasar_alert.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -798,11 +598,7 @@ const latihanData = {
         category: "Math",
         icon: "fa-calculator",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 14/variabel_perhitungan.html"
-=======
-        link: "latihan/pertemuan 14/variabel_perhitungan.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -811,11 +607,7 @@ const latihanData = {
         category: "Variable",
         icon: "fa-cube",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 14/variabeldalamjs.html"
-=======
-        link: "latihan/pertemuan 14/variabeldalamjs.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -835,11 +627,7 @@ const latihanData = {
         category: "Dialog",
         icon: "fa-bell",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/alert.html"
-=======
-        link: "latihan/pertemuan 15/alert.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -848,11 +636,7 @@ const latihanData = {
         category: "Dialog",
         icon: "fa-question-circle",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/confirm.html"
-=======
-        link: "latihan/pertemuan 15/confirm.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -861,11 +645,7 @@ const latihanData = {
         category: "Event",
         icon: "fa-mouse-pointer",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/EventOnclick.html"
-=======
-        link: "latihan/pertemuan 15/EventOnclick.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -874,11 +654,7 @@ const latihanData = {
         category: "Input",
         icon: "fa-keyboard",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/prompt.html"
-=======
-        link: "latihan/pertemuan 15/prompt.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -887,11 +663,7 @@ const latihanData = {
         category: "Form",
         icon: "fa-text-width",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/form_input_type_text.html"
-=======
-        link: "latihan/pertemuan 15/form_input_type_text.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 6,
@@ -900,11 +672,7 @@ const latihanData = {
         category: "Form",
         icon: "fa-dot-circle",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/input_type_radio.html"
-=======
-        link: "latihan/pertemuan 15/input_type_radio.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 7,
@@ -913,11 +681,7 @@ const latihanData = {
         category: "Form",
         icon: "fa-caret-square-down",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/input_type_select.html"
-=======
-        link: "latihan/pertemuan 15/input_type_select.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 8,
@@ -926,11 +690,7 @@ const latihanData = {
         category: "Form",
         icon: "fa-check-square",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 15/input_type_checkbox.html"
-=======
-        link: "latihan/pertemuan 15/input_type_checkbox.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -950,11 +710,7 @@ const latihanData = {
         category: "Loop",
         icon: "fa-sync",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/looping.html"
-=======
-        link: "latihan/pertemuan 16/looping.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -963,11 +719,7 @@ const latihanData = {
         category: "Operator",
         icon: "fa-plus-minus",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/operator.html"
-=======
-        link: "latihan/pertemuan 16/operator.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -976,11 +728,7 @@ const latihanData = {
         category: "Math",
         icon: "fa-calculator",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/operator_aritmatika.html"
-=======
-        link: "latihan/pertemuan 16/operator_aritmatika.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -989,11 +737,7 @@ const latihanData = {
         category: "Assignment",
         icon: "fa-equals",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/operator_assignment.html"
-=======
-        link: "latihan/pertemuan 16/operator_assignment.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -1002,11 +746,7 @@ const latihanData = {
         category: "Comparison",
         icon: "fa-balance-scale",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/operator_pembanding.html"
-=======
-        link: "latihan/pertemuan 16/operator_pembanding.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 6,
@@ -1015,11 +755,7 @@ const latihanData = {
         category: "Logic",
         icon: "fa-sitemap",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/operator_logika.html"
-=======
-        link: "latihan/pertemuan 16/operator_logika.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 7,
@@ -1028,11 +764,7 @@ const latihanData = {
         category: "String",
         icon: "fa-quote-right",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/operator_string.html"
-=======
-        link: "latihan/pertemuan 16/operator_string.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 8,
@@ -1041,11 +773,7 @@ const latihanData = {
         category: "Type",
         icon: "fa-search",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 16/tipedata.html"
-=======
-        link: "latihan/pertemuan 16/tipedata.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -1065,11 +793,7 @@ const latihanData = {
         category: "Loop",
         icon: "fa-redo",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 17/Latihan17-do-while-loop.html"
-=======
-        link: "latihan/pertemuan 17/Latihan17-do-while-loop.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -1078,11 +802,7 @@ const latihanData = {
         category: "Loop",
         icon: "fa-repeat",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 17/Latihan17-forloop.html"
-=======
-        link: "latihan/pertemuan 17/Latihan17-forloop.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -1091,11 +811,7 @@ const latihanData = {
         category: "Conditional",
         icon: "fa-code-branch",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 17/Latihan17-if-else.html"
-=======
-        link: "latihan/pertemuan 17/Latihan17-if-else.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 4,
@@ -1104,11 +820,7 @@ const latihanData = {
         category: "Conditional",
         icon: "fa-random",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 17/Latihan17-Switch-case.html"
-=======
-        link: "latihan/pertemuan 17/Latihan17-Switch-case.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 5,
@@ -1117,11 +829,7 @@ const latihanData = {
         category: "Loop",
         icon: "fa-sync-alt",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 17/Latihan17-Whileloop.html"
-=======
-        link: "latihan/pertemuan 17/Latihan17-Whileloop.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   },
@@ -1141,11 +849,7 @@ const latihanData = {
         category: "Array",
         icon: "fa-layer-group",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 18/Latihan18-array.html"
-=======
-        link: "latihan/pertemuan 18/Latihan18-array.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 2,
@@ -1154,11 +858,7 @@ const latihanData = {
         category: "Function",
         icon: "fa-function",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 18/Latihan18-function.html"
-=======
-        link: "latihan/pertemuan 18/Latihan18-function.html"
->>>>>>> 8cbecc8 (update porto)
       },
       {
         id: 3,
@@ -1167,11 +867,7 @@ const latihanData = {
         category: "Project",
         icon: "fa-thermometer-half",
         status: "selesai",
-<<<<<<< HEAD
         link: "../latihan/pertemuan 18/Latihan18-konversisuhudenganarray.html"
-=======
-        link: "latihan/pertemuan 18/Latihan18-konversisuhudenganarray.html"
->>>>>>> 8cbecc8 (update porto)
       }
     ]
   }
