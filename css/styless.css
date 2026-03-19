@@ -6,6 +6,12 @@
   --accent-to: #06b6d4;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.06);
+  --text-body-light: #334155;
+  --text-muted-light: #475569;
+  --text-soft-light: #64748b;
+  --text-body-dark: #cbd5e1;
+  --text-muted-dark: #94a3b8;
+  --text-soft-dark: #94a3b8;
 }
 
 /* utility font family (Inter loaded via Google Fonts) */
