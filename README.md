@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Portofolio-Renaldy-TailwindCSS
-Styling menggunakan tailwind css
-=======
 # Ahmad Renaldy Portfolio
 
 Portfolio website dengan fokus recruiter-first presentation:
@@ -116,4 +112,3 @@ images/
   - `gallery.html`
   - `contact.html`
   - tiga `project-*.html`
->>>>>>> 8cbecc8 (update porto)

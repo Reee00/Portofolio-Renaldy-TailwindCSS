@@ -122,7 +122,6 @@ const initMobileMenu = () => {
 // Gallery Filter
 const initGalleryFilter = () => {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-item');
 
   if (filterBtns.length === 0) return;
 
@@ -138,7 +137,7 @@ const initGalleryFilter = () => {
       btn.classList.add('active');
 
       // Filter items
-      galleryItems.forEach(item => {
+      document.querySelectorAll('.gallery-item').forEach(item => {
         const itemCat = item.dataset.cat;
         if (category === 'all' || itemCat === category) {
           item.style.display = 'block';
@@ -158,24 +157,27 @@ const initLightbox = () => {
   const lbTitle = document.getElementById('lb-title');
   const lbDesc = document.getElementById('lb-desc');
   const lbClose = document.getElementById('lb-close');
-  const galleryItems = document.querySelectorAll('.gallery-item');
 
   if (!lightbox) return;
 
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const title = item.dataset.title;
-      const desc = item.dataset.desc;
-      const img = item.dataset.img;
+  document.addEventListener('click', (event) => {
+    const item = event.target.closest('.gallery-item');
+    if (!item) return;
 
-      lbTitle.textContent = title;
-      lbDesc.textContent = desc;
-      lbImg.src = img || 'https://via.placeholder.com/800x600?text=Project+Image';
-      
-      lightbox.classList.remove('hidden');
-      lightbox.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    });
+    // Keep project links clickable without opening lightbox.
+    if (event.target.closest('a')) return;
+
+    const title = item.dataset.title || '';
+    const desc = item.dataset.desc || '';
+    const img = item.dataset.img || 'https://via.placeholder.com/800x600?text=Project+Image';
+
+    if (lbTitle) lbTitle.textContent = title;
+    if (lbDesc) lbDesc.textContent = desc;
+    if (lbImg) lbImg.src = img;
+
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
   });
 
   const closeLightbox = () => {
