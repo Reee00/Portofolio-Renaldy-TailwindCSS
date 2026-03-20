@@ -39,7 +39,7 @@ const ThemeManager = (() => {
 
   const syncIcons = () => {
     const theme = getCurrentTheme();
-    const iconClass = theme === 'dark' ? 'fa-moon' : 'fa-sun';
+    const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
     document.querySelectorAll('#darkIcon, #darkIconMobile').forEach((icon) => {
       icon.className = `fa-regular ${iconClass}`;
     });
