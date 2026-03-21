@@ -75,9 +75,8 @@
     if (!target) return false;
 
     try {
-      const response = await fetch(`${fragmentPath}?v=${ASSET_VERSION}`, {
-        cache: 'no-store',
-      });
+      // ?v= query string handles cache busting when assets change
+      const response = await fetch(`${fragmentPath}?v=${ASSET_VERSION}`);
       if (!response.ok) {
         throw new Error(`Gagal memuat ${fragmentPath}`);
       }

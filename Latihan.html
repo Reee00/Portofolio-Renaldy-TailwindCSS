@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Hasil Latihan – Ahmad Renaldy</title>
+    <title>Learning Archive – Ahmad Renaldy</title>
     <link rel="icon" type="image/svg+xml" href="images/Webykai.svg" />
     <meta
       name="description"
-      content="Dokumentasi hasil latihan web development Ahmad Renaldy dari HTML dasar hingga JavaScript sebagai bukti proses belajar terstruktur."
+      content="Learning Archive: Kumpulan latihan, eksplorasi teknis, dan catatan belajar web development Ahmad Renaldy."
     />
+    <meta name="robots" content="index, follow" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
@@ -21,7 +22,7 @@
         darkMode: "class",
         theme: {
           extend: {
-            colors: { primary: "#7c3aed", accent: "#06b6d4" },
+            colors: { primary: "#0f766e", accent: "#0284c7" },
           },
         },
       };
@@ -36,646 +37,249 @@
     <link rel="stylesheet" href="css/styless.css" />
   </head>
   <body
-    class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-[#1a1625] dark:via-[#1f1b2e] dark:to-[#0f0a1a] text-slate-900 dark:text-slate-100 transition-colors duration-300"
+    class="bg-gradient-to-br from-slate-100 via-sky-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col"
   >
-    <!-- NAVBAR -->
-    <header class="sticky top-4 z-40">
-      <div class="max-w-6xl mx-auto px-4">
-        <nav
-          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
-        >
-          <div class="flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
-              >
-                AR
-              </div>
-              <div>
-                <div class="font-semibold">
-                  Ahmad <span class="text-cyan-300">Renaldy</span>
-                </div>
-                <div class="text-xs text-slate-400 dark:text-slate-300">
-                  Web & Digital Media
-                </div>
-              </div>
-            </a>
+    <!-- Shared Header -->
+    <div id="site-header"></div>
 
-            <div class="hidden md:flex items-center gap-5">
-              <a href="index.html" class="nav-link">Home</a>
-              <a href="about.html" class="nav-link">About</a>
-              <a href="gallery.html" class="nav-link">Gallery</a>
-              <a href="profile.html" class="nav-link">Profile</a>
-              <a href="contact.html" class="nav-link">Contact</a>
-              <a href="Latihan.html" class="nav-link active">Hasil Latihan</a>
+    <main class="flex-grow pt-24 pb-16">
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-              <button
-                id="darkToggle"
-                aria-label="Toggle dark mode"
-                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
-              >
-                <i id="darkIcon" class="fa-regular fa-moon"></i>
-              </button>
-            </div>
+        <!-- Page Header -->
+        <div class="mb-10 fade-in">
+          <a href="index.html" class="inline-flex items-center text-sm font-medium text-cyan-500 hover:text-cyan-400 transition-colors mb-5 group">
+            <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+            Kembali ke Beranda
+          </a>
+          <h1 class="text-3xl sm:text-4xl font-bold mb-3">
+            <i class="fa-solid fa-book-open text-cyan-500 mr-2"></i>Learning Archive
+          </h1>
+          <p class="text-slate-500 dark:text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed">
+            Arsip pribadi yang mendokumentasikan proses belajar web development — dari HTML dasar hingga JavaScript. 
+            Setiap modul berisi sub-latihan yang bisa kamu buka langsung.
+          </p>
+        </div>
 
-            <div class="md:hidden flex items-center gap-3">
-              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
-                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
-              </button>
-              <button
-                id="menuBtn"
-                class="p-2 rounded-lg bg-white/4"
-                aria-label="Toggle menu"
-              >
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
+        <!-- Stats Bar -->
+        <div class="glass p-4 sm:p-5 rounded-2xl flex flex-wrap items-center justify-center sm:justify-around gap-4 sm:gap-6 text-center mb-10 text-sm fade-in">
+          <div>
+            <strong id="stat-modul" class="text-2xl text-cyan-500 block mb-0.5">...</strong>
+            <span class="text-slate-500 dark:text-slate-400 text-xs">Modul</span>
           </div>
-
-          <div
-            id="mobileMenu"
-            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
-          >
-            <div class="flex flex-col gap-2">
-              <a href="index.html" class="nav-link-mobile">
-                <i class="fa-solid fa-home w-5"></i>
-                <span>Home</span>
-              </a>
-              <a href="about.html" class="nav-link-mobile">
-                <i class="fa-solid fa-user w-5"></i>
-                <span>About</span>
-              </a>
-              <a href="gallery.html" class="nav-link-mobile">
-                <i class="fa-solid fa-images w-5"></i>
-                <span>Gallery</span>
-              </a>
-              <a href="profile.html" class="nav-link-mobile">
-                <i class="fa-solid fa-id-card w-5"></i>
-                <span>Profile</span>
-              </a>
-              <a href="contact.html" class="nav-link-mobile">
-                <i class="fa-solid fa-envelope w-5"></i>
-                <span>Contact</span>
-              </a>
-              <a href="Latihan.html" class="nav-link-mobile">
-                <i class="fa-solid fa-code w-5"></i>
-                <span>Hasil Latihan</span>
-              </a>
-            </div>
+          <div class="hidden sm:block w-px h-8 bg-slate-200 dark:bg-white/10"></div>
+          <div>
+            <strong id="stat-sub" class="text-2xl text-cyan-500 block mb-0.5">...</strong>
+            <span class="text-slate-500 dark:text-slate-400 text-xs">Sub-Latihan</span>
           </div>
-        </nav>
-      </div>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main>
-      <!-- Hero Section -->
-      <section class="py-16">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center fade-in mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              <span class="title-gradient">Hasil Latihan</span>
-            </h1>
-            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-              Dokumentasi progress pembelajaran HTML dari dasar hingga advanced
-            </p>
-          </div>
-
-          <!-- Filter Tabs -->
-          <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in">
-            <button
-              class="filter-btn active px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 text-white font-semibold"
-              data-filter="all"
-            >
-              Semua
-            </button>
-            <button
-              class="filter-btn px-6 py-2 rounded-full glass hover:bg-white/10"
-              data-filter="Pemrograman Web 1"
-            >
-              Pemrograman Web 1
-            </button>
-          </div>
-
-          <!-- Training Cards Grid -->
-          <div
-            id="trainingGrid"
-            class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in"
-          >
-            <!-- Card 1: Basic Tag HTML -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-orange-500/20 to-red-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-brands fa-html5 text-6xl text-orange-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Basic Tag HTML</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Mempelajari tag dasar HTML seperti heading, paragraph,
-                horizontal rule, dan format teks
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 1</span>
-                
-                 <a href="sublatihan.html?id=2"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 2: Format Teks -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-blue-500/20 to-indigo-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-font text-6xl text-blue-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">
-                Format Teks & Karakter Khusus
-              </h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Penggunaan tag formatting seperti bold, italic, underline dan
-                karakter khusus HTML
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 2</span>
-                
-                <a href="sublatihan.html?id=3"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 3: Multimedia -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-purple-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-video text-6xl text-purple-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Gambar, Suara, dan Video</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Implementasi multimedia dalam HTML dengan tag video dan kontrol
-                JavaScript
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 3</span>
-                
-                <a href="sublatihan.html?id=4"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 4: Hyperlink -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-green-500/20 to-emerald-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-link text-6xl text-green-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Hyperlink</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Membuat navigasi antar halaman dengan hyperlink internal dan
-                eksternal
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 4</span>
-                
-                <a href="sublatihan.html?id=5"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 5: List -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-yellow-500/20 to-orange-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-list text-6xl text-yellow-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Bullet Numbering & List</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Membuat list multi-level dengan ordered list, unordered list,
-                dan berbagai tipe marker
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 4</span>
-                
-                <a href="sublatihan.html?id=6"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 6: Tabel -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-cyan-500/20 to-blue-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-table text-6xl text-cyan-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Tabel</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Membuat struktur tabel HTML dengan berbagai atribut seperti
-                colspan, rowspan, dan styling
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 5</span>
-                
-                <a href="sublatihan.html?id=7"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 7: Form -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-red-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-file-lines text-6xl text-red-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Form HTML</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Membuat form registrasi dengan berbagai input type: text, radio,
-                checkbox, select, dan textarea
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 5</span>
-                
-                <a href="sublatihan.html?id=8"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 8: Frame -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-indigo-500/20 to-purple-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-border-all text-6xl text-indigo-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Frame</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Membuat layout multi-section dengan frameset untuk pemisahan
-                konten (legacy)
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 6</span>
-                
-                <a href="sublatihan.html?id=9"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 9: IFrame -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-teal-500/20 to-cyan-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-window-maximize text-6xl text-teal-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">IFrame</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Embedding konten eksternal dengan iframe untuk integrasi
-                website, video, dan map
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 7</span>
-                
-                <a href="sublatihan.html?id=10"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 10: CSS -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-pink-500/20 to-rose-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-brands fa-css3-alt text-6xl text-pink-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Cascading Style Sheet</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Pengenalan CSS untuk styling dan layout halaman web modern
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 8</span>
-                
-                <a href="sublatihan.html?id=11"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 11: Class CSS -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-violet-500/20 to-purple-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-palette text-6xl text-violet-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Class dalam CSS</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Menggunakan class selector untuk styling reusable dan organisasi
-                CSS yang baik
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span><i class="fa-regular fa-calendar mr-1"></i>Minggu 9</span>
-                
-                <a href="sublatihan.html?id=12"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-              </div>
-            </div>
-
-            <!-- Card 12: Div -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-amber-500/20 to-yellow-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-square text-6xl text-amber-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Div (Division)</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Menggunakan div sebagai container untuk layout dan grouping
-                element
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span
-                  ><i class="fa-regular fa-calendar mr-1"></i>Minggu 10</span
-                >
-                
-                <a href="sublatihan.html?id=13"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-                >
-              </div>
-            </div>
-
-            <!-- Card 13: JS Intro -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-yellow-500/20 to-amber-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-brands fa-js text-6xl text-yellow-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Pengenalan JavaScript</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Dasar-dasar JavaScript untuk membuat website interaktif dan
-                dinamis
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span
-                  ><i class="fa-regular fa-calendar mr-1"></i>Minggu 11</span
-                >
-                
-                <a href="sublatihan.html?id=14"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-                >
-              </div>
-            </div>
-
-            <!-- Card 14: Dialog Box -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-emerald-500/20 to-green-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-comment-dots text-6xl text-emerald-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Dialog Box</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Interaksi dengan user menggunakan dialog box dan event handling
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span
-                  ><i class="fa-regular fa-calendar mr-1"></i>Minggu 12</span
-                >
-                
-                <a href="sublatihan.html?id=15"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-                >
-              </div>
-            </div>
-
-            <!-- Card 15: Tipe Data & Operator -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-sky-500/20 to-blue-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-calculator text-6xl text-sky-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Tipe Data dan Operator</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Memahami tipe data JavaScript dan berbagai operator untuk
-                manipulasi data
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span
-                  ><i class="fa-regular fa-calendar mr-1"></i>Minggu 13</span
-                >
-                
-                <a href="sublatihan.html?id=16"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-                >
-              </div>
-            </div>
-
-            <!-- Card 16: Control & Loop -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-fuchsia-500/20 to-pink-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-repeat text-6xl text-fuchsia-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">
-                Struktur Kendali dan Looping
-              </h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Menguasai control flow dan perulangan untuk logika program yang
-                kompleks
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span
-                  ><i class="fa-regular fa-calendar mr-1"></i>Minggu 14</span
-                >
-                
-                  <a href="sublatihan.html?id=17"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-                >
-              </div>
-            </div>
-
-            <!-- Card 17: Function & Array -->
-            <div class="training-card" data-category="Pemrograman Web 1">
-              <div
-                class="w-full h-40 bg-gradient-to-br from-lime-500/20 to-green-400/20 rounded-lg mb-4 grid place-items-center"
-              >
-                <i class="fa-solid fa-layer-group text-6xl text-lime-400"></i>
-              </div>
-              <div class="mb-3">
-                <span class="category-badge">Pemrograman Web 1</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Function dan Array</h3>
-              <p class="text-sm text-slate-400 mb-4">
-                Membuat fungsi reusable dan memanipulasi data dengan array untuk
-                aplikasi kompleks
-              </p>
-              <div
-                class="flex items-center justify-between text-xs text-slate-500 mt-auto"
-              >
-                <span
-                  ><i class="fa-regular fa-calendar mr-1"></i>Minggu 15</span
-                >
-                
-                  <a href="sublatihan.html?id=18"
-                  class="text-cyan-400 hover:text-cyan-300"
-                  >Lihat Detail →</a>
-                >
-              </div>
-            </div>
+          <div class="hidden sm:block w-px h-8 bg-slate-200 dark:bg-white/10"></div>
+          <div>
+            <strong id="stat-kategori" class="text-2xl text-cyan-500 block mb-0.5">3</strong>
+            <span class="text-slate-500 dark:text-slate-400 text-xs">Kategori</span>
           </div>
         </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 sm:gap-3 mb-10 fade-in" id="categoryTabs">
+          <button data-filter="all" class="category-tab active px-4 py-2 rounded-full text-sm font-medium transition-all">
+            <i class="fa-solid fa-layer-group mr-1.5"></i>Semua
+          </button>
+          <!-- Tabs are rendered dynamically by JS -->
+        </div>
+
+        <!-- Dynamic Archive Container -->
+        <div id="archive-container"></div>
+
       </section>
+    </main>
 
-      <!-- Stats Section -->
-      <section class="py-12 mb-12">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="glass rounded-2xl p-8">
-            <div class="grid md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div
-                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
-                >
-                  17
-                </div>
-                <div class="text-sm text-slate-400">Total Pertemuan</div>
-              </div>
-              <div>
-                <div
-                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
-                >
-                  61
-                </div>
-                <div class="text-sm text-slate-400">Sub Latihan</div>
-              </div>
-              <div>
-                <div
-                  class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2"
-                >
-                  45+
-                </div>
-                <div class="text-sm text-slate-400">Jam Belajar</div>
-              </div>
-              <div>
-                <div
-                  class="text-4xl font-bold bg-clip-text text -transparent bg-gradient-to-r from-purple-400 to-cyan-300 mb-2">
-                15 Minggu
-                </div>
-                <div class="text-sm text-slate-400">Periode</div>
-                </div>
-                </div>
-                </div>
-                </div>
-                </section>
-<!-- Footer -->
-  <footer class="py-8">
-    <div class="max-w-6xl mx-auto px-6 text-center text-slate-400">
-      © <strong>Ahmad Renaldy</strong> – Maintainer
-      yayasankankeranakindonesia.com
-    </div>
-  </footer>
-</main>
+    <!-- Shared Footer -->
+    <div id="site-footer"></div>
 
-<script src="js/mainn.js"></script>
-</body>
+    <script src="js/mainn.js?v=20260319"></script>
+    <script src="js/layout-loader.js?v=20260319"></script>
+    <script src="latihan-data.js"></script>
+
+    <style>
+      /* Category tab styles */
+      .category-tab {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid transparent;
+        color: #94a3b8;
+      }
+      .category-tab:hover {
+        background: rgba(6, 182, 212, 0.08);
+        color: #06b6d4;
+      }
+      .category-tab.active {
+        background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(14,165,233,0.1));
+        color: #06b6d4;
+        border-color: rgba(6,182,212,0.3);
+        box-shadow: 0 0 12px rgba(6,182,212,0.1);
+      }
+      html:not(.dark) .category-tab {
+        background: rgba(0,0,0,0.03);
+        color: #64748b;
+      }
+      html:not(.dark) .category-tab:hover {
+        background: rgba(6, 182, 212, 0.06);
+        color: #0891b2;
+      }
+      html:not(.dark) .category-tab.active {
+        background: rgba(6,182,212,0.1);
+        color: #0891b2;
+        border-color: rgba(6,182,212,0.25);
+      }
+
+      /* Card colors per category - hardcoded to avoid Tailwind JIT issues */
+      .cat-badge-html { background: rgba(249,115,22,0.1); color: #f97316; }
+      .cat-badge-css  { background: rgba(59,130,246,0.1); color: #3b82f6; }
+      .cat-badge-js   { background: rgba(234,179,8,0.1);  color: #eab308; }
+
+      .cat-icon-html  { background: rgba(249,115,22,0.1); }
+      .cat-icon-html i { color: #f97316; }
+      .cat-icon-css   { background: rgba(59,130,246,0.1); }
+      .cat-icon-css i  { color: #3b82f6; }
+      .cat-icon-js    { background: rgba(234,179,8,0.1); }
+      .cat-icon-js i   { color: #eab308; }
+
+      .cat-border-html:hover { border-color: rgba(249,115,22,0.3) !important; }
+      .cat-border-css:hover  { border-color: rgba(59,130,246,0.3) !important; }
+      .cat-border-js:hover   { border-color: rgba(234,179,8,0.3) !important; }
+
+      .cat-heading-html { border-left-color: #f97316; }
+      .cat-heading-css  { border-left-color: #3b82f6; }
+      .cat-heading-js   { border-left-color: #eab308; }
+
+      /* Smooth category show/hide */
+      .category-section { transition: opacity 0.3s ease, transform 0.3s ease; }
+      .category-section.hidden-cat { 
+        display: none; 
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof latihanData === 'undefined' || typeof listKategori === 'undefined') {
+          console.error("Data latihan atau kategori tidak ditemukan.");
+          return;
+        }
+
+        const container = document.getElementById('archive-container');
+        const tabsContainer = document.getElementById('categoryTabs');
+        if (!container) return;
+
+        // Icon map for categories
+        const catIcons = { html: 'fa-html5', css: 'fa-css3-alt', js: 'fa-js' };
+        const catBrandPrefix = { html: 'fa-brands', css: 'fa-brands', js: 'fa-brands' };
+
+        let totalModul = 0;
+        let totalSub = 0;
+
+        // Render category filter tabs
+        listKategori.forEach(kategori => {
+          const tab = document.createElement('button');
+          tab.dataset.filter = kategori.id;
+          tab.className = 'category-tab px-4 py-2 rounded-full text-sm font-medium transition-all';
+          tab.innerHTML = `<i class="${catBrandPrefix[kategori.id] || 'fa-solid'} ${catIcons[kategori.id] || 'fa-code'} mr-1.5"></i>${kategori.title}`;
+          tabsContainer.appendChild(tab);
+        });
+
+        // Render category sections
+        listKategori.forEach(kategori => {
+          const dataKategori = latihanData.filter(item => item.categoryId === kategori.id);
+          if (dataKategori.length === 0) return;
+
+          const section = document.createElement('div');
+          section.className = `category-section mb-12 fade-in`;
+          section.dataset.category = kategori.id;
+
+          // Category heading
+          let html = `
+            <div class="flex items-center gap-3 mb-6 pl-3 border-l-4 cat-heading-${kategori.id}">
+              <div class="w-10 h-10 rounded-lg cat-icon-${kategori.id} flex items-center justify-center">
+                <i class="${catBrandPrefix[kategori.id] || 'fa-solid'} ${catIcons[kategori.id] || 'fa-code'} text-xl"></i>
+              </div>
+              <div>
+                <h2 class="text-lg sm:text-xl font-bold">${kategori.title}</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400">${dataKategori.length} modul tersedia</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          `;
+
+          dataKategori.forEach(item => {
+            totalModul++;
+            const subCount = item.subLatihan ? item.subLatihan.length : 0;
+            totalSub += subCount;
+
+            html += `
+              <a href="sublatihan.html?id=${item.id}" 
+                 class="glass flex flex-col p-5 rounded-xl border border-transparent cat-border-${kategori.id} hover:shadow-lg hover:-translate-y-0.5 transition-all group h-full">
+                
+                <!-- Badge Row -->
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-semibold cat-badge-${kategori.id} px-2.5 py-1 rounded-full">
+                    Minggu ${item.minggu}
+                  </span>
+                  <span class="text-xs text-slate-400 dark:text-slate-500">
+                    <i class="fa-solid fa-clock mr-1"></i>${item.duration}
+                  </span>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="font-bold text-base mb-2 line-clamp-2 group-hover:text-cyan-500 transition-colors" title="${item.title}">
+                  ${item.icon} ${item.title}
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 flex-grow line-clamp-2 leading-relaxed">
+                  ${item.description}
+                </p>
+                
+                <!-- Footer -->
+                <div class="mt-auto border-t border-slate-200 dark:border-white/10 pt-3 flex items-center justify-between text-xs">
+                  <span class="text-slate-400 dark:text-slate-500">
+                    <i class="fa-solid fa-list-check mr-1"></i>${subCount} sub-latihan
+                  </span>
+                  <span class="font-medium text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-500 flex items-center gap-1 transition-colors">
+                    Lihat Modul
+                    <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                  </span>
+                </div>
+              </a>
+            `;
+          });
+
+          html += `</div>`;
+          section.innerHTML = html;
+          container.appendChild(section);
+        });
+
+        // Update stats
+        const statModul = document.getElementById('stat-modul');
+        const statSub = document.getElementById('stat-sub');
+        if (statModul) statModul.textContent = totalModul;
+        if (statSub) statSub.textContent = totalSub;
+
+        // Category filter logic
+        tabsContainer.addEventListener('click', (e) => {
+          const tab = e.target.closest('.category-tab');
+          if (!tab) return;
+
+          // Update active tab
+          tabsContainer.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const filter = tab.dataset.filter;
+          document.querySelectorAll('.category-section').forEach(section => {
+            if (filter === 'all' || section.dataset.category === filter) {
+              section.classList.remove('hidden-cat');
+            } else {
+              section.classList.add('hidden-cat');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

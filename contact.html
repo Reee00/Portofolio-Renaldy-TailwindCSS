@@ -34,7 +34,8 @@
       rel="stylesheet"
     />
     <!-- Tailwind (compiled) -->
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#0f766e",accent:"#0284c7"}}}}</script>
 
     <!-- Font Awesome -->
     <link
@@ -74,7 +75,7 @@
               id="name"
               name="name"
               required
-              class="w-full p-3 mt-1 rounded-md bg-transparent border border-white/6 focus:outline-none"
+              class="w-full p-3 mt-1 rounded-md bg-white/60 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 transition-colors"
               placeholder="Nama lengkap"
             />
           </div>
@@ -85,7 +86,7 @@
               name="email"
               type="email"
               required
-              class="w-full p-3 mt-1 rounded-md bg-transparent border border-white/6 focus:outline-none"
+              class="w-full p-3 mt-1 rounded-md bg-white/60 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 transition-colors"
               placeholder="you@domain.com"
             />
           </div>
@@ -96,7 +97,7 @@
               name="message"
               required
               rows="6"
-              class="w-full p-3 mt-1 rounded-md bg-transparent border border-white/6 focus:outline-none"
+              class="w-full p-3 mt-1 rounded-md bg-white/60 dark:bg-white/5 border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400 transition-colors"
               placeholder="Tulis pesan..."
             ></textarea>
           </div>

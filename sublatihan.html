@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Latihan Web | Portfolio Ahmad Renaldy</title>
-  <link rel="icon" type="image/svg+xml" href="images/Webykai.svg" />
-  <meta
-    name="description"
-    content="Halaman detail sub latihan pemrograman web Ahmad Renaldy dengan progress pembelajaran dan tautan tugas per pertemuan."
-  />
-  
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Detail Latihan Web | Portfolio Ahmad Renaldy</title>
+    <link rel="icon" type="image/svg+xml" href="images/Webykai.svg" />
+    <meta
+      name="description"
+      content="Halaman detail sub latihan pemrograman web Ahmad Renaldy dengan progress pembelajaran dan tautan tugas per pertemuan."
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
@@ -26,7 +26,6 @@
         },
       };
     </script>
-    <script src="latihan-data.js"></script>
 
     <link
       rel="stylesheet"
@@ -37,366 +36,157 @@
     <link rel="stylesheet" href="css/styless.css" />
   </head>
   <body
-    class="bg-gradient-to-br from-slate-100 via-purple-50 to-white dark:bg-gradient-to-br dark:from-[#1a1625] dark:via-[#1f1b2e] dark:to-[#0f0a1a] text-slate-900 dark:text-slate-100 transition-colors duration-300"
+    class="bg-gradient-to-br from-slate-100 via-sky-50 to-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-black text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col"
   >
-    <!-- NAVBAR -->
-    <header class="sticky top-4 z-40">
-      <div class="max-w-6xl mx-auto px-4">
-        <nav
-          class="bg-white/5 dark:bg-white/3 backdrop-blur-lg border border-white/6 rounded-2xl p-3 shadow-lg"
-        >
-          <div class="flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-400 grid place-items-center text-black font-bold"
-              >
-                AR
+    <!-- Shared Header -->
+    <div id="site-header"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Breadcrumb Navigation -->
+        <div class="mb-8 fade-in">
+          <a href="Latihan.html" class="inline-flex items-center text-sm font-medium text-cyan-500 hover:text-cyan-400 transition-colors group">
+            <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+            Kembali ke Learning Archive
+          </a>
+        </div>
+
+        <!-- Hero Section (Dynamic) -->
+        <section class="mb-12 fade-in">
+          <div class="glass p-8 rounded-2xl border-l-4 border-cyan-500">
+            <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+              <div class="w-16 h-16 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                <span id="heroIcon" class="text-3xl">📝</span>
               </div>
-              <div>
-                <div class="font-semibold">
-                  Ahmad <span class="text-cyan-300">Renaldy</span>
+              <div class="flex-1">
+                <h1 id="heroTitle" class="text-3xl md:text-4xl font-bold mb-3">Memuat Data...</h1>
+                <p id="heroDescription" class="text-slate-500 dark:text-slate-400 text-sm md:text-base leading-relaxed mb-4">
+                  Silakan tunggu sementara data latihan sedang diambil.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 text-xs font-semibold">
+                  <span class="px-3 py-1 rounded bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300">
+                    <i class="fa-solid fa-calendar mr-2 text-cyan-500"></i>Minggu <span id="heroMinggu">-</span>
+                  </span>
+                  <span class="px-3 py-1 rounded bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300">
+                    <i class="fa-solid fa-list mr-2 text-purple-500"></i><span id="heroTotal">-</span> Sub Latihan
+                  </span>
+                  <span class="px-3 py-1 rounded bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300">
+                    <i class="fa-solid fa-clock mr-2 text-orange-500"></i><span id="heroDuration">-</span>
+                  </span>
                 </div>
-                <div class="text-xs text-slate-400 dark:text-slate-300">
-                  Web & Digital Media
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sub Exercise List (Dynamic) -->
+        <section>
+          <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-purple-500"></i> Daftar Materi & Praktik
+          </h2>
+          <div id="subLatihanContainer" class="flex flex-col gap-4">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="site-footer"></div>
+
+    <script src="js/mainn.js?v=20260319"></script>
+    <script src="js/layout-loader.js?v=20260319"></script>
+    <script src="latihan-data.js"></script>
+    
+    <!-- Dynamic Content Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof latihanData === 'undefined') {
+          console.error('Data latihan tidak dapat dimuat.');
+          return;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const rawId = urlParams.get('id');
+        
+        const pertemuan = latihanData.find(item => String(item.id) === String(rawId));
+        
+        if (!pertemuan) {
+          document.getElementById('heroTitle').textContent = "Modul Tidak Tersedia";
+          document.getElementById('heroDescription').textContent = "Maaf, link mungkin tidak valid atau modul tak lagi tersedia.";
+          document.getElementById('heroMinggu').textContent = "-";
+          document.getElementById('heroTotal').textContent = "-";
+          document.getElementById('heroDuration').textContent = "-";
+          
+          document.getElementById('subLatihanContainer').innerHTML = `
+            <div class="text-center py-10 fade-in">
+              <a href="Latihan.html" class="inline-flex items-center bg-cyan-500 hover:bg-cyan-600 text-white font-medium px-6 py-3 rounded-xl transition shadow-lg shadow-cyan-500/30">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Kembali ke Arsip
+              </a>
+            </div>`;
+          return;
+        }
+        
+        // Update Hero Section
+        document.getElementById('heroIcon').textContent = pertemuan.icon || '📝';
+        document.getElementById('heroTitle').textContent = pertemuan.title;
+        document.getElementById('heroDescription').textContent = pertemuan.description;
+        document.getElementById('heroMinggu').textContent = pertemuan.minggu;
+        document.getElementById('heroTotal').textContent = pertemuan.totalSub || pertemuan.subLatihan.length;
+        document.getElementById('heroDuration').textContent = pertemuan.duration;
+        document.title = `${pertemuan.title} - Learning Archive`;
+        
+        // Render Sub Latihan Cards
+        const container = document.getElementById('subLatihanContainer');
+        container.innerHTML = ''; 
+        
+        const statusConfig = {
+          selesai: { color: 'bg-green-500/10 text-green-500 border-green-500/20', text: 'Selesai', icon: 'fa-check-circle' },
+          progress: { color: 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-500 border-yellow-500/20', text: 'Dalam Progress', icon: 'fa-clock' },
+          belum: { color: 'bg-slate-500/10 text-slate-500 border-slate-500/20', text: 'Belum Mulai', icon: 'fa-circle' }
+        };
+        
+        pertemuan.subLatihan.forEach((sub, index) => {
+          const status = statusConfig[sub.status] || statusConfig.belum;
+          const icon = sub.icon || 'fa-code';
+          
+          const card = document.createElement('a');
+          card.href = sub.link;
+          card.className = 'glass block p-5 md:p-6 rounded-xl hover:shadow-lg hover:border-cyan-500/30 transition-all group';
+          
+          card.innerHTML = `
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4 flex-1">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold flex-shrink-0">
+                  ${index + 1}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-1 group-hover:text-cyan-500 transition-colors">${sub.title}</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400 mb-3 line-clamp-2 md:line-clamp-none">
+                    ${sub.description}
+                  </p>
+                  <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <span class="px-2 py-1 rounded bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300">
+                      <i class="fa-solid ${icon} mr-1"></i> ${sub.category}
+                    </span>
+                    <span class="px-2 py-1 rounded border ${status.color}">
+                      <i class="fa-solid ${status.icon} mr-1"></i> ${status.text}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </a>
-
-            <div class="hidden md:flex items-center gap-5">
-              <a href="index.html" class="nav-link">Home</a>
-              <a href="about.html" class="nav-link">About</a>
-              <a href="gallery.html" class="nav-link">Gallery</a>
-              <a href="profile.html" class="nav-link">Profile</a>
-              <a href="contact.html" class="nav-link">Contact</a>
-              <a href="Latihan.html" class="nav-link active">Hasil Latihan</a>
-
-              <button
-                id="darkToggle"
-                aria-label="Toggle dark mode"
-                class="p-2 rounded-lg bg-white/3 hover:bg-white/6"
-              >
-                <i id="darkIcon" class="fa-regular fa-moon"></i>
-              </button>
-            </div>
-
-            <div class="md:hidden flex items-center gap-3">
-              <button id="darkToggleMobile" class="p-2 rounded-lg bg-white/3">
-                <i id="darkIconMobile" class="fa-regular fa-moon"></i>
-              </button>
-              <button
-                id="menuBtn"
-                class="p-2 rounded-lg bg-white/4"
-                aria-label="Toggle menu"
-              >
-                <i class="fa-solid fa-bars"></i>
-              </button>
-            </div>
-          </div>
-
-          <div
-            id="mobileMenu"
-            class="hidden md:hidden mt-4 pt-4 border-t border-white/10"
-          >
-            <div class="flex flex-col gap-2">
-              <a href="index.html" class="nav-link-mobile">
-                <i class="fa-solid fa-home w-5"></i>
-                <span>Home</span>
-              </a>
-              <a href="about.html" class="nav-link-mobile">
-                <i class="fa-solid fa-user w-5"></i>
-                <span>About</span>
-              </a>
-              <a href="gallery.html" class="nav-link-mobile">
-                <i class="fa-solid fa-images w-5"></i>
-                <span>Gallery</span>
-              </a>
-              <a href="profile.html" class="nav-link-mobile">
-                <i class="fa-solid fa-id-card w-5"></i>
-                <span>Profile</span>
-              </a>
-              <a href="contact.html" class="nav-link-mobile">
-                <i class="fa-solid fa-envelope w-5"></i>
-                <span>Contact</span>
-              </a>
-              <a href="Latihan.html" class="nav-link-mobile">
-                <i class="fa-solid fa-code w-5"></i>
-                <span>Hasil Latihan</span>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-  <!-- Main Content -->
-  <main class="pt-32 pb-16 px-4">
-    <div class="max-w-6xl mx-auto">
-      
-      <!-- Breadcrumb Navigation -->
-      <div class="mb-8 fade-in">
-        <div class="flex items-center gap-2 text-sm opacity-70">
-          <a href="Latihan.html" class="hover:text-purple-500 transition-colors">
-            <i class="fa-solid fa-arrow-left mr-2"></i>Kembali ke Hasil Latihan
-          </a>
-        </div>
-      </div>
-
-      <!-- Hero Section (Dynamic) -->
-      <section class="text-center mb-12 fade-in">
-        <div class="inline-block glass p-6 rounded-2xl mb-6">
-          <div id="heroIcon" class="text-6xl mb-4">📝</div>
-        </div>
-        <h1 id="heroTitle" class="text-4xl md:text-5xl font-bold mb-4">
-          Loading...
-        </h1>
-        <p id="heroDescription" class="text-lg opacity-80 max-w-2xl mx-auto">
-          Memuat data...
-        </p>
-        <div class="flex items-center justify-center gap-4 mt-6 text-sm opacity-70">
-          <span><i class="fa-solid fa-calendar mr-2"></i>Minggu <span id="heroMinggu">-</span></span>
-          <span><i class="fa-solid fa-list mr-2"></i><span id="heroTotal">-</span> Sub Latihan</span>
-          <span><i class="fa-solid fa-clock mr-2"></i><span id="heroDuration">-</span></span>
-        </div>
-      </section>
-
-      <!-- Sub Exercise List (Dynamic) -->
-      <section id="subLatihanContainer" class="space-y-4">
-        <!-- Will be populated by JavaScript -->
-      </section>
-
-      <!-- Progress Summary (Dynamic) -->
-      <section class="mt-12 fade-in">
-        <div class="glass p-8">
-          <h2 class="text-2xl font-bold mb-6 text-center">Progress Pembelajaran</h2>
-          <div class="grid md:grid-cols-3 gap-6">
-            <!-- Selesai -->
-            <div class="text-center">
-              <div id="statSelesai" class="text-4xl font-bold text-green-400 mb-2">0</div>
-              <div class="text-sm opacity-70">Sub Latihan Selesai</div>
-              <div class="w-full h-2 bg-gray-700 rounded-full mt-3 overflow-hidden">
-                <div id="barSelesai" class="h-full bg-green-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+              <div class="hidden md:flex flex-shrink-0 items-center justify-center p-3 rounded-full bg-slate-100 dark:bg-white/5 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                <i class="fa-solid fa-arrow-right"></i>
               </div>
             </div>
-            <!-- Dalam Progress -->
-            <div class="text-center">
-              <div id="statProgress" class="text-4xl font-bold text-yellow-400 mb-2">0</div>
-              <div class="text-sm opacity-70">Sedang Dikerjakan</div>
-              <div class="w-full h-2 bg-gray-700 rounded-full mt-3 overflow-hidden">
-                <div id="barProgress" class="h-full bg-yellow-500 rounded-full transition-all duration-500" style="width: 0%"></div>
-              </div>
-            </div>
-            <!-- Belum Mulai -->
-            <div class="text-center">
-              <div id="statBelum" class="text-4xl font-bold text-gray-400 mb-2">0</div>
-              <div class="text-sm opacity-70">Belum Dimulai</div>
-              <div class="w-full h-2 bg-gray-700 rounded-full mt-3 overflow-hidden">
-                <div id="barBelum" class="h-full bg-gray-500 rounded-full transition-all duration-500" style="width: 0%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-8 text-center">
-            <div class="text-lg font-semibold mb-2">Total Progress</div>
-            <div id="totalProgress" class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-cyan-500 bg-clip-text text-transparent mb-3">
-              0%
-            </div>
-            <div class="max-w-md mx-auto">
-              <div class="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
-                <div id="totalProgressBar" class="h-full bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full transition-all duration-500" style="width: 0%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Action Buttons -->
-      <section class="mt-8 flex flex-col sm:flex-row gap-4 justify-center fade-in">
-        <a href="Latihan.html" class="btn-outline text-center">
-          <i class="fa-solid fa-arrow-left mr-2"></i>Kembali ke Daftar Latihan
-        </a>
-        <a id="btnLanjutkan" href="#" class="btn-primary text-center">
-          <i class="fa-solid fa-play mr-2"></i>Lanjutkan Latihan
-        </a>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="py-8 px-4">
-    <div class="max-w-6xl mx-auto glass p-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <!-- Social Media -->
-        <div class="flex items-center gap-3">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Buka GitHub" class="social" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Buka LinkedIn" class="social" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Twitter" class="social" title="Twitter">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram" class="social" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="text-sm opacity-70 text-center">
-          <p>&copy; 2024 Ahmad Renaldy. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="js/mainn.js"></script>
-  
-  <!-- Dynamic Content Script -->
-<script>
-  const loaderEl = document.getElementById('page-loader');
-
-  // Cek apakah latihan-data.js berhasil dimuat
-  if (typeof latihanData === 'undefined') {
-    console.error('latihan-data.js gagal dimuat!');
-    if (loaderEl) {
-      loaderEl.innerHTML = `
-        <div class="text-center text-white">
-          <i class="fa-solid fa-exclamation-triangle text-6xl mb-4 text-red-400"></i>
-          <p class="text-xl font-bold mb-2">Error Loading Data</p>
-          <p class="mb-4">File latihan-data.js tidak dapat dimuat</p>
-          <button onclick="location.reload()" class="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700">
-            Coba Lagi
-          </button>
-        </div>
-      `;
-    }
-  }
-
-  // Load dynamic content based on URL parameter
-  document.addEventListener('DOMContentLoaded', () => {
-    // Hide loader setelah halaman siap
-    if (loaderEl) {
-      setTimeout(() => {
-        loaderEl.style.display = 'none';
-      }, 500);
-    }
-
-    if (typeof latihanData === 'undefined') {
-      return;
-    }
-
-    // Get URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const pertemuanId = urlParams.get('id');
-    
-    // Check if ID exists
-    if (!pertemuanId || !latihanData[pertemuanId]) {
-      alert('Pertemuan tidak ditemukan!');
-      window.location.href = 'Latihan.html';
-      return;
-    }
-    
-    // Get pertemuan data
-    const pertemuan = latihanData[pertemuanId];
-    
-    // Update Hero Section
-    document.getElementById('heroIcon').textContent = pertemuan.icon;
-    document.getElementById('heroTitle').textContent = pertemuan.title;
-    document.getElementById('heroDescription').textContent = pertemuan.description;
-    document.getElementById('heroMinggu').textContent = pertemuan.minggu;
-    document.getElementById('heroTotal').textContent = pertemuan.totalSub;
-    document.getElementById('heroDuration').textContent = pertemuan.duration;
-    document.title = `${pertemuan.title} - Sub Latihan`;
-    
-    // Render Sub Latihan
-    const container = document.getElementById('subLatihanContainer');
-    container.innerHTML = ''; // Clear
-    
-    const statusConfig = {
-      selesai: {
-        color: 'status-selesai',
-        text: 'Selesai',
-        icon: 'fa-check-circle'
-      },
-      progress: {
-        color: 'status-progress',
-        text: 'Dalam Progress',
-        icon: 'fa-clock'
-      },
-      belum: {
-        color: 'status-belum',
-        text: 'Belum Mulai',
-        icon: 'fa-circle'
-      }
-    };
-    
-    pertemuan.subLatihan.forEach((sub, index) => {
-      const status = statusConfig[sub.status];
-      
-      const card = document.createElement('div');
-      card.className = 'glass p-6 fade-in hover:scale-[1.01] transition-transform cursor-pointer';
-      card.onclick = () => window.location.href = sub.link;
-      
-      card.innerHTML = `
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 flex items-center justify-center font-bold text-white text-lg">
-            ${index + 1}
-          </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold mb-2">${sub.title}</h3>
-            <p class="opacity-80 text-sm mb-3">
-              ${sub.description}
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full text-xs bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                <i class="fa-solid ${sub.icon} mr-1"></i>${sub.category}
-              </span>
-              <span class="px-3 py-1 rounded-full text-xs ${status.color} border">
-                <i class="fa-solid ${status.icon} mr-1"></i>${status.text}
-              </span>
-            </div>
-          </div>
-          <div class="flex-shrink-0">
-            <i class="fa-solid fa-chevron-right opacity-50"></i>
-          </div>
-        </div>
-      `;
-      
-      container.appendChild(card);
-    });
-    
-    // Calculate Progress
-    const selesai = pertemuan.subLatihan.filter(s => s.status === 'selesai').length;
-    const progress = pertemuan.subLatihan.filter(s => s.status === 'progress').length;
-    const belum = pertemuan.subLatihan.filter(s => s.status === 'belum').length;
-    const total = pertemuan.subLatihan.length;
-    const percentage = Math.round((selesai / total) * 100);
-    
-    // Update Stats
-    document.getElementById('statSelesai').textContent = selesai;
-    document.getElementById('statProgress').textContent = progress;
-    document.getElementById('statBelum').textContent = belum;
-    document.getElementById('totalProgress').textContent = percentage + '%';
-    
-    // Update Progress Bars dengan animasi
-    setTimeout(() => {
-      document.getElementById('barSelesai').style.width = (selesai > 0 ? (selesai / total) * 100 : 0) + '%';
-      document.getElementById('barProgress').style.width = (progress > 0 ? (progress / total) * 100 : 0) + '%';
-      document.getElementById('barBelum').style.width = (belum > 0 ? (belum / total) * 100 : 0) + '%';
-      document.getElementById('totalProgressBar').style.width = percentage + '%';
-    }, 100);
-    
-    // Update "Lanjutkan" button
-    const nextSub = pertemuan.subLatihan.find(s => s.status === 'progress') || 
-                    pertemuan.subLatihan.find(s => s.status === 'belum');
-    if (nextSub) {
-      document.getElementById('btnLanjutkan').href = nextSub.link;
-    } else {
-      document.getElementById('btnLanjutkan').href = '#';
-      document.getElementById('btnLanjutkan').innerHTML = '<i class="fa-solid fa-check mr-2"></i>Semua Selesai';
-    }
-  });
-</script>
-</body>
+          `;
+          
+          container.appendChild(card);
+        });
+      });
+    </script>
+  </body>
 </html>

@@ -33,7 +33,8 @@
       rel="stylesheet"
     />
     <!-- Tailwind (compiled) -->
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#0f766e",accent:"#0284c7"}}}}</script>
 
     <!-- Font Awesome -->
     <link
@@ -56,51 +57,119 @@
         class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16 fade-in"
         aria-labelledby="profile-heading"
       >
-        <h1 id="profile-heading" class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Profil Profesional</h1>
-        <p class="text-slate-500 mb-6">
-          Ringkasan pengalaman, keahlian, dan kontak profesional.
-        </p>
+        <!-- Header Profil -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+          <div>
+            <h1 id="profile-heading" class="text-2xl sm:text-3xl font-bold">Ahmad Renaldy</h1>
+            <p class="text-slate-500">Web Developer &bull; Content Manager</p>
+            <div class="badge-open mt-2">
+              <span class="dot"></span> Open to Work
+            </div>
+          </div>
+          <!-- Tombol Download CV -->
+          <a
+            href="images/CV-RENALDY.svg"
+            download="CV-Ahmad-Renaldy"
+            class="btn-primary ml-auto flex items-center gap-2"
+            aria-label="Download CV Ahmad Renaldy"
+          >
+            <i class="fa-solid fa-download"></i>
+            Download CV
+          </a>
+        </div>
 
         <div class="grid md:grid-cols-2 gap-6">
+          <!-- Ringkasan -->
           <div class="glass p-6">
-            <h2 class="font-semibold mb-2">Ringkasan</h2>
-            <p class="text-slate-500">
+            <h2 class="font-semibold text-lg mb-3">Ringkasan</h2>
+            <p class="text-slate-500 text-sm">
               Saya membantu organisasi mengelola website yang cepat, mudah
               diupdate, dan teroptimasi SEO dasar. Fokus saya ada pada kualitas
               tampilan, struktur konten, dan konsistensi update.
             </p>
           </div>
 
+          <!-- Kontak -->
           <div class="glass p-6">
-            <h2 class="font-semibold mb-2">Kontak</h2>
-            <p class="text-slate-500 mb-2">
-              Email:
-              <a
-                href="mailto:ahmadd.renaldyy@gmail.com"
-                class="text-cyan-500"
-                >ahmadd.renaldyy@gmail.com</a
-              >
-            </p>
-            <p class="text-slate-500 mb-2">
-              Instagram:
-              <a
-                href="https://instagram.com/ahmadd.renaldyy"
-                class="text-cyan-400"
-                target="_blank"
-                rel="noopener noreferrer"
-                >@ahmadd.renaldyy</a
-              >
-            </p>
-            <p class="text-slate-500">
-              LinkedIn:
-              <a
-                href="https://www.linkedin.com/in/ahmad-renaldy-532606217"
-                class="text-cyan-400"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ahmad Renaldy</a
-              >
-            </p>
+            <h2 class="font-semibold text-lg mb-3">Kontak Profesional</h2>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope w-4 text-cyan-400"></i>
+                <a href="mailto:ahmadd.renaldyy@gmail.com" class="text-cyan-500 hover:text-cyan-400">
+                  ahmadd.renaldyy@gmail.com
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fab fa-instagram w-4 text-cyan-400"></i>
+                <a href="https://instagram.com/ahmadd.renaldyy" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300">
+                  @ahmadd.renaldyy
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fab fa-linkedin w-4 text-cyan-400"></i>
+                <a href="https://www.linkedin.com/in/ahmad-renaldy-532606217" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300">
+                  Ahmad Renaldy
+                </a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fab fa-github w-4 text-cyan-400"></i>
+                <a href="https://github.com/Reee00" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300">
+                  github.com/Reee00
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Keahlian Utama -->
+          <div class="glass p-6 md:col-span-2">
+            <h2 class="font-semibold text-lg mb-3">Keahlian Utama</h2>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">JavaScript (Dasar)</span>
+              <span class="skill-tag">WordPress CMS</span>
+              <span class="skill-tag">SEO On-Page</span>
+              <span class="skill-tag">Content Management</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
+              <span class="skill-tag">Figma (Basic)</span>
+            </div>
+          </div>
+
+          <!-- Pengalaman -->
+          <div class="glass p-6 md:col-span-2">
+            <h2 class="font-semibold text-lg mb-4">Pengalaman &amp; Timeline</h2>
+            <div class="space-y-4">
+              <div class="timeline-item">
+                <div class="text-sm font-semibold text-slate-700 dark:text-slate-200">2023 — Sekarang</div>
+                <div class="text-sm text-slate-500">Pengelola Website &amp; Konten — Yayasan Kanker Anak Indonesia</div>
+                <div class="text-xs text-slate-400 mt-1">Maintenance website, optimasi SEO on-page, pengelolaan 30+ konten artikel &amp; kegiatan.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="text-sm font-semibold text-slate-700 dark:text-slate-200">2019 — 2020</div>
+                <div class="text-sm text-slate-500">Production Online Shop</div>
+              </div>
+              <div class="timeline-item">
+                <div class="text-sm font-semibold text-slate-700 dark:text-slate-200">Jan 2019 — Jun 2019</div>
+                <div class="text-sm text-slate-500">Customer Service Online Shop</div>
+              </div>
+              <div class="timeline-item">
+                <div class="text-sm font-semibold text-slate-700 dark:text-slate-200">Agu 2018 — Des 2018</div>
+                <div class="text-sm text-slate-500">Staff Inbound — PT. Citra Van Titipan Kilat, Kota Tangerang</div>
+              </div>
+              <div class="timeline-item">
+                <div class="text-sm font-semibold text-slate-700 dark:text-slate-200">2017 — Sekarang</div>
+                <div class="text-sm text-slate-500">Freelance Teknisi Smartphone</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Kontak -->
+          <div class="glass p-6 md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div class="font-semibold text-sm">Tertarik berkolaborasi?</div>
+              <p class="text-slate-500 text-sm">Saya terbuka untuk diskusi project, freelance, atau peluang kerja penuh waktu.</p>
+            </div>
+            <a href="contact.html" class="btn-primary whitespace-nowrap" data-link>Hubungi Saya</a>
           </div>
         </div>
       </section>

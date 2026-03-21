@@ -13,7 +13,8 @@
       rel="stylesheet"
     />
     <!-- Tailwind (compiled) -->
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#0f766e",accent:"#0284c7"}}}}</script>
 
     <!-- Font Awesome -->
     <link
@@ -95,12 +96,13 @@
         >
           <!-- Case study items -->
           <article
-            class="gallery-item glass p-4 cursor-pointer"
+            class="gallery-item glass p-4 cursor-pointer relative"
             data-cat="web"
             data-title="Website Yayasan Kanker Anak Indonesia"
             data-desc="Problem: konten sulit dikelola. Role: maintenance + optimasi. Impact: alur update konten lebih cepat."
             data-img="images/Webykai.png"
           >
+            <span class="absolute -top-2 -right-2 z-10 text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 text-white shadow-lg shadow-cyan-500/30">⭐ Featured</span>
             <img
               src="images/Webykai.png"
               alt="Website Yayasan Kanker Anak Indonesia"

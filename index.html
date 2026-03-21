@@ -13,7 +13,8 @@
       rel="stylesheet"
     />
     <!-- Tailwind (compiled) -->
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#0f766e",accent:"#0284c7"}}}}</script>
 
     <!-- Font Awesome -->
     <link
@@ -67,9 +68,14 @@
             <div class="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-wider mb-4 px-3 py-1 rounded-full border border-cyan-400/30 text-cyan-400">
               Available for Web Project Collaboration
             </div>
+            <div class="badge-open mb-4">
+              <span class="dot"></span> Open to Work
+            </div>
             <h1 id="hero-heading" class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              Saya
               Ahmad Renaldy
+              <span class="block gradient-text">
+                Web Developer
+              </span>
             </h1>
             <p class="text-base sm:text-lg text-slate-500 mb-6 max-w-xl">
               Web Developer dengan fokus website cepat, rapi, dan mudah dikelola
@@ -100,28 +106,36 @@
             </div>
           </div>
 
-          <div class="flex-1 fade-in">
-            <div class="glass p-4 rounded-2xl shadow-xl max-w-md mx-auto">
-              <div
-                class="w-full h-56 bg-white/5 rounded-xl mb-4 grid place-items-center text-slate-400"
-              >
-                <a
-                  href="https://web.yayasankankeranakindonesia.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Buka website web.yayasankankeranakindonesia.com"
-                  ><img src="images/Webykai.svg" alt="Logo dan preview proyek website Yayasan Kanker Anak Indonesia" loading="lazy"
-                /></a>
+          <div class="flex-1 fade-in flex flex-col items-center gap-6">
+            <!-- Foto Profil: ganti src dengan foto asli kamu -->
+            <div class="relative">
+              <div class="photo-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>Foto kamu<br>ditempatkan di sini</span>
               </div>
-              <div class="flex items-center justify-between">
-                <div>
-                  <div class="font-semibold">Project Terbaru</div>
-                  <div class="text-sm text-slate-400">
-                    Website Yayasan - maintenance, optimasi, dan workflow konten
-                  </div>
+            </div>
+
+            <!-- Preview project -->
+            <div class="glass p-4 rounded-2xl shadow-xl w-full max-w-sm">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-sky-400 grid place-items-center text-white text-xs font-bold">
+                  YK
                 </div>
-                <div class="text-xs text-slate-400">UI / CMS</div>
+                <div>
+                  <div class="font-semibold text-sm">Project Terbaru</div>
+                  <div class="text-xs text-slate-400">Website Yayasan — maintenance, optimasi, workflow konten</div>
+                </div>
+                <div class="ml-auto text-xs text-slate-400">UI/CMS</div>
               </div>
+              <a
+                href="https://web.yayasankankeranakindonesia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Buka website web.yayasankankeranakindonesia.com"
+                class="block w-full h-32 bg-gradient-to-br from-cyan-500/10 to-sky-500/10 rounded-xl border border-cyan-400/20 grid place-items-center hover:border-cyan-400/40 transition-colors"
+              >
+                <img src="images/Webykai.svg" alt="Logo dan preview proyek website Yayasan Kanker Anak Indonesia" loading="lazy" class="h-20 object-contain" />
+              </a>
             </div>
           </div>
         </div>

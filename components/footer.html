@@ -1,14 +1,41 @@
-<footer class="py-8">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400">
-    <span>
-      &copy; <strong>Ahmad Renaldy</strong> &mdash; Maintainer
-      yayasankankeranakindonesia.com
-    </span>
-    <div class="mt-2 text-xs">
-      Learning Archive:
-      <a href="Latihan.html" class="text-cyan-400 hover:text-cyan-300" data-link
-        >Hasil Latihan</a
-      >
+<footer class="py-10 border-t border-slate-200 dark:border-white/5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Brand -->
+      <div class="text-center md:text-left">
+        <div class="font-semibold text-slate-900 dark:text-white">Ahmad Renaldy</div>
+        <div class="text-xs text-slate-500 mt-0.5">Web Developer &amp; Content Manager</div>
+      </div>
+
+      <!-- Nav links -->
+      <div class="flex gap-4 text-sm text-slate-500">
+        <a href="index.html" class="hover:text-cyan-400 transition-colors" data-link>Home</a>
+        <a href="gallery.html" class="hover:text-cyan-400 transition-colors" data-link>Case Studies</a>
+        <a href="about.html" class="hover:text-cyan-400 transition-colors" data-link>About</a>
+        <a href="contact.html" class="hover:text-cyan-400 transition-colors" data-link>Contact</a>
+      </div>
+
+      <!-- Social icons -->
+      <div class="flex gap-3">
+        <a href="https://github.com/Reee00" class="social" target="_blank" rel="noopener noreferrer" aria-label="GitHub Ahmad Renaldy">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ahmad-renaldy-532606217" class="social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Ahmad Renaldy">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/ahmadd.renaldyy" class="social" target="_blank" rel="noopener noreferrer" aria-label="Instagram Ahmad Renaldy">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
+
+    <!-- Copyright -->
+    <div class="mt-6 text-center text-xs text-slate-400">
+      &copy; <span id="footerYear">2026</span> Ahmad Renaldy &mdash; All rights reserved
+    </div>
+    <script>
+      const y = document.getElementById('footerYear');
+      if (y) y.textContent = new Date().getFullYear();
+    </script>
   </div>
 </footer>

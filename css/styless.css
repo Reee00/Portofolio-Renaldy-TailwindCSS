@@ -29,6 +29,126 @@ p {
   line-height: 1.7;
 }
 
+/* ===============================================
+   MISSING COMPONENT CLASSES (Critical Fixes)
+   =============================================== */
+
+/* Gradient text on hero "Web Developer" */
+.gradient-text {
+  background: linear-gradient(90deg, #06b6d4, #0ea5e9, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* "Open to Work" badge with pulsing green dot */
+.badge-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.badge-open .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Skill tag pills for About/Profile pages */
+.skill-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(6, 182, 212, 0.08);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  transition: all 0.25s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(6, 182, 212, 0.15);
+  transform: translateY(-1px);
+}
+
+html.dark .skill-tag {
+  background: rgba(6, 182, 212, 0.1);
+  color: #22d3ee;
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+html.dark .skill-tag:hover {
+  background: rgba(6, 182, 212, 0.2);
+}
+
+/* Photo placeholder circle */
+.photo-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(124, 58, 237, 0.1));
+  border: 2px dashed rgba(6, 182, 212, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.photo-placeholder i {
+  font-size: 2.5rem;
+  opacity: 0.5;
+}
+
+.photo-placeholder span {
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.3;
+  opacity: 0.6;
+}
+
+html.dark .photo-placeholder {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(124, 58, 237, 0.08));
+  border-color: rgba(6, 182, 212, 0.2);
+  color: #64748b;
+}
+
+/* Line clamp utilities (fallback for missing Tailwind classes) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Improve readability for Tailwind text utility classes used across pages */
 .text-slate-500 {
   color: var(--text-muted-light) !important;
@@ -48,29 +168,23 @@ html.dark .dark\:text-slate-400 {
   color: var(--text-soft-dark) !important;
 }
 
-/* Base card/button/nav styling used across pages */
+/* Base card/button/nav styling — structural properties only.
+   Visual colors are in the LIGHT & DARK MODE sections below. */
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  border: 1px solid var(--glass-border);
   backdrop-filter: blur(8px);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .glass:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  border-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
-  color: black;
   padding: 0.6rem 1.1rem;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 600;
   display: inline-block;
-  box-shadow: 0 8px 30px rgba(7, 9, 36, 0.6);
   transition: all 0.3s ease;
   text-align: center;
 }
@@ -84,18 +198,11 @@ html.dark .dark\:text-slate-400 {
 }
 
 .btn-outline {
-  border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 0.6rem 1rem;
   border-radius: 999px;
-  color: #cbd5e1;
   transition: all 0.3s ease;
   display: inline-block;
   text-align: center;
-}
-
-.btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-link {
@@ -363,173 +470,7 @@ textarea {
   }
 }
 
-/* Fallback responsive utilities for classes used in HTML but missing in current build */
-@media (min-width: 640px) {
-  .sm\:px-6 {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-  }
-
-  .sm\:py-10 {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-
-  .sm\:py-12 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-
-  .sm\:py-14 {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
-  }
-
-  .sm\:gap-3 {
-    gap: 0.75rem !important;
-  }
-
-  .sm\:gap-4 {
-    gap: 1rem !important;
-  }
-
-  .sm\:gap-6 {
-    gap: 1.5rem !important;
-  }
-
-  .sm\:gap-8 {
-    gap: 2rem !important;
-  }
-
-  .sm\:gap-10 {
-    gap: 2.5rem !important;
-  }
-
-  .sm\:p-5 {
-    padding: 1.25rem !important;
-  }
-
-  .sm\:p-6 {
-    padding: 1.5rem !important;
-  }
-
-  .sm\:mb-2 {
-    margin-bottom: 0.5rem !important;
-  }
-
-  .sm\:mb-4 {
-    margin-bottom: 1rem !important;
-  }
-
-  .sm\:mb-6 {
-    margin-bottom: 1.5rem !important;
-  }
-
-  .sm\:mb-8 {
-    margin-bottom: 2rem !important;
-  }
-
-  .sm\:mt-2 {
-    margin-top: 0.5rem !important;
-  }
-
-  .sm\:mt-3 {
-    margin-top: 0.75rem !important;
-  }
-
-  .sm\:h-40 {
-    height: 10rem !important;
-  }
-
-  .sm\:text-xs {
-    font-size: 0.75rem !important;
-    line-height: 1rem !important;
-  }
-
-  .sm\:text-sm {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
-  }
-
-  .sm\:text-base {
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-  }
-
-  .sm\:text-lg {
-    font-size: 1.125rem !important;
-    line-height: 1.75rem !important;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem !important;
-    line-height: 1.75rem !important;
-  }
-
-  .sm\:text-2xl {
-    font-size: 1.5rem !important;
-    line-height: 2rem !important;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem !important;
-    line-height: 2.5rem !important;
-  }
-
-  .sm\:min-h-\[82vh\] {
-    min-height: 82vh !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:gap-6 {
-    gap: 1.5rem !important;
-  }
-
-  .md\:gap-12 {
-    gap: 3rem !important;
-  }
-
-  .md\:p-3 {
-    padding: 0.75rem !important;
-  }
-
-  .md\:py-14 {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
-  }
-
-  .md\:py-16 {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-
-  .md\:py-20 {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-  }
-
-  .md\:gap-3 {
-    gap: 0.75rem !important;
-  }
-
-  .md\:text-base {
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:px-8 {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-}
+/* Fallback responsive utilities REMOVED — now provided by Tailwind CDN */
 
 /* iOS safe-area horizontal padding support */
 @supports (padding: max(0px)) {
@@ -764,7 +705,7 @@ html.dark .glass {
 
 /* Tombol */
 html.dark .btn-primary {
-  color: #000;
+  color: #ffffff;
   box-shadow: 0 8px 24px rgba(2, 132, 199, 0.3);
 }
 html.dark .btn-outline {

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /upload.html
+Disallow: /latihan2.html
 Sitemap: https://portofolio-ahmadrenaldy.vercel.app/sitemap.xml

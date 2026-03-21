@@ -33,7 +33,8 @@
       rel="stylesheet"
     />
     <!-- Tailwind (compiled) -->
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{primary:"#0f766e",accent:"#0284c7"}}}}</script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -50,23 +51,20 @@
     <main class="pt-16">
       <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16 fade-in" aria-labelledby="about-heading">
         <div class="grid md:grid-cols-3 gap-6 sm:gap-8 items-start">
-          <div class="col-span-1">
-            <div class="glass p-6">
-              <div
-                class="w-full h-48 bg-white/5 rounded-lg grid place-items-center text-slate-400"
-              >
-                <img
-                  src="images/CV-RENALDY.svg"
-                  alt="Foto profil Ahmad Renaldy, Web Developer"
-                  loading="lazy"
-                  class="w-32 h-32 object-cover rounded-full border-4 border-white/10 shadow-lg"
-                />
+        <div class="col-span-1">
+            <div class="glass p-6 text-center">
+              <!-- Foto Profil: ganti src dengan foto asli kamu -->
+              <div class="flex justify-center mb-4">
+                <div class="photo-placeholder">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Foto kamu<br>ditempatkan di sini</span>
+                </div>
               </div>
-              <h3 class="font-semibold text-xl mt-4">Ahmad Renaldy</h3>
+              <h2 class="font-semibold text-xl mt-2">Ahmad Renaldy</h2>
               <div class="text-sm text-slate-500 mb-3">
-                Web Developer • Content Manager
+                Web Developer &bull; Content Manager
               </div>
-              <div class="flex gap-3">
+              <div class="flex justify-center gap-3">
                 <a
                   href="https://github.com/Reee00"
                   class="social"
@@ -74,16 +72,24 @@
                   rel="noopener noreferrer"
                   aria-label="Buka GitHub Ahmad Renaldy"
                 >
-                  <i class="fab fa-github"></i
-                ></a>
+                  <i class="fab fa-github"></i>
+                </a>
                 <a
                   href="https://www.linkedin.com/in/ahmad-renaldy-532606217"
                   class="social"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Buka LinkedIn Ahmad Renaldy"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
+                  ><i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://instagram.com/ahmadd.renaldyy"
+                  class="social"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Buka Instagram Ahmad Renaldy"
+                  ><i class="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -98,46 +104,21 @@
               <strong>web.yayasankankeranakindonesia.com</strong>.
             </p>
 
-            <h3 class="text-xl font-semibold mb-3">Keahlian</h3>
-            <div class="space-y-4 mb-6">
-              <div>
-                <div class="flex justify-between text-sm text-slate-500 mb-1">
-                  <span>HTML & Tailwind</span><span>95%</span>
-                </div>
-                <div class="w-full bg-white/5 rounded-full h-2">
-                  <div
-                    class="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-sky-400"
-                    style="width: 95%"
-                  ></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm text-slate-500 mb-1">
-                  <span>WordPress</span><span>90%</span>
-                </div>
-                <div class="w-full bg-white/5 rounded-full h-2">
-                  <div
-                    class="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-sky-400"
-                    style="width: 90%"
-                  ></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm text-slate-500 mb-1">
-                  <span>SEO & Konten</span><span>85%</span>
-                </div>
-                <div class="w-full bg-white/5 rounded-full h-2">
-                  <div
-                    class="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-sky-400"
-                    style="width: 85%"
-                  ></div>
-                </div>
-              </div>
+            <h2 class="text-xl font-semibold mb-3">Keahlian</h2>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">JavaScript (Dasar)</span>
+              <span class="skill-tag">WordPress CMS</span>
+              <span class="skill-tag">SEO On-Page</span>
+              <span class="skill-tag">Content Management</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
+              <span class="skill-tag">Figma (Basic)</span>
             </div>
 
-            <h3 class="text-xl font-semibold mb-3">
-              Timeline Pendidikan & Pengalaman
-            </h3>
+            <h2 class="text-xl font-semibold mb-3">
+              Timeline Pendidikan &amp; Pengalaman
+            </h2>
             <div class="space-y-4">
               <div class="timeline-item">
                 <div class="text-sm text-slate-500 font-semibold">
@@ -176,6 +157,20 @@
                 </div>
               </div>
             </div>
+
+            <!-- Learning Archive Link -->
+            <div class="mt-8 pt-6 border-t border-slate-200 dark:border-white/10">
+              <a href="Latihan.html" class="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-cyan-500/10 hover:from-purple-500/20 hover:to-cyan-500/20 transition-all group">
+                <div>
+                  <h3 class="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                    <i class="fa-solid fa-code text-cyan-500"></i> Learning Archive
+                  </h3>
+                  <p class="text-sm text-slate-500 mt-1">Eksplorasi teknis & modul dasar web dev.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right text-cyan-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
