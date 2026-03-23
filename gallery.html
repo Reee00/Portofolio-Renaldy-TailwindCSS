@@ -23,8 +23,18 @@
       crossorigin="anonymous"
     />
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="css/styless.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Studi Kasus Web Developer",
+      "description": "Kumpulan studi kasus Ahmad Renaldy: optimasi website yayasan, redesign profil, dan perbaikan workflow konten web.",
+      "url": "https://portofolio-ahmadrenaldy.vercel.app/gallery.html",
+      "author": { "@type": "Person", "name": "Ahmad Renaldy" }
+    }
+    </script>
 
     <meta
       name="description"
@@ -33,6 +43,7 @@
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Ahmad Renaldy Portfolio" />
     <meta property="og:url" content="https://portofolio-ahmadrenaldy.vercel.app/gallery.html" />
     <meta property="og:title" content="Studi Kasus Web Developer | Ahmad Renaldy" />
     <meta
@@ -40,13 +51,19 @@
       content="Pelajari pendekatan problem-action-impact dari proyek website yang dikerjakan Ahmad Renaldy."
     />
     <meta property="og:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Studi Kasus Web Developer - Ahmad Renaldy" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ahmadrenaldy" />
+    <meta name="twitter:creator" content="@ahmadrenaldy" />
     <meta name="twitter:title" content="Studi Kasus Web Developer | Ahmad Renaldy" />
     <meta
       name="twitter:description"
       content="Kumpulan studi kasus website dengan pendekatan problem-action-impact."
     />
     <meta name="twitter:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
+    <meta name="twitter:image:alt" content="Studi Kasus Web Developer - Ahmad Renaldy" />
   </head>
   <body
     data-nav-active="gallery.html"
@@ -191,6 +208,20 @@
           <p id="lb-desc" class="text-sm text-slate-300"></p>
         </div>
       </div>
+
+      <!-- CTA Section -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div class="glass p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h2 class="text-lg font-bold mb-1">Ingin tahu lebih lanjut?</h2>
+            <p class="text-sm text-slate-500">Lihat profil lengkap atau langsung hubungi saya untuk diskusi project.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="about.html" class="btn-outline text-sm">Tentang Saya</a>
+            <a href="contact.html" class="btn-primary text-sm">Hubungi Saya</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div id="site-footer"></div>

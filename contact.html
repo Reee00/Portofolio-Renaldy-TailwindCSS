@@ -13,6 +13,7 @@
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Ahmad Renaldy Portfolio" />
     <meta property="og:url" content="https://portofolio-ahmadrenaldy.vercel.app/contact.html" />
     <meta property="og:title" content="Hubungi Ahmad Renaldy | Web Developer" />
     <meta
@@ -20,13 +21,19 @@
       content="Diskusikan kebutuhan project website, perbaikan UI, atau optimasi konten bersama Ahmad Renaldy."
     />
     <meta property="og:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hubungi Ahmad Renaldy - Web Developer" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ahmadrenaldy" />
+    <meta name="twitter:creator" content="@ahmadrenaldy" />
     <meta name="twitter:title" content="Hubungi Ahmad Renaldy | Web Developer" />
     <meta
       name="twitter:description"
       content="Kontak Ahmad Renaldy untuk kolaborasi project website dan optimasi konten."
     />
     <meta name="twitter:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
+    <meta name="twitter:image:alt" content="Hubungi Ahmad Renaldy - Web Developer" />
 
     <!--Google Fonts-->
     <link
@@ -44,8 +51,21 @@
       crossorigin="anonymous"
     />
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="css/styless.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Hubungi Ahmad Renaldy",
+      "url": "https://portofolio-ahmadrenaldy.vercel.app/contact.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Ahmad Renaldy",
+        "email": "ahmadd.renaldyy@gmail.com"
+      }
+    }
+    </script>
   </head>
   <body
     data-nav-active="contact.html"
@@ -58,7 +78,7 @@
         <h1 id="contact-heading" class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Hubungi Saya</h1>
         <p class="text-slate-500 mb-6">
           Silakan kirim kebutuhan project, kolaborasi, atau pertanyaan teknis.
-          Saya akan merespons secepatnya.
+          Saya akan merespons secepatnya. Bisa juga lihat <a href="profile.html" class="text-cyan-400 hover:text-cyan-300">profil lengkap saya</a> atau <a href="gallery.html" class="text-cyan-400 hover:text-cyan-300">studi kasus project</a> terlebih dahulu.
         </p>
 
         <form
@@ -111,6 +131,22 @@
             <p id="contactStatus" class="hidden text-xs mt-3" aria-live="polite"></p>
           </div>
         </form>
+
+        <!-- Quick Links -->
+        <div class="mt-8 glass p-6 rounded-xl">
+          <h2 class="font-semibold text-lg mb-3">Halaman Lainnya</h2>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <a href="gallery.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-cyan-400 transition-colors">
+              <i class="fa-solid fa-briefcase w-4 text-cyan-400"></i> Lihat Case Studies
+            </a>
+            <a href="about.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-cyan-400 transition-colors">
+              <i class="fa-solid fa-user w-4 text-cyan-400"></i> Tentang Saya
+            </a>
+            <a href="profile.html" class="flex items-center gap-2 text-sm text-slate-500 hover:text-cyan-400 transition-colors">
+              <i class="fa-solid fa-id-card w-4 text-cyan-400"></i> Profil Lengkap
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 

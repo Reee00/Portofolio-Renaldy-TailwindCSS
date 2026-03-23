@@ -13,6 +13,7 @@
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Ahmad Renaldy Portfolio" />
     <meta property="og:url" content="https://portofolio-ahmadrenaldy.vercel.app/project-ykai-website.html" />
     <meta property="og:title" content="Studi Kasus Website YKAI | Ahmad Renaldy" />
     <meta
@@ -20,13 +21,21 @@
       content="Problem, action, dan impact optimasi website yayasan untuk mempercepat workflow konten."
     />
     <meta property="og:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Studi Kasus Website YKAI - Ahmad Renaldy" />
+    <meta property="article:author" content="Ahmad Renaldy" />
+    <meta property="article:published_time" content="2026-03-19" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ahmadrenaldy" />
+    <meta name="twitter:creator" content="@ahmadrenaldy" />
     <meta name="twitter:title" content="Studi Kasus Website YKAI | Ahmad Renaldy" />
     <meta
       name="twitter:description"
       content="Studi kasus optimasi website yayasan untuk alur kerja konten yang lebih efisien."
     />
     <meta name="twitter:image" content="https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png" />
+    <meta name="twitter:image:alt" content="Studi Kasus Website YKAI - Ahmad Renaldy" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
@@ -40,6 +49,30 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/styless.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://portofolio-ahmadrenaldy.vercel.app/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://portofolio-ahmadrenaldy.vercel.app/gallery.html" },
+        { "@type": "ListItem", "position": 3, "name": "Website YKAI" }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Studi Kasus: Website Yayasan Kanker Anak Indonesia",
+      "author": { "@type": "Person", "name": "Ahmad Renaldy" },
+      "datePublished": "2026-03-19",
+      "description": "Studi kasus website YKAI: maintenance website, optimasi konten, dan perbaikan alur kerja tim non-teknis.",
+      "url": "https://portofolio-ahmadrenaldy.vercel.app/project-ykai-website.html",
+      "image": "https://portofolio-ahmadrenaldy.vercel.app/images/Webykai.png"
+    }
+    </script>
   </head>
   <body
     data-nav-active="gallery.html"
@@ -49,7 +82,17 @@
 
     <main class="pt-16 pb-16">
       <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-14">
-        <a href="gallery.html" class="text-sm text-cyan-400 hover:text-cyan-300 inline-block mb-6">&larr; Kembali ke Gallery</a>
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex flex-wrap items-center gap-1 text-sm text-slate-400">
+            <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li><a href="gallery.html" class="hover:text-cyan-400 transition-colors">Case Studies</a></li>
+            <li><span class="mx-1">/</span></li>
+            <li class="text-slate-600 dark:text-slate-200">Website YKAI</li>
+          </ol>
+        </nav>
+
         <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Studi Kasus: Website Yayasan Kanker Anak Indonesia</h1>
         <p class="text-slate-500 mb-8">Project utama pengelolaan website yayasan dengan fokus stabilitas, kemudahan update konten, dan optimasi SEO dasar.</p>
 
@@ -94,6 +137,30 @@
         <div class="glass p-6 rounded-xl mb-6">
           <h2 class="text-xl font-bold mb-2">Link Project</h2>
           <a href="https://web.yayasankankeranakindonesia.com" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300">https://web.yayasankankeranakindonesia.com</a>
+        </div>
+
+        <!-- Related Case Studies -->
+        <div class="mt-10 pt-8 border-t border-slate-200 dark:border-white/10">
+          <h2 class="text-xl font-bold mb-4">Studi Kasus Lainnya</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="project-portal-ykai.html" class="glass p-4 rounded-xl hover:border-cyan-400/40 transition-colors block">
+              <h3 class="font-semibold mb-1">Portal Web YKAI</h3>
+              <p class="text-sm text-slate-500">Penyederhanaan workflow admin konten.</p>
+            </a>
+            <a href="project-profile-redesign.html" class="glass p-4 rounded-xl hover:border-cyan-400/40 transition-colors block">
+              <h3 class="font-semibold mb-1">Redesign Halaman Profil</h3>
+              <p class="text-sm text-slate-500">Perbaikan hierarchy informasi untuk recruiter.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 glass p-6 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-slate-500">Tertarik diskusi project serupa?</p>
+          <div class="flex gap-3">
+            <a href="about.html" class="btn-outline text-sm">Tentang Saya</a>
+            <a href="contact.html" class="btn-primary text-sm">Hubungi Saya</a>
+          </div>
         </div>
       </section>
     </main>
